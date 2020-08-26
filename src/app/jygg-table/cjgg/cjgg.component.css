@@ -1,0 +1,11 @@
+.textCss{
+    width: 300px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space:nowrap; 
+}
+.div1{
+    width:305px;
+    height:28px; 
+    line-height:25px;
+}

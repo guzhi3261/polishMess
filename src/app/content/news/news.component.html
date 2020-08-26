@@ -1,0 +1,107 @@
+<table width="998" border="0"align="center" cellpadding="0" cellspacing="0" class="mart7">
+    <tbody>
+        <tr>
+            <!--新闻中心+更多》》-->
+            <td colspan="2" align="left">
+                <table width="740" border="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td width="150">
+                                <img src="../../../assets/img/xwzx_t.jpg" width="150" height="30" />
+                            </td>
+                            <td align="right" background="../../../assets/img/titbg2.jpg">
+                                <a href="#!/xwindex" target="_blank">更多&nbsp;》》</a>&nbsp;&nbsp;<!--/?type={{new_type}}&page={{new_page}}&num{{news_num}}-->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            <!--地图导航 标题 -->
+            <td width="250" valign="top">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td width="80" height="30" align="center" background="../../../assets/img/titbg.jpg" class="titw">地图导航</td>
+                            <td align="right" background="../../../assets/img/titbg.jpg">&nbsp;</td>
+                            <td width="22">
+                                <img src="../../../assets/img/titbg1.jpg" width="22" height="30" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <!--这一行要实现图片轮换出现 -->
+        <tr>
+            <td width="362" height="278" valign="top" style="padding-top:7px;">
+                <div class="swiper-container" >
+                    <div class="swiper-wrapper">
+                        <ng-container *ngFor="let item of swiperList">
+                            <div class="swiper-slide" >
+                                <img [src]="item.imgUrl" width="362px" height="278" alt=""> 
+                            </div>                            
+                        </ng-container>
+                    </div>                    
+                    <!-- 如果需要分页器-->
+                    <!-- <div class="swiper-pagination"></div> -->
+                    
+                    <!-- 如果需要导航按钮 -->
+                    <!-- <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div> -->
+                    
+                    <!-- 如果需要滚动条 -->
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </td>
+            <!-- JavaScript的showDiv方法未实现-->
+            <td width="386" align="center" valign="top" style="padding-top:7px;" >
+                <div class="news_sw">
+                    <ul>
+                        <a href="/xwzx/xwdt/" target="_blank">
+                            <li class="active">新闻动态</li>
+                        </a>                        
+                    </ul>
+                </div>
+                <table width="370" border="0" cellpadding="0" cellspacing="0" class="ntbord" id="snc1" style="display: block;">
+                    <tbody>
+                        <tr>
+                            <td height="247" width="370" align="center" valign="top" bgcolor="#FFFFFF">
+                                <table width="350" border="0" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                        <tr>
+                                            <td height="40" align="center" class="head_l" >
+                                                <a [routerLink]="['/newsdetail', id]">{{newsTop}}</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table width="350" border="0" cellpadding="0" cellspacing="0" class="mart7">
+                                    <tbody>
+                                        <tr *ngFor="let news of newses;let i = index"><!--|limitTo:5-->
+                                            <td height="24" align="left" class="textCss"  *ngIf="i < 5" >·
+                                                <a  [routerLink]="['/newsdetail', news.news.id]">{{news.news.title}}</a>
+                                            </td>
+                                            <td width="70" align="center"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>                    
+            </td>
+            <td width="250" valign="top">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" class="ntbord">
+                    <tbody>
+                        <tr>
+                            <td height="285" align="center" valign="top" bgcolor="#FFFFFF">
+                                <img src="../../../assets/img/map.jpg" width="246" height="284" usemap="#Map" border="0">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+
+        </tr>
+    </tbody>
+</table>

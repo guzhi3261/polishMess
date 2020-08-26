@@ -1,0 +1,178 @@
+<!--交易公告table-->
+<table width="998" border="0" align="center" cellpadding="0" cellspacing="0" class="mart7">
+    <tbody>
+        <tr>
+            <!--包含交易公告表头和iframe框-->
+            <td height="782" align="left" valign="top">
+                <table width="740" border="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td width="149"><img src="../../../assets/img/jygg_t.jpg" width="149" height="30"></td>
+                            <td align="right" background="../../../assets/img/titbg2.jpg">
+                                <a  target="_blank">更多 &nbsp;</a>》》&nbsp;&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br />
+                <app-zrxx></app-zrxx>
+                <app-jjjy></app-jjjy>
+                <app-cjgg></app-cjgg>
+                 <!-- <iframe src="index123.html" width="740" height="761" frameborder="0" scrolling="no"></iframe>  -->
+            </td>
+            <!--侧边几个表格：快速导航，政策法规，综合查询-->
+            <td width="250" valign="top">
+                <!--快速导航表头图片-->
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td width="80" height="30" align="center" background="../../../assets/img/titbg.jpg" class="titw">快捷导航</td>
+                            <td align="right" background="../../../assets/img/titbg.jpg">&nbsp;</td>
+                            <td width="22"><img src="../../../assets/img/titbg1.jpg" width="22" height="30"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--快速到航选择地区-->
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" class="ntbord">
+                    <tbody>
+                        <tr>
+                            <td height="107" align="center" bgcolor="#FFFFFF">
+                                <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="60" height="28" align="center">省辖市</td>
+                                            <td align="left">
+                                                <select id="selCity" name="city" onchange="getCity(this.options[this.selectedIndex].value)" class="sea_select">
+                                                    <option value="请选择" selected="selected">请选择</option>
+                                                    <option value="安阳市">安阳市</option>
+                                                    <option value="鹤壁市">鹤壁市</option>
+                                                    <option value="济源市">济源市</option>
+                                                    <option value="焦作市">焦作市</option>
+                                                    <option value="开封市">开封市</option>
+                                                    <option value="漯河市">漯河市</option>
+                                                    <option value="洛阳市">洛阳市</option>
+                                                    <option value="南阳市">南阳市</option>
+                                                    <option value="平顶山市">平顶山市</option>
+                                                    <option value=""></option>
+                                                    <option value="三门峡市">三门峡市</option>
+                                                    <option value="商丘市">商丘市</option>
+                                                    <option value="新乡市">新乡市</option>
+                                                    <option value="信阳市">信阳市</option>
+                                                    <option value="许昌市">许昌市</option>
+                                                    <option value="焦作市">焦作市</option>
+                                                    <option value="周口市">周口市</option>
+                                                    <option value="驻马店市">驻马店市</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td height="28" align="center">县市区</td>
+                                            <td align="left">
+                                                <select name="
+                                                    " id="selDistrict" class="sea_select">
+                                                    <option value="请选择">请选择</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td height="28" align="center">&nbsp;</td>
+                                            <td align="left" valign="bottom">
+                                                <a onclick="FastChooseCity()" href="#">
+                                                    <img src="../../../assets/img/bt_ok.jpg" width="68" height="24"></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--政策法规表头-->
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" class="mart7">
+                    <tbody>
+                        <tr>
+                            <td width="140"><img src="../../../assets/img/zcfg_t.jpg" width="140" height="30"></td>
+                            <td align="right" background="../../../assets/img/titbg2.jpg">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                
+                
+                
+                
+                <!--政策法规内容-->
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" class="bormart">
+                    <tbody>
+                        <tr>
+                            <td height="377" align="center" valign="top" bgcolor="#FFFFFF">
+                                <table width="92%" border="0" cellspacing="0" cellpadding="0" style="border-bottom:1px dotted #999; margin-top:5px;">
+                                    <tbody>
+                                        <tr>
+                                            <td align="left" class="tdStyle">国家政策法规</td>
+                                            <td width="60" align="right">
+                                                <a href="#!/gjzcfg" target="_blank">更多 &gt;&gt;</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table width="92%" height="150" border="0" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                        <tr>
+                                            <td align="left" valign="top">
+                                                <table width="92%" border="0" cellspacing="0" cellpadding="0">
+                                                    <tbody>
+                                                        <tr *ngFor="let policy of policies; let i = index" >
+                                                            <td height="25" align="left" class="textCss" *ngIf="i < 5">
+                                                               ·  <a [routerLink]="['/policydetail', policy.zhengCeFaGui.id]"> {{policy.zhengCeFaGui.title}} </a>                                                               
+                                                            </td>
+                                                            <td width="70" align="center"></td>
+                                                        </tr>
+                                                        
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="tableStyle" border="0" cellspacing="0" cellpadding="0" >
+                                    <tbody>
+                                        <tr>
+                                            <td align="left" class="tdStyle">地方政策规章</td>
+                                            <td width="60" align="right">
+                                                <a href="#!/dfzcfg" target="_blank">更多 &gt;&gt;</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table width="92%" height="150" border="0" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                        <tr>
+                                            <td align="left" valign="top">
+                                                <table width="92%" border="0" cellspacing="0" cellpadding="0">
+
+                                                    <tbody>
+                                                        <tr *ngFor="let policy of policies; let i = index" >
+                                                            <td height="25" align="left" class="textCss" *ngIf="i < 5">
+                                                               ·  <a [routerLink]="['/policydetail', policy.zhengCeFaGui.id]"> {{policy.zhengCeFaGui.title}} </a>                                                               
+                                                            </td>
+                                                            <td width="70" align="center"></td>
+                                                        </tr>
+
+                                                        
+
+                                                    </tbody>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--<iframe src="pages/zhcx.html" width="100%" height="222" frameborder="0" scrolling="no"></iframe>-->
+            </td>
+        </tr>
+    </tbody>
+</table>

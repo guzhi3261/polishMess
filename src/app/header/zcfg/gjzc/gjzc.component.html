@@ -1,0 +1,116 @@
+
+<app-header></app-header>
+<table width="998" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:7px;">
+	<tbody>
+		<tr>
+			<td width="268" align="center" valign="top" bgcolor="#edfcf8">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" class="list_t">
+					<tbody>
+						<tr>
+							<td height="50" align="center" background="../../../assets/img/list.jpg">政策法规</td>
+						</tr>
+					</tbody>
+				</table>
+				<table width="213" border="0" cellspacing="0" cellpadding="0">
+
+					<tbody>
+						<tr>
+							<td height="12"></td>
+						</tr>
+						<tr>
+							<td height="37" align="center" background="../../../assets/img/listbg.jpg" class="list_nav">
+								<a routerLink="/gjzcfg">国家政策法规</a>
+							</td>
+						</tr>
+						<tr>
+							<td height="12"></td>
+						</tr>
+						<tr>
+							<td height="37" align="center" background="../../../assets/img/listbg.jpg" class="list_nav">
+								<a routerLink="/dfzcfg">地方政策规章</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+			<td align="right" valign="top">&nbsp;</td>
+			<td width="722" align="right" valign="top">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tbody>
+						<tr>
+							<td height="31" align="left" class="pos">当前位置：
+								<a >首页</a> &gt;
+                                <a>政策法规</a> &gt;
+                                <a>国家政策法规</a> &gt;
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tbody>
+						<tr>
+							<td width="729" height="560" align="center" valign="top" bgcolor="#edfcf8">
+								<table width="95%" border="0" cellspacing="0" cellpadding="0" style="margin:6px 0">
+
+									<tbody>
+										<tr *ngFor="let policy of policies">
+											<td height="26" align="left">·
+                                                <a [routerLink]="['/policydetail']" [queryParams]="{title:policy.zhengCeFaGui.title}">{{policy.zhengCeFaGui.title}} </a>
+
+												<!-- <a [routerLink]="['/policydetail',policy.zhengCeFaGui.id]">{{policy.zhengCeFaGui.title}} </a> -->
+											</td>
+											<td width="90" align="center"></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table bgcolor="#edfcf8" width="729" border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+
+							<td height="30" align="center">
+								<script type="text/javascript">
+									function check() {
+										var a = document.form1.list1.value;
+										window.open(a);
+									}
+								</script>
+								<form action="" name="form1" id="form1">
+									<a href="index.html">首页</a>
+									<a href="index.html">上一页</a>
+									<a href="index1.html">下一页</a>
+									<a href="index16.html">尾页</a> 页次:1/17 转到第
+									<select size="1" name="list1" id="list1">
+										<option value="index.html">1</option>
+										<option value="index1.html">2</option>
+										<option value="index2.html">3</option>
+										<option value="index3.html">4</option>
+										<option value="index4.html">5</option>
+										<option value="index5.html">6</option>
+										<option value="index6.html">7</option>
+										<option value="index7.html">8</option>
+										<option value="index8.html">9</option>
+										<option value="index9.html">10</option>
+										<option value="index10.html">11</option>
+										<option value="index11.html">12</option>
+										<option value="index12.html">13</option>
+										<option value="index13.html">14</option>
+										<option value="index14.html">15</option>
+										<option value="index15.html">16</option>
+										<option value="index16.html">17</option>
+									</select>页
+									<input type="button" value="确定" name="button1" onclick="check()">
+								</form>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</td>
+		</tr>
+	</tbody>
+</table>

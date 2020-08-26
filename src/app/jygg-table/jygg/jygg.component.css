@@ -1,0 +1,23 @@
+.iframe{
+    width:"740" ;
+    height:"761" ;
+    border:"0" ;
+}
+.tdStyle{
+    height: 30px;
+    color: #ed5f00;
+    font-weight: bold;
+}
+.tableStyle{
+    width: 92%;
+    border: 0px;
+    border-bottom: 1px dotted #999 ;
+    margin-top: 5px;
+
+}
+.textCss{
+    max-width: 228px;
+    white-space:nowrap; 
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

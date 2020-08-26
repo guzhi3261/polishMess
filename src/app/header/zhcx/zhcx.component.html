@@ -1,0 +1,103 @@
+<app-header></app-header>
+<table width="1002" border="0" align="center" cellpadding="0" cellspacing="0" class="mart7">
+    <tr>
+        <td width="140"><img src="../../../assets/img/zhcx_t.jpg" width="140" height="30" /></td>
+        <td align="right" background="../../../assets/img/titbg2.jpg">&nbsp;</td>
+    </tr>
+</table>
+
+<form id="xmFrm" action="../portal.do?method=infoList" method="post" target="_blank">
+    <input id="unitId" name="unitId" type="hidden" value="1" />
+    <input name="isww" type="hidden" value="1" />
+
+    <table width="1002" align="center" border="0" cellpadding="0" cellspacing="0" class="bormart">
+        <tr>
+            <td height="176" align="center" bgcolor="#FFFFFF">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="80" height="22" align="center">地区：</td>
+                        <td align="left">
+                           
+                            <input readonly name="selectName" type="text" class="sea_input" id="citySel" style=" width:145px;height:14px" onclick="showCityMenu()" value="河南省">
+                            <input type="hidden" name="unitID" id="cityCode" value="">
+                            <div id=cityMenuContent class="" style="display:none;position:absolute;z-index:9999; ">
+                                <ul id="cityUl" class="ztree" style="margin-top:0; width:140px;height:124px; background: url('/nccqjy/images/css/zTreeStyle/img/loading.gif') no-repeat scroll left top #f0f6e4;"></ul>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="22" align="center">分类：</td>
+                        <td align="left">
+                            <select name="fenlei" class="sea_select">
+                                <option style="height:16px" value="0">请选择</option>
+                                <option style="height:16px" value="1">转让信息</option>
+                                <option style="height:16px" value="2">通知公告</option>
+                                <option style="height:16px" value="3">成交公告</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="22" align="center">类别：</td>
+                        <td align="left">
+                            <select name="proType" class="sea_select">
+                                <option value="">请选择类别</option>
+
+                                <option value="40286f8147d283fc0147d2a637c00001">土地经营权</option>
+
+                                <option value="40286f8147d283fc0147d2b947ac0004">水面经营权</option>
+
+                                <option value="40286f8147d283fc0147d2b8b2670002">四荒使用权</option>
+
+                                <option value="40286f8147d283fc0147d2b9aa4c0005">林权</option>
+
+                                <option value="40286f8147d283fc0147d2b8f6120003">集体资产</option>
+
+                                <option value="40286f8147d283fc0147d2bb7e040009">设施设备</option>
+
+                                <option value="8ad881cd50f022870150f045ffe30019">水利设施</option>
+
+                                <option value="40286f8147d283fc0147d2bbd8b9000a">涉农项目</option>
+
+                                <option value="40286f8147d283fc0147d2ba538a0006">农民住房</option>
+
+                                <option value="8ad881c4514be61d01514c2bcaaf0002">宅基地使用权</option>
+
+                                <option value="40286f8147d283fc0147d2ba96aa0007">集体资产股权</option>
+
+                                <option value="40286f8147d283fc0147d2bae5a90008">海域使用权</option>
+
+                                <option value="8ad881cd50f022870150f048ebe2001c">知识产权</option>
+
+                                <option value="40286f8147d283fc0147d2bc1ae8000b">其他</option>
+
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="22" align="center">面积：</td>
+                        <td align="left">
+                            <select name="proArea" class="sea_select">
+                                <option style="height:16px" value="">请选择</option>
+
+                                <option style="height:16px" value="1">100亩以下</option>
+                                <option style="height:16px" value="2">100-300亩</option>
+                                <option style="height:16px" value="3">300-500亩</option>
+                                <option style="height:16px" value="4">500-1000亩</option>
+                                <option style="height:16px" value="5">1000亩以上</option>
+
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="22" align="center">关键字：</td>
+                        <td align="left"><input style="height:14px" name="proName" type="text" class="sea_input" value="" /></td>
+                    </tr>
+                    <tr>
+                        <td height="50" colspan="2" align="center" valign="bottom"><img src="../../../assets/img/bt_ok2.jpg" width="205" height="44" onclick="formSave('xmFrm')" /></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</form>

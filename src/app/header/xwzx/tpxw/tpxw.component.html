@@ -1,0 +1,102 @@
+<app-header></app-header>
+
+<div>
+	<table border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:7px;">
+		<tbody>
+			<tr>
+				<td width="268" align="center" valign="top" bgcolor="#edfcf8">
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="list_t">
+						<tbody>
+							<tr>
+								<td height="50" align="center" background="../../../assets/img/list.jpg">新闻中心</td>
+							</tr>
+						</tbody>
+					</table>
+					<table width="213" border="0" cellspacing="0" cellpadding="0">
+						<tbody>
+							<tr>
+								<td height="12"></td>
+							</tr>
+							<tr>
+								<td height="37" align="center" background="../../../assets/img/listbg.jpg" class="list_nav">
+									<a routerLink="/xwdt">新闻动态</a>
+								</td>
+							</tr>
+							
+							<tr>
+								<td height="12"></td>
+							</tr>
+							<tr>
+								<td height="37" align="center" background="../../../assets/img/listbg.jpg" class="list_nav">
+									<a routerLink="/tpxw">图片新闻</a>
+								</td>
+							</tr>
+							<tr>
+								<td height="12"></td>
+							</tr>							
+						</tbody>
+					</table>
+				</td>
+				<td align="right" valign="top">&nbsp;</td>
+				<td width="722" align="right" valign="top">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tbody>
+							<tr>
+								<td height="31" align="left" class="pos">当前位置：
+									<a>首页</a> &gt;
+                                    <a>新闻中心</a> &gt;
+                                    <a>图片新闻</a> &gt;
+									
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table  width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tbody>
+							<tr>
+								<td width="729" height="560" align="center" valign="top" bgcolor="#edfcf8">
+									<table  width="95%" border="0" cellspacing="0" cellpadding="0"  id="idData" style="margin:6px 0">
+										<tbody>
+											<tr *ngFor="let news of newses">
+												<td height="26" align="left">·
+													<a [routerLink]= "['/newsdetail']" [queryParams]="{title:news.news.title}">{{news.news.title}}</a>
+												</td>
+												<td width="90" align="center"></td>
+												
+											</tr>			
+											
+											
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table width="60%" align="right">
+						<tr><td><div id="barcon" name="barcon"></div></td></tr>
+					</table>
+					
+
+					<table bgcolor="#edfcf8" width="729" border="0" cellpadding="0" cellspacing="0">
+						<tbody>
+							<tr>
+
+								<td height="30" align="center">
+								
+								<form action="" name="form1" id="form1">
+										<a ng-click="first()">首页</a>
+										<a href="javascript:void(0)" ng-click="pre()">上一页</a>
+										页次:
+										<a href="javascript:void(0)" ng-click="next()">下一页</a>
+										<a ng-click="last()">尾页</a>
+								</form>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</td>
+			</tr>
+		</tbody>
+		</table>
+</div>

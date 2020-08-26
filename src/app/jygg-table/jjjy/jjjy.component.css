@@ -1,0 +1,8 @@
+.xmmcrow{
+    width: 205px;
+    height: 28px;
+    line-height: 25px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

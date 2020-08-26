@@ -1,0 +1,13 @@
+.td1{
+    height: 40px;
+    font-size:23px; 
+    font-family:'微软雅黑';
+    color:#000; 
+    font-weight:bold; 
+    line-height:40px
+}
+.td2 {
+    line-height:28px; 
+    font-size:14px; 
+    color:#444;
+}
