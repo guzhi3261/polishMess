@@ -1,3 +1,11 @@
+.body {
+    margin: 0px;
+    padding: 0px;
+    background: #f2f2f2;
+    font-size: 12px;
+    font-family: "微软雅黑";
+    color: #555;
+}
 .MainTable{
     background-color:#ffffff;
     width: 1002px;

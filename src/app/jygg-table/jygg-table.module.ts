@@ -6,9 +6,8 @@ import { JjjyComponent } from './jjjy/jjjy.component';
 import { ZrxxComponent } from './zrxx/zrxx.component';
 
 
-
 @NgModule({
-  declarations: [ZrxxComponent ],
+  declarations: [ZrxxComponent,  ],
   imports: [
     CommonModule
   ]

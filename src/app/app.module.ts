@@ -35,19 +35,21 @@ import { ButtonModule } from 'primeng/button';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ZrxxDetailComponent } from './jygg-table/zrxx-detail/zrxx-detail.component';
+import { CjggDetailComponent } from './jygg-table/cjgg-detail/cjgg-detail.component';
+import { JjjyDetailComponent } from './jygg-table/jjjy-detail/jjjy-detail.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,  NewsComponent, HeaderComponent, ZrxxComponent, JjjyComponent, CjggComponent,
-    JyggAllComponent,
-    XwzxComponent, ZcfgComponent, 
+    JyggAllComponent, XwzxComponent, ZcfgComponent, 
     JyggComponent, JygzComponent, DashboradComponent,
     ZhcxComponent, HdjlComponent, LxwmComponent,
     XwdtComponent, TpxwComponent, NewsDetailComponent,
     GjzcComponent, DfzcComponent, PolicyDetailComponent,
     JingjiaComponent, 
-    ZrxxDetailComponent
+    ZrxxDetailComponent, CjggDetailComponent, JjjyDetailComponent
   ],
   imports: [
     BrowserModule,

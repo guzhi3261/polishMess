@@ -16,7 +16,9 @@ import { GjzcComponent } from './header/zcfg/gjzc/gjzc.component';
 import { DfzcComponent } from './header/zcfg/dfzc/dfzc.component';
 import { PolicyDetailComponent } from './header/zcfg/policy-detail/policy-detail.component';
 import { JingjiaComponent } from './jingjia/jingjia.component';
-import { ZrxxComponent } from './jygg-table/zrxx/zrxx.component';
+import { ZrxxDetailComponent } from './jygg-table/zrxx-detail/zrxx-detail.component';
+import { CjggDetailComponent } from './jygg-table/cjgg-detail/cjgg-detail.component';
+import { JjjyDetailComponent } from './jygg-table/jjjy-detail/jjjy-detail.component';
 
 
 const routes: Routes = [
@@ -36,7 +38,9 @@ const routes: Routes = [
   {path: 'dfzcfg', component: DfzcComponent},
   {path: 'policydetail/:id', component: PolicyDetailComponent},
   {path: 'jingjia', component: JingjiaComponent},
-  {path: 'zrxxdetail', component: ZrxxComponent},
+  {path: 'zrxxdetail', component: ZrxxDetailComponent},
+  {path: 'cjggdetail', component: CjggDetailComponent},
+  {path: 'jjjydetail', component: JjjyDetailComponent},
   {path: '**', component: DashboradComponent},
   
 ];

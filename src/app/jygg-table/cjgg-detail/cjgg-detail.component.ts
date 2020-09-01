@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import Swiper from 'swiper';
 
-
 @Component({
-  selector: 'app-zrxx-detail',
-  templateUrl: './zrxx-detail.component.html',
-  styleUrls: ['./zrxx-detail.component.css']
+  selector: 'app-cjgg-detail',
+  templateUrl: './cjgg-detail.component.html',
+  styleUrls: ['./cjgg-detail.component.css']
 })
-export class ZrxxDetailComponent implements OnInit {
+export class CjggDetailComponent implements OnInit {
 
   constructor() { }
   swiperList: any [] = [];
+
 
   ngOnInit(): void {
     setTimeout(() => {
@@ -18,14 +18,12 @@ export class ZrxxDetailComponent implements OnInit {
       }, 0);
       this.swiperList = [
       {
-          imgUrl: 'http://www.yyth.com.cn/uploadDir/jpg/20190111/1547185316391.jpg'
+          imgUrl: 'http://www.jsnc.gov.cn/nccqjy/portal.do?method=downLoadFile&&id=2c9004127445c8bc0174488a3e1d3182'
       },
       {
-          imgUrl: 'http://www.yyth.com.cn/uploadDir/jpg/20181229/1546050204895.jpg'
+          imgUrl: 'http://www.jsnc.gov.cn/nccqjy/portal.do?method=downLoadFile&&id=2c9004127445c8bc0174488a3e0d3181'
       },
-      {
-          imgUrl: 'http://www.yyth.com.cn/uploadDir/jpg/20181229/1546061999592.jpg'
-      }
+      
       ];
   }
   // 轮播图初始化
@@ -57,4 +55,5 @@ export class ZrxxDetailComponent implements OnInit {
       });
   }
   }
+
 

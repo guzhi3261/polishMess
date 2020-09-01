@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "polishMess": {
@@ -32,7 +32,7 @@
               "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": [
-             "src/assets/js/swiper.min.js"
+              "src/assets/js/swiper.min.js"
             ]
           },
           "configurations": {
@@ -126,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "polishMess"
+    }
+  },
+  "defaultProject": "polishMess",
+  "cli": {
+    "analytics": "3bb9a2c1-4cc1-430d-8023-c0f02ab21870"
+  }
 }
