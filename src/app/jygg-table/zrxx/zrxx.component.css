@@ -6,7 +6,6 @@
 .thSty{
     width:"140";
     height:"30";
-    align:"center"
 }
 .jygg{
     width: 100%;
@@ -21,6 +20,7 @@
     width: 100%;
     border: 0px;
 }
-td,th {
-    align-items: center;
+table tr th {
+    margin: auto;
+    text-align:center;
 }

@@ -144,7 +144,7 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                                <table width="92%" height="150" border="0" cellspacing="0" cellpadding="0">
+                                <table width="92%" height="200px" border="0" cellspacing="0" cellpadding="0">
                                     <tbody>
                                         <tr>
                                             <td align="left" valign="top">
@@ -152,7 +152,7 @@
 
                                                     <tbody>
                                                         <tr *ngFor="let policy of policies; let i = index" >
-                                                            <td height="25" align="left" class="textCss" *ngIf="i < 5">
+                                                            <td height="25" align="left" class="textCss" *ngIf="i < 10">
                                                                ·  <a [routerLink]="['/policydetail', policy.zhengCeFaGui.id]"> {{policy.zhengCeFaGui.title}} </a>                                                               
                                                             </td>
                                                             <td width="70" align="center"></td>

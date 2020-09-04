@@ -6,3 +6,7 @@
     text-overflow: ellipsis;
     overflow: hidden;
 }
+table tr th {
+    margin: auto;
+    text-align:center;
+}

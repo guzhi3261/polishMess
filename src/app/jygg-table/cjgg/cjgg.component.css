@@ -9,3 +9,19 @@
     height:28px; 
     line-height:25px;
 }
+table tr th {
+    margin: auto;
+    text-align:center;
+}
+.titw{
+    margin: auto;
+    text-align: center;
+}
+.TitleName{
+    width:305px;
+    height:28px; 
+    line-height:25px;  
+    white-space:nowrap; 
+    text-overflow:ellipsis; 
+    overflow:hidden;
+}
