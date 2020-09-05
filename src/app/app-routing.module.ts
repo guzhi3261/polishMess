@@ -38,7 +38,7 @@ const routes: Routes = [
   {path: 'dfzcfg', component: DfzcComponent},
   {path: 'policydetail/:id', component: PolicyDetailComponent},
   {path: 'jingjia', component: JingjiaComponent},
-  {path: 'zrxxdetail', component: ZrxxDetailComponent},
+  {path: 'zrxxdetail/:id', component: ZrxxDetailComponent},
   {path: 'cjggdetail', component: CjggDetailComponent},
   {path: 'jjjydetail', component: JjjyDetailComponent},
   {path: '**', component: DashboradComponent},

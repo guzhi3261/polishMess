@@ -46,7 +46,7 @@
                                                     <option value="安阳市">安阳市</option>
                                                     <option value="鹤壁市">鹤壁市</option>
                                                     <option value="济源市">济源市</option>
-                                                    <option value="焦作市">焦作市</option>
+                                                    <option value="范县">范县</option>
                                                     <option value="开封市">开封市</option>
                                                     <option value="漯河市">漯河市</option>
                                                     <option value="洛阳市">洛阳市</option>
@@ -58,7 +58,7 @@
                                                     <option value="新乡市">新乡市</option>
                                                     <option value="信阳市">信阳市</option>
                                                     <option value="许昌市">许昌市</option>
-                                                    <option value="焦作市">焦作市</option>
+                                                    <option value="范县">范县</option>
                                                     <option value="周口市">周口市</option>
                                                     <option value="驻马店市">驻马店市</option>
                                                 </select>
@@ -152,7 +152,7 @@
 
                                                     <tbody>
                                                         <tr *ngFor="let policy of policies; let i = index" >
-                                                            <td height="25" align="left" class="textCss" *ngIf="i < 10">
+                                                            <td height="25" align="left" class="textCss" *ngIf="i <10">
                                                                ·  <a [routerLink]="['/policydetail', policy.zhengCeFaGui.id]"> {{policy.zhengCeFaGui.title}} </a>                                                               
                                                             </td>
                                                             <td width="70" align="center"></td>

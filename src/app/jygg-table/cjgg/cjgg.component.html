@@ -16,14 +16,14 @@
                     <th width="90">公示日期</th>
                 </tr>
 
-                <tr>
-                    <td height="28" class="num">320115008D19030001</td>
+                <tr *ngFor="let item of cjxx; let i = index">
+                    <td height="28" class="num" >{{item.chengJiaoXinXi.id}}</td>
                     <td align="left" class="tit">
                         <a routerLink = "/cjggdetail" target="_blank">
-                            <div class="textCss div1" >&nbsp;马村区马村街道社区干巴沼水面</div>
+                            <div class="textCss div1" >&nbsp;{{item.chengJiaoXinXi.xiangMuMingCheng}}</div>
                         </a>
                     </td>
-                    <td   ><span class="tit">焦作市马村区马村街道</span></td>
+                    <td   ><span class="tit">范县濮水镇董桑庄村</span></td>
                     <td class="num">2019-03-27</td>
                 </tr>
 
@@ -31,10 +31,10 @@
                     <td height="28"    class="num">321003100N19030001</td>
                     <td align="left" class="tit">
                         <a href="#">
-                            <div class="textCss div1">&nbsp;焦北街道2019年河塘管护工程</div>
+                            <div class="textCss div1">&nbsp;城关镇2019年河塘管护工程</div>
                         </a>
                     </td>
-                    <td><span class="tit">焦作市焦北街道 </span></td>
+                    <td><span class="tit">范县城关镇 </span></td>
                     <td class="num">2019-03-27</td>
                 </tr>
 
@@ -42,10 +42,10 @@
                     <td height="28"    class="num">320324103A19030003</td>
                     <td align="left" class="tit">
                         <a href="#">
-                            <div class="TitleName">&nbsp;山阳区街道二组土地流转</div>
+                            <div class="TitleName">&nbsp;城关镇二组土地流转</div>
                         </a>
                     </td>
-                    <td><span class="tit">焦作市山阳区街道 </span></td>
+                    <td><span class="tit">范县城关镇 </span></td>
                     <td class="num">2019-03-27</td>
                 </tr>
 
@@ -53,10 +53,10 @@
                     <td height="28" class="num">320324103A19030007</td>
                     <td align="left" class="tit">
                         <a href="#">
-                            <div class="TitleName">&nbsp;中站区月山街道五组土地流转</div>
+                            <div class="TitleName">&nbsp;辛庄乡五组土地流转</div>
                         </a>
                     </td>
-                    <td   ><span class="tit">焦作市中站区月山街道</span></td>
+                    <td   ><span class="tit">范县辛庄乡</span></td>
                     <td    class="num">2019-03-27</td>
                 </tr>
 
@@ -64,10 +64,10 @@
                     <td height="28"    class="num">321012121Q19030003</td>
                     <td align="left" class="tit">
                         <a href="#">
-                            <div class="TitleName">&nbsp;焦北街道农贸市场蔬菜自产自销摊位续租</div>
+                            <div class="TitleName">&nbsp;城关镇农贸市场蔬菜自产自销摊位续租</div>
                         </a>
                     </td>
-                    <td ><span class="tit">焦作市焦北街道 </span></td>
+                    <td ><span class="tit">范县城关镇 </span></td>
                     <td class="num">2019-03-27</td>
                 </tr>
 

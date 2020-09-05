@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Swiper from 'swiper';
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -9,24 +11,42 @@ import Swiper from 'swiper';
 })
 export class ZrxxDetailComponent implements OnInit {
 
-  constructor() { }
-  swiperList: any [] = [];
+  constructor(private http:HttpClient, protected activatedroute: ActivatedRoute, private route: Router) { 
+    this.id = this.activatedroute.snapshot.params['id'];
+  }
+  contentUrl = "http://218.29.137.134:22742/api/services/app/GongYingXinXies/GetGongYingXinXiForEdit?Id=";
+  id:string;
+  zrxx: any;
+  public xiangMuMingCheng: string;
+  public chuangJianRiQi: string;
+  public zhuanChuFangDiZhi: string;
+  public guaPaiQi: string;
+  
+
+  swiperList: any [] = [
+    {
+        imgUrl: 'http://www.yyth.com.cn/uploadDir/jpg/20190111/1547185316391.jpg'
+    },
+    {
+        imgUrl: 'http://www.yyth.com.cn/uploadDir/jpg/20181229/1546050204895.jpg'
+    },
+    {
+        imgUrl: 'http://www.yyth.com.cn/uploadDir/jpg/20181229/1546061999592.jpg'
+    }
+    ];;
 
   ngOnInit(): void {
     setTimeout(() => {
       this.swiperInit();
       }, 0);
-      this.swiperList = [
-      {
-          imgUrl: 'http://www.yyth.com.cn/uploadDir/jpg/20190111/1547185316391.jpg'
-      },
-      {
-          imgUrl: 'http://www.yyth.com.cn/uploadDir/jpg/20181229/1546050204895.jpg'
-      },
-      {
-          imgUrl: 'http://www.yyth.com.cn/uploadDir/jpg/20181229/1546061999592.jpg'
-      }
-      ];
+      this.http.get(this.contentUrl + this.id).subscribe((res) => {
+        this.zrxx = res['result']['gongYingXinXi']
+        this.xiangMuMingCheng = this.zrxx.xiangMuMingCheng;
+        this.chuangJianRiQi = this.zrxx.chuangJianRiQi;
+        this.zhuanChuFangDiZhi = this.zrxx.zhuanChuFangDiZhi;
+        this.guaPaiQi = this.zrxx.guaPaiQi;
+        console.log(this.zrxx);
+    });
   }
   // 轮播图初始化
   swiperInit() {
