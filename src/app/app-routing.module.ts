@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginComponent } from './common/login/login.component';
+import { RegistComponent } from './common/regist/regist.component';
+
 import { XwzxComponent } from './header/xwzx/xwzx.component';
 import { ZcfgComponent } from './header/zcfg/zcfg.component';
 import { JyggAllComponent } from './header/jyggall/jyggall.component';
@@ -19,10 +22,14 @@ import { JingjiaComponent } from './jingjia/jingjia.component';
 import { ZrxxDetailComponent } from './jygg-table/zrxx-detail/zrxx-detail.component';
 import { CjggDetailComponent } from './jygg-table/cjgg-detail/cjgg-detail.component';
 import { JjjyDetailComponent } from './jygg-table/jjjy-detail/jjjy-detail.component';
+import { AuctionComponent } from './auction/auction.component';
 
 
 const routes: Routes = [
 
+  
+  {path: 'login', component: LoginComponent},
+  {path: 'regist', component: RegistComponent},
   {path: 'xwzx', component: XwzxComponent},
   {path: 'zcfg', component: ZcfgComponent},
   {path: 'jyggall', component: JyggAllComponent},
@@ -39,8 +46,9 @@ const routes: Routes = [
   {path: 'policydetail/:id', component: PolicyDetailComponent},
   {path: 'jingjia', component: JingjiaComponent},
   {path: 'zrxxdetail/:id', component: ZrxxDetailComponent},
-  {path: 'cjggdetail', component: CjggDetailComponent},
+  {path: 'cjggdetail/:id', component: CjggDetailComponent},
   {path: 'jjjydetail', component: JjjyDetailComponent},
+  {path: 'auction', component: AuctionComponent},
   {path: '**', component: DashboradComponent},
   
 ];

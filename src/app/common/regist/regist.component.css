@@ -1,0 +1,102 @@
+.body {
+    margin: 0px;
+    padding: 0px;
+    font-family: "微软雅黑","黑体",Arial;
+    position: relative;
+    background: #f2f2f2;
+    font-size: 12px;
+}
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+div, ul, li, h1, span {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-family: "微软雅黑","黑体",Arial;
+}
+#head {
+    height: 90px;
+    background: #13b695;
+}
+#head .reg1 {
+    width: 1000px;
+    margin: 0 auto;
+    height: 90px;
+}
+#head h1 {
+    float: left;
+    height: 90px;
+    display: block;
+    line-height: 90px;
+    font-size: 23px;
+    color: #fff;
+    padding-left: 80px;
+}
+#head #return {
+    background: url(../../../assets/img/return.png) right center no-repeat;
+    width: 119px;
+    float: right;
+    height: 29px;
+    margin-top: 30px;
+    line-height: 27px;
+    text-align: center;
+    font-weight: bold;
+}
+.content{
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    height: auto !important;
+    overflow: auto;
+}
+.usercenter {
+    position: relative;
+    height: auto;
+    overflow: auto;
+    background: #fff;
+}
+.active {
+    background: url(../../../assets/img/sw1.jpg);
+    color: #26927c;
+}
+
+label{
+    width: 100px;
+    position: relative;
+    top: 5px;
+    left:10px;
+    word-break:keep-all;
+}
+.pTabPanel{
+    width: 700px;
+    
+}
+.lbt {
+    width: 290px;
+    height: 40px;
+    background: #10ae8e;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    line-height: 40px;
+    position: relative;
+    left: 30%;
+}
+
+.p-inputgroup .p-inputtext, .p-fluid .p-inputgroup .p-inputtext{
+    flex: 0.6;
+    height: 36px;
+}

@@ -29,14 +29,21 @@ import { PolicyDetailComponent } from './header/zcfg/policy-detail/policy-detail
 import { JingjiaComponent } from './jingjia/jingjia.component';
 
 import { InputTextModule } from 'primeng/inputtext';
+import {TabViewModule} from 'primeng/tabview';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
+
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ZrxxDetailComponent } from './jygg-table/zrxx-detail/zrxx-detail.component';
 import { CjggDetailComponent } from './jygg-table/cjgg-detail/cjgg-detail.component';
 import { JjjyDetailComponent } from './jygg-table/jjjy-detail/jjjy-detail.component';
+import { XqxxComponent } from './jygg-table/xqxx/xqxx.component';
+import { xqTypePipe } from './model/dataPipe.model';
+import { LoginComponent } from './common/login/login.component';
+import { RegistComponent } from './common/regist/regist.component';
+import { AuctionComponent } from './auction/auction.component';
 
 
 
@@ -49,7 +56,12 @@ import { JjjyDetailComponent } from './jygg-table/jjjy-detail/jjjy-detail.compon
     XwdtComponent, TpxwComponent, NewsDetailComponent,
     GjzcComponent, DfzcComponent, PolicyDetailComponent,
     JingjiaComponent, 
-    ZrxxDetailComponent, CjggDetailComponent, JjjyDetailComponent
+    ZrxxDetailComponent, CjggDetailComponent, JjjyDetailComponent,
+    XqxxComponent,
+    xqTypePipe,
+    LoginComponent,
+    RegistComponent,
+    AuctionComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +72,7 @@ import { JjjyDetailComponent } from './jygg-table/jjjy-detail/jjjy-detail.compon
     HttpClientJsonpModule,
     HttpModule,
     InputTextModule,
-    DialogModule,ButtonModule
+    ButtonModule, TabViewModule,DialogModule, 
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [NewsService],

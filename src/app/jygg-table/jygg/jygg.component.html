@@ -15,8 +15,10 @@
                 </table>
                 <br />
                 <app-zrxx></app-zrxx>
+                <app-xqxx></app-xqxx>
                 <app-jjjy></app-jjjy>
                 <app-cjgg></app-cjgg>
+                
                  <!-- <iframe src="index123.html" width="740" height="761" frameborder="0" scrolling="no"></iframe>  -->
             </td>
             <!--侧边几个表格：快速导航，政策法规，综合查询-->
@@ -41,7 +43,7 @@
                                         <tr>
                                             <td width="60" height="28" align="center">省辖市</td>
                                             <td align="left">
-                                                <select id="selCity" name="city" onchange="getCity(this.options[this.selectedIndex].value)" class="sea_select">
+                                                <select id="selCity" name="city"  class="sea_select">
                                                     <option value="请选择" selected="selected">请选择</option>
                                                     <option value="安阳市">安阳市</option>
                                                     <option value="鹤壁市">鹤壁市</option>
@@ -52,7 +54,6 @@
                                                     <option value="洛阳市">洛阳市</option>
                                                     <option value="南阳市">南阳市</option>
                                                     <option value="平顶山市">平顶山市</option>
-                                                    <option value=""></option>
                                                     <option value="三门峡市">三门峡市</option>
                                                     <option value="商丘市">商丘市</option>
                                                     <option value="新乡市">新乡市</option>
@@ -95,9 +96,6 @@
                         </tr>
                     </tbody>
                 </table>
-                
-                
-                
                 
                 
                 <!--政策法规内容-->
@@ -156,22 +154,46 @@
                                                                ·  <a [routerLink]="['/policydetail', policy.zhengCeFaGui.id]"> {{policy.zhengCeFaGui.title}} </a>                                                               
                                                             </td>
                                                             <td width="70" align="center"></td>
-                                                        </tr>
-
-                                                        
+                                                        </tr>                                                        
 
                                                     </tbody>
                                                 </table>
-
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
+                                
                             </td>
                         </tr>
                     </tbody>
                 </table>
                 <!--<iframe src="pages/zhcx.html" width="100%" height="222" frameborder="0" scrolling="no"></iframe>-->
+                <!-- 互动 -->
+                <br>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tbody><tr>
+                        <td><a target="_blank"><img src="../../../assets/img/2014_snc_bt1.jpg" width="250" height="47"></a></td>
+                    </tr>
+                    <tr>
+                        <td height="7"></td>
+                    </tr>
+                    <tr>
+                        <td><a routerLink="hdjl"><img src="../../../assets/img/2014_snc_bt2.jpg" width="250" height="48"></a></td>
+                    </tr>      
+                        <tr>
+                        <td height="7"></td>
+                    </tr>
+                    <tr>
+                        <td><a routerLink="lxwm" target="_blank"><img src="../../../assets/img/2014_snc_bt3.jpg" width="250" height="47"></a></td>
+                    </tr>
+                    <tr>
+                        <td height="7"></td>
+                    </tr>
+                    <tr>
+                        <td><a routerLink="lxwm" target="_blank"><img src="../../../assets/img/2014_snc_bt4.jpg" width="250" height="47"></a><a></a></td>
+                    </tr>
+                    </tbody>
+                </table>
             </td>
         </tr>
     </tbody>

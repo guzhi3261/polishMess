@@ -1,7 +1,6 @@
 <app-header></app-header>
 
 <div class="body">
-
     <table width="1002" border="0" align="center" cellpadding="0" cellspacing="0" style=" background-color:#ffffff; ">
         <tbody>
             <tr>
@@ -10,13 +9,11 @@
                         cellspacing="0">
                         <tbody>
                             <tr>
-                                <td height="31" style="padding-left:20px" align="left" class="pos">当前位置：<a>首页</a> -> <a>交易公告</a> -&gt; <a>成交公告</a></td>
-                                
+                                <td height="31" style="padding-left:20px" align="left" class="pos">当前位置：<a>首页</a> -> <a>交易公告</a> -&gt; <a>成交公告</a></td>                                
                             </tr>
                         </tbody>
                     </table>
                 </td>
-
             </tr>
             <tr>
                 <td width="497" height="341" align="left" valign="top">
@@ -38,46 +35,7 @@
                         <!-- 如果需要滚动条 -->
                         <div class="swiper-scrollbar"></div>
                     </div>
-                    <!-- <div class="slidebox-01">
-                        <ul class="slidepic-01" style="left: -477px;">
-
-
-                            <li>
-                                <div class="photo"><img
-                                        src="/nccqjy/portal.do?method=downLoadFile&amp;&amp;id=2c9004127445c8bc0174488a3e0d3181">
-                                </div>
-                                <div class="txt">
-
-
-                                    仁寿社区五保户房屋维修1
-
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="photo"><img
-                                        src="/nccqjy/portal.do?method=downLoadFile&amp;&amp;id=2c9004127445c8bc0174488a3e1d3182">
-                                </div>
-                                <div class="txt">
-
-
-                                    仁寿社区五保户房屋维修2
-
-                                </div>
-                            </li>
-
-                        </ul>
-                        <div class="slidebtn-01">
-                            <ul>
-
-
-                                <li class="">1</li>
-
-                                <li class="current">2</li>
-
-                            </ul>
-                        </div>
-                    </div> -->
+                    
                 </td>
 
                 <td valign="top">
@@ -85,7 +43,7 @@
                     <table width="460" border="0" cellspacing="0" cellpadding="0">
                         <tbody>
                             <tr>
-                                <td height="40" align="center" class="head_l">仁寿社区五保户徐盛隆房屋维修项目</td>
+                                <td height="40" align="center" class="head_l">{{xiangMuMingCheng}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -93,15 +51,13 @@
                         <tbody>
                             <tr>
                                 <td width="100" align="left" height="30">项目编号：</td>
-                                <td height="30" align="left" colspan="3">321012118N20090002</td>
+                                <td height="30" align="left" colspan="3">{{id}}</td>
                             </tr>
                             <tr>
                                 <td width="100" align="left" height="30">产权类型：</td>
                                 <td height="30" align="left" colspan="3">涉农资金项目</td>
                             </tr>
                             <tr>
-
-
                             </tr>
                             <tr>
                                 <td width="100" align="left" height="30">
@@ -114,7 +70,7 @@
                             </tr>
                             <tr>
                                 <td width="100" align="left" height="30">乡镇（街道）:</td>
-                                <td height="30" align="left" colspan="3">大桥镇</td>
+                                <td height="30" align="left" colspan="3">{{biaoDiQuYu}}</td>
                             </tr>
                             <tr>
                                 <td width="100" align="left" height="30">村（社区）:</td>
@@ -150,9 +106,6 @@
                                 </tr>
                             </tbody>
                         </table>
-
-
-
                         <!-- 项目信息开始  -->
 
                         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="xmxx"
@@ -164,15 +117,11 @@
                                 <tr>
                                     <td align="left" colspan="3"><span>产权类型：</span>
                                         危房修缮 &nbsp;
-
-
-
-
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="left"><span>建设单位：</span> 大桥镇仁寿社区 </td>
-                                    <td align="left" colspan="2"><span>预算总额：</span>5,070.00元</td>
+                                    <td align="left"><span>建设单位：</span> {{zhuanChuFang }}</td>
+                                    <td align="left" colspan="2"><span>预算总额：</span>{{chengJiaoJiaGe}}&nbsp;{{chengJiaoJiaGeDanWei}}</td>
                                 </tr>
                                 <tr>
                                     <td align="left" colspan="3"><span>资金来源：</span>
@@ -188,7 +137,7 @@
                                 </tr>
                                 <tr>
                                     <td align="left" colspan="3">
-                                        <span>项目描述：</span>扬州市江都区大桥镇仁寿社区五保户徐盛隆一人居住生活，无配偶子女，靠五保金生活，由于天气恶劣导致房屋破损严重无法居住，经村两委会讨论决定，同意由李秋香负责对徐盛隆房屋维修，有关事项如下：
+                                        <span>项目描述：</span>社区五保户徐盛隆一人居住生活，无配偶子女，靠五保金生活，由于天气恶劣导致房屋破损严重无法居住，经村两委会讨论决定，同意由李秋香负责对徐盛隆房屋维修，有关事项如下：
                                         1、工程名称：大桥镇仁寿社区五保户徐盛隆房屋维修项目。
                                         2、工程概况：
                                         具体要求如下：
@@ -210,19 +159,18 @@
                                     <td align="left" rowspan="2" style="width:10px"><span>项目审批信息</span></td>
                                     <td align="left" colspan="2"><span>项目审批表：</span>
 
-                                        <a target="_show"
+                                        <!-- <a target="_show"
                                             href="portal.do?method=downLoadFile&amp;&amp;id=2c9004127445c8bc0174488a73943187">IMG7584.jpg</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                                         <a target="_show"
-                                            href="portal.do?method=downLoadFile&amp;&amp;id=2c9004127445c8bc0174488a73b43189">IMG7585.jpg</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            href="portal.do?method=downLoadFile&amp;&amp;id=2c9004127445c8bc0174488a73b43189">IMG7585.jpg</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="left" colspan="2"><span>村民代表大会意见表：</span>
-
-                                        <a target="_show"
-                                            href="portal.do?method=downLoadFile&amp;&amp;id=2c9004127445c8bc0174488a9f673191">IMG7587.jpg</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <!-- <a target="_show"
+                                            href="portal.do?method=downLoadFile&amp;&amp;id=2c9004127445c8bc0174488a9f673191">IMG7587.jpg</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 
                                     </td>
                                 </tr>
@@ -274,8 +222,8 @@
 
                                 <tr>
                                     <td align="left" colspan="2"><span>最高限价：</span>小写&nbsp;
-                                        5,070.00
-                                        元&nbsp;</td>
+                                       {{ chengJiaoJiaGe}}&nbsp;
+                                       {{chengJiaoJiaGeDanWei}}&nbsp;</td>
                                 </tr>
 
 
@@ -286,15 +234,7 @@
                                     </td>
 
                                     <td align="left"><span>成交付款方式：</span>
-
-
-
-
-
-
                                         转账汇款&nbsp;
-
-
                                     </td>
                                 </tr>
 
@@ -309,9 +249,9 @@
                                 </tr>
 
                                 <tr>
-                                    <td align="left"><span>成交人：</span>李秋香</td>
+                                    <td align="left"><span>受让方：</span>{{shouRangFang}}</td>
                                     <td align="left"><span>成交价：</span>小写&nbsp;
-                                        5,070.00
+                                       {{chengJiaoJiaGe}}
                                         元</td>
                                 </tr>
 

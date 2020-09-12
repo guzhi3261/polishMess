@@ -4,6 +4,7 @@ import { CjggComponent } from './cjgg/cjgg.component';
 
 import { JjjyComponent } from './jjjy/jjjy.component';
 import { ZrxxComponent } from './zrxx/zrxx.component';
+import { XqxxComponent } from './xqxx/xqxx.component';
 
 
 @NgModule({

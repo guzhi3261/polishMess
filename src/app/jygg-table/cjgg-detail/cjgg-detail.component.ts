@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Swiper from 'swiper';
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cjgg-detail',
@@ -7,13 +9,25 @@ import Swiper from 'swiper';
   styleUrls: ['./cjgg-detail.component.css']
 })
 export class CjggDetailComponent implements OnInit {
-
-  constructor() { }
-  swiperList: any [] = [];
+    
+    constructor(private http:HttpClient, protected activatedroute: ActivatedRoute, private route: Router) { 
+        this.id = this.activatedroute.snapshot.params['id'];
+      }
+      contentUrl = "http://218.29.137.134:22742/api/services/app/ChengJiaoXinXies/GetChengJiaoXinXiForEdit?Id=";
+      id:string;
+      cjxx: any;
+      public xiangMuMingCheng: string;
+      public biaoDiQuYu: string;
+      public chengJiaoJiaGe: string;
+      public shouRangFang: string;
+      public zhuanChuFang: string;
+      public chengJiaoJiaGeDanWei: string;
+    swiperList: any [] = [];
 
 
   ngOnInit(): void {
     setTimeout(() => {
+        //轮播图片组
       this.swiperInit();
       }, 0);
       this.swiperList = [
@@ -25,6 +39,17 @@ export class CjggDetailComponent implements OnInit {
       },
       
       ];
+      //http请求数据
+        this.http.get(this.contentUrl + this.id).subscribe((res) => {
+        this.cjxx = res['result']['chengJiaoXinXi']
+        this.xiangMuMingCheng = this.cjxx.xiangMuMingCheng;
+        this.biaoDiQuYu = this.cjxx.biaoDiQuYu;
+        this.chengJiaoJiaGe = this.cjxx.chengJiaoJiaGe;
+        this.shouRangFang = this.cjxx.shouRangFang;
+        this.zhuanChuFang = this.cjxx.zhuanChuFang;
+        this.chengJiaoJiaGeDanWei = this.cjxx.chengJiaoJiaGeDanWei;
+        console.log(this.cjxx);
+    });
   }
   // 轮播图初始化
   swiperInit() {

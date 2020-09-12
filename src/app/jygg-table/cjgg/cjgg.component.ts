@@ -8,19 +8,18 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CjggComponent implements OnInit {
 
-  public baseUrl = "http://218.29.137.134:22742/api/services/app/ChengJiaoXinXies/GetAll?ZhuanChuFangLeiXingFilter=-1&MaxResultCount=5";
+  public baseUrl = "http://218.29.137.134:22742/api/services/app/ChengJiaoXinXies/GetAll?LiuZhuanFangShiFilter=-1&MaxResultCount=5";
   public cjxx: any = [];
   public cjxxList: any = [];
   public id: any ;
   public xiangMuMingCheng: any ;
-  public faBuQuYu: any ;
-  public chuangJianRiQi: any ;
+  public biaoDiQuYu: any ;
+  public chengJiaoShiJian: any ;
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.http.get(this.baseUrl).subscribe((res: Response) => {
       this.cjxx = res['result']['items']    
-      console.log(this.cjxx[0].chengJiaoXinXi)  
     })
   }
 

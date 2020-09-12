@@ -1,0 +1,26 @@
+.xqxx th {
+    background: #d5f2eb;
+    border-top: 1px solid #d8d8d8;
+    border-right: 1px solid #d8d8d8;
+    color: #009a65;
+    font-weight: bold;
+}
+.num{
+    width: 250px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space:nowrap; 
+}
+
+.xmmcrow{
+    width: 205px;
+    height: 28px;
+    line-height: 25px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+table tr th {
+    margin: auto;
+    text-align:center;
+}

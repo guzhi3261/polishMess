@@ -10,7 +10,7 @@
         <td height="176" valign="top" bgcolor="#FFFFFF">
             <table id="cjgglist" width="100%" border="0" cellspacing="0" cellpadding="0" class="jygg1">
                 <tr>
-                    <th width="140" height="30">项目编号</th>
+                    <th class="TheId" >项目编号</th>
                     <th>项目名称</th>
                     <th width="185">交易地点</th>
                     <th width="90">公示日期</th>
@@ -18,16 +18,16 @@
 
                 <tr *ngFor="let item of cjxx; let i = index">
                     <td height="28" class="num" >{{item.chengJiaoXinXi.id}}</td>
-                    <td align="left" class="tit">
-                        <a routerLink = "/cjggdetail" target="_blank">
+                    <td align="left" class="tit TheId">
+                        <a [routerLink] = "['/cjggdetail',item.chengJiaoXinXi.id]" target="_blank">
                             <div class="textCss div1" >&nbsp;{{item.chengJiaoXinXi.xiangMuMingCheng}}</div>
                         </a>
                     </td>
-                    <td   ><span class="tit">范县濮水镇董桑庄村</span></td>
-                    <td class="num">2019-03-27</td>
+                    <td   ><span class="tit">{{item.chengJiaoXinXi.biaoDiQuYu}}</span></td>
+                    <td class="num">{{item.chengJiaoXinXi.chengJiaoShiJian | date:'yyyy-MM-dd'}}</td>
                 </tr>
 
-                <tr>
+                <!-- <tr>
                     <td height="28"    class="num">321003100N19030001</td>
                     <td align="left" class="tit">
                         <a href="#">
@@ -69,7 +69,7 @@
                     </td>
                     <td ><span class="tit">范县城关镇 </span></td>
                     <td class="num">2019-03-27</td>
-                </tr>
+                </tr> -->
 
             </table>
         </td>

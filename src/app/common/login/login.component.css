@@ -1,0 +1,143 @@
+div, ul, li, p, h1, span {
+    font: bold;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-family: "微软雅黑","黑体",Arial;
+}
+#head1 {
+    height: 90px;
+    background: #fff;
+}
+#head1 li {
+    width: 1100px;
+    margin: 0 auto;
+    height: 90px;
+}
+#head1 h1 {
+    /* background: url(../images/head_tbg.png) 5px center no-repeat; */
+    float: left;
+    height: 90px;
+    display: block;
+    line-height: 90px;
+    font-size: 23px;
+    color: #0d846c;
+    padding-left: 80px;
+}
+.login_bg {
+    height: 400px;
+    background: url(../../../assets/img/login.png) center center no-repeat #13b695;
+    position: relative;
+}
+.login_bg li {
+    width: 1100px;
+    margin: 0 auto;
+    height: 400px;
+    position: relative;
+}
+.right_bg {
+    width: 330px;
+    height: 340px;
+    position: absolute;
+    right: 0px;
+    top: 25px;
+    background: #fff;
+    text-align: center;
+}
+.uname {
+    background: url(../../../assets/img/log1.jpg);
+    width: 286px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: right;
+}
+.uname input {
+    margin-top: 7px;
+    height: 24px;
+    border: none;
+    width: 220px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+input {
+    padding-left: 6px;
+    font-size: 12px;
+    color: #999;
+    border: 1px solid #ccc;
+    font-family: "微软雅黑";
+}
+.passw {
+    background: url(../../../assets/img/log2.jpg);
+    width: 286px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: right;
+}
+.passw input {
+    margin-top: 7px;
+    height: 24px;
+    border: none;
+    width: 220px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+.ms {
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    text-align: right;
+    font-size: 15px;
+}
+.lbt {
+    width: 290px;
+    height: 40px;
+    background: #10ae8e;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    line-height: 40px;
+}
+.ms1 {
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    text-align: right;
+    font-size: 16px;
+    font-weight: bold;
+}
+.ms1 span {
+    color: #D00D10;
+}
+.ms1 a {
+    font-size: 16px;
+}
+.ms a {
+    font-size: 15px;
+}
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    border-spacing: 2px;
+    border-color: grey;
+}
+#bottom {
+    background: #fff;
+    height: 140px;
+    line-height: 24px;
+    color: #555;
+    text-align: center;
+    clear: both;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+a {
+    color: #444;
+    font-size: 12px;
+    font-family: "微软雅黑","黑体",Arial;
+    text-decoration: none;
+}
