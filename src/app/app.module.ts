@@ -32,6 +32,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import {TabViewModule} from 'primeng/tabview';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
+import {ProgressBarModule} from 'primeng/progressbar';
 
 
 
@@ -44,6 +45,9 @@ import { xqTypePipe } from './model/dataPipe.model';
 import { LoginComponent } from './common/login/login.component';
 import { RegistComponent } from './common/regist/regist.component';
 import { AuctionComponent } from './auction/auction.component';
+import { MyAuctionComponent } from './auction/my-auction/my-auction.component';
+import { AuctionRuleComponent } from './auction/auction-rule/auction-rule.component';
+import { AuctioningComponent } from './auction/auctioning/auctioning.component';
 
 
 
@@ -61,7 +65,10 @@ import { AuctionComponent } from './auction/auction.component';
     xqTypePipe,
     LoginComponent,
     RegistComponent,
-    AuctionComponent
+    AuctionComponent,
+    MyAuctionComponent,
+    AuctionRuleComponent,
+    AuctioningComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,6 +80,8 @@ import { AuctionComponent } from './auction/auction.component';
     HttpModule,
     InputTextModule,
     ButtonModule, TabViewModule,DialogModule, 
+    ProgressBarModule
+
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [NewsService],

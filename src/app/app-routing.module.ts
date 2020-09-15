@@ -23,6 +23,10 @@ import { ZrxxDetailComponent } from './jygg-table/zrxx-detail/zrxx-detail.compon
 import { CjggDetailComponent } from './jygg-table/cjgg-detail/cjgg-detail.component';
 import { JjjyDetailComponent } from './jygg-table/jjjy-detail/jjjy-detail.component';
 import { AuctionComponent } from './auction/auction.component';
+import { MyAuctionComponent } from './auction/my-auction/my-auction.component';
+import { AuctionRuleComponent } from './auction/auction-rule/auction-rule.component';
+import { AuctioningComponent } from './auction/auctioning/auctioning.component';
+import { LoginGuard } from './common/login/login.guard';
 
 
 const routes: Routes = [
@@ -48,13 +52,19 @@ const routes: Routes = [
   {path: 'zrxxdetail/:id', component: ZrxxDetailComponent},
   {path: 'cjggdetail/:id', component: CjggDetailComponent},
   {path: 'jjjydetail', component: JjjyDetailComponent},
-  {path: 'auction', component: AuctionComponent},
+  {path: 'auction', component: AuctionComponent,children:[
+    {path: 'myAuction', component: MyAuctionComponent},
+    {path: 'auctionRule', component: AuctionRuleComponent},
+    {path: 'auctioning', component: AuctioningComponent}
+  ],canActivate:[LoginGuard]},
+  // {path: 'myAuction', component: MyAuctionComponent},
   {path: '**', component: DashboradComponent},
   
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [LoginGuard]
 })
 export class AppRoutingModule { }
