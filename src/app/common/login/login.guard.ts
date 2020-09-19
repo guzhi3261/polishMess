@@ -1,11 +1,22 @@
-import { CanActivate } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { CanActivate,Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
+@Injectable()
 export class LoginGuard implements CanActivate{
+    token;
+    constructor(
+        public cookies: CookieService,
+        private router: Router
+
+    ){}
+
     canActivate(){
-        let loggedIn :boolean 
-        if(!loggedIn){
-            alert("用户未登陆")
+        this.token = this.cookies.get("accessToken") 
+        if(!this.token){
+            this.router.navigate(['/login'])
+            alert("登陆已过期")
         }
-        return loggedIn;
+        return true;
     }
 }

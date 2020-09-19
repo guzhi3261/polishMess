@@ -33,6 +33,7 @@ import {TabViewModule} from 'primeng/tabview';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import {ProgressBarModule} from 'primeng/progressbar';
+import { CardModule } from 'primeng';
 
 
 
@@ -48,6 +49,8 @@ import { AuctionComponent } from './auction/auction.component';
 import { MyAuctionComponent } from './auction/my-auction/my-auction.component';
 import { AuctionRuleComponent } from './auction/auction-rule/auction-rule.component';
 import { AuctioningComponent } from './auction/auctioning/auctioning.component';
+import { FormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 
 
 
@@ -80,11 +83,13 @@ import { AuctioningComponent } from './auction/auctioning/auctioning.component';
     HttpModule,
     InputTextModule,
     ButtonModule, TabViewModule,DialogModule, 
-    ProgressBarModule
+    ProgressBarModule,
+    FormsModule,
+    CardModule
 
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  providers: [NewsService],
+  providers: [NewsService,CookieService],
   bootstrap: [AppComponent],
   
 })

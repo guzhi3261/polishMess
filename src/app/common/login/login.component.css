@@ -141,3 +141,14 @@ a {
     font-family: "微软雅黑","黑体",Arial;
     text-decoration: none;
 }
+button{
+    border: 0px;
+}
+#pic{
+    cursor:pointer;
+    border:1px solid #ccc;
+    height:30px;
+    width: 90px;
+    margin-left:10px;
+    vertical-align:top;
+}

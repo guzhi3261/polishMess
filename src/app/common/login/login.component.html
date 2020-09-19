@@ -21,37 +21,21 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div class="uname">
-                        <input type="text" id="account" name="account" placeholder="请输入账号">
-                    </div>
-                    <div class="passw"><input type="password" id="pwd" name="pwd" placeholder="请输入密码"
-                            onkeyup="this.value=this.value.replace(/^\s+|\s+$/g,'')"></div>
-                    <div id="valiCode" style="display:none;">
-                        <table cellpadding="0" cellspacing="0" style="margin-top:20px;">
-                            <tbody>
-                                <tr>
-                                    <td><input type="text" name="picCode" maxlength="4" id="picCode"
-                                            style="height:30px;width: 80px;margin-left:20px;"
-                                            onkeyup="valiPicCode(this)">&nbsp;</td>
-                                    <td align="left" width="165"><a onclick="getPicCode()"><img id="pic"
-                                                src="/nccqjy/member/login.do?method=getPicCode"
-                                                style="cursor:pointer;border:1px solid #ccc;height:30px;width: 90px;margin-left:10px;vertical-align:top;"></a>&nbsp;
-                                    </td>
-                                    <td align="right" width="24">
-                                        <img id="imgr" title="正确" style="display:none;"
-                                            src="/nccqjy/wsjy/wsjyqt/css/default/icons/ok.png">
-                                        <img id="imge" title="错误" style="display:none;"
-                                            src="/nccqjy/wsjy/wsjyqt/css/default/icons/cancel.png">
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <form (ngSubmit)="login()">
+
+                        <div class="uname">
+                            <input type="text" id="account" name="account" placeholder="请输入账号" [(ngModel)]="userName">
+                        </div>
+                        <div class="passw">
+                            <input type="password" id="pwd" name="pwd" placeholder="请输入密码" [(ngModel)]="pwd"
+                                onkeyup="this.value=this.value.replace(/^\s+|\s+$/g,'')">
+                        </div>                    
+                    
                     <div class="ms"><a href="/nccqjy/member/forgetpwd.do" routerLink="/forgetPwd">忘记密码 ？</a></div>
 
-
-                    <a class="lbt" style="margin:0 auto"  routerLink="/auction">登&nbsp;&nbsp;&nbsp;录</a>
+                    <button  type="submit"><a class="lbt" style="margin:0 auto"  routerLink="/auction">登&nbsp;&nbsp;&nbsp;录</a></button>
                     <div class="ms1"><span>没有会员账号 ？</span><a routerLink="/regist">用户注册</a></div>
+                </form>
                 </div>
             </li>
         </ul>
