@@ -2,8 +2,8 @@
 <p-progressBar [value]="value"></p-progressBar>
 <br>
 <div>
-    <input type="number" pInputText >
-    <button pButton pRipple type="button" label="出价" class="p-button-success"></button>
+    <input type="number" pInputText [(ngModel)]="bidPrice">
+    <button pButton pRipple type="button" label="出价" class="p-button-success" (click)="getPrice()"></button>
 </div>
 <div class="bidHistory">
     <table>
@@ -13,9 +13,9 @@
             <th>出价</th>
         </tr>
         <tr>
-            <td>2020-09-19</td>
+            <td>{{now}}</td>
             <td></td>
-            <td>500</td>
+            <td>{{price}}</td>
 
         </tr>
     </table>

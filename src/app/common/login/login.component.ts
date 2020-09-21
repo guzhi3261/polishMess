@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
+import { Observable,  } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -24,6 +26,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private cookies: CookieService,
+    private router: Router
     ) {  
   }
 
@@ -43,9 +46,12 @@ export class LoginComponent implements OnInit {
     }
     this.http.post(this.baseUrl,this.requestBody,this.httpOptions).subscribe((res: Response)=>{
       this.accessToken = res['result'].accessToken;
-      this.cookies.set("accessToken",this.accessToken,new Date(new Date().getTime() + this.time))
-
+      this.cookies.set("accessToken",this.accessToken,new Date(new Date().getTime() + this.time))  
+      this.router.navigate(['/auction'])   
       console.log(res)
+    },
+    error=>{
+      alert('用户名或密码不正确');
     })    
   }
 
