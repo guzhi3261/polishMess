@@ -11,7 +11,7 @@ import { Observable,  } from 'rxjs';
 })
 export class LoginComponent implements OnInit {
 
-  baseUrl="http://218.29.137.134:22742/api/TokenAuth/Authenticate";
+  baseUrl = 'http://218.29.137.134:22742/api/TokenAuth/Authenticate';
   public userName: string;
   public pwd: string;
   public requestBody: object;
@@ -21,28 +21,26 @@ export class LoginComponent implements OnInit {
     })
   };
   public accessToken: string;
-  public time: number = 2*60*60*1000;// cookie过期时间两个小时 2*60*60*1000
-  
+  public time: number = 2 * 60 * 60 * 1000; // cookie过期时间两个小时 2*60*60*1000
   constructor(
     private http: HttpClient,
     private cookies: CookieService,
     private router: Router
     ) {  
   }
-
+   
   ngOnInit(): void {
   }
-
-  login(){
+  login() {
     this.requestBody = {
-      "userNameOrEmailAddress": this.userName,
-      "password": this.pwd,
-      "twoFactorVerificationCode": "string",
-      "rememberClient": true,
-      "twoFactorRememberClientToken": "string",
-      "singleSignIn": true,
-      "returnUrl": "string",
-      "captchaResponse": "string"
+      'userNameOrEmailAddress': this.userName,
+      'password': this.pwd,
+      'twoFactorVerificationCode': 'string',
+      'rememberClient': true,
+      'twoFactorRememberClientToken': 'string',
+      'singleSignIn': true,
+      'returnUrl': 'string',
+      'captchaResponse': 'string'
     }
     this.http.post(this.baseUrl,this.requestBody,this.httpOptions).subscribe((res: Response)=>{
       this.accessToken = res['result'].accessToken;
@@ -53,6 +51,10 @@ export class LoginComponent implements OnInit {
     error=>{
       alert('用户名或密码不正确');
     })    
+     
+    }
+
+   
   }
 
-}
+
