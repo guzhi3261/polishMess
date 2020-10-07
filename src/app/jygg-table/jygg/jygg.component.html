@@ -9,7 +9,7 @@
                         <tr>
                             <td width="149"><img src="../../../assets/img/jygg_t.jpg" width="149" height="30"></td>
                             <td align="right" background="../../../assets/img/titbg2.jpg">
-                                <a  target="_blank">更多 &nbsp;</a>》》&nbsp;&nbsp;</td>
+                                <a  routerLink="/jyggall/zhuanrang">更多 &nbsp;</a>》》&nbsp;&nbsp;</td>
                         </tr>
                     </tbody>
                 </table>
@@ -41,37 +41,26 @@
                                 <table width="90%" border="0" cellspacing="0" cellpadding="0">
                                     <tbody>
                                         <tr>
-                                            <td width="60" height="28" align="center">省辖市</td>
+                                            <td width="60" height="28" align="center">乡镇</td>
                                             <td align="left">
-                                                <select id="selCity" name="city"  class="sea_select">
+                                                <!-- <p-dropdown [options]="town" [(ngModel)]="townsSelected" placeholder="选择一个乡镇" optionLabel="code" [showClear]="true"></p-dropdown> -->
+                                                <select id="selCity" name="town"  class="sea_select" [(ngModel)]="townsSelected" (ngModelChange)="getVillages()">
                                                     <option value="请选择" selected="selected">请选择</option>
-                                                    <option value="安阳市">安阳市</option>
-                                                    <option value="鹤壁市">鹤壁市</option>
-                                                    <option value="济源市">济源市</option>
-                                                    <option value="范县">范县</option>
-                                                    <option value="开封市">开封市</option>
-                                                    <option value="漯河市">漯河市</option>
-                                                    <option value="洛阳市">洛阳市</option>
-                                                    <option value="南阳市">南阳市</option>
-                                                    <option value="平顶山市">平顶山市</option>
-                                                    <option value="三门峡市">三门峡市</option>
-                                                    <option value="商丘市">商丘市</option>
-                                                    <option value="新乡市">新乡市</option>
-                                                    <option value="信阳市">信阳市</option>
-                                                    <option value="许昌市">许昌市</option>
-                                                    <option value="范县">范县</option>
-                                                    <option value="周口市">周口市</option>
-                                                    <option value="驻马店市">驻马店市</option>
+                                                    <option *ngFor="let t of town" [ngValue]="t.code">{{t.name}}</option>                                                  
+                                                   
                                                 </select>
+                                                <div></div>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td height="28" align="center">县市区</td>
+                                            <td height="28" align="center">村</td>
                                             <td align="left">
-                                                <select name="
-                                                    " id="selDistrict" class="sea_select">
-                                                    <option value="请选择">请选择</option>
+                                                <select id="selCity" name="village"  class="sea_select" [(ngModel)]="villageSelected">
+                                                    <option value="请选择" selected="selected">请选择</option>
+                                                    <option *ngFor="let item of villages"[ngValue]="item.code">{{item.name}}</option>                                                  
+                                                   
                                                 </select>
+                                               
                                             </td>
                                         </tr>
                                         <tr>

@@ -1,0 +1,69 @@
+.MainTable{
+    background-color:#ffffff;
+    width: 1002px;
+    border: 0px;
+
+}
+.xmxx span {
+    color: #2976B5;
+    font-size: 12px;
+    font-weight: normal;
+    padding-right: 10px;
+}
+div, ul, li, span, p {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.head_l {
+    color: #000000;
+    font-size: 18px;
+    font-family: "微软雅黑";
+    font-weight: bold;
+    border-bottom: 1px solid #d8d8d8;
+}
+.usercenter {
+    position: relative;
+    height: auto !important;
+    background: #fff;
+    overflow: auto;
+    border: 1px solid #d8d8d8;
+}
+.xmxx td {
+    padding: 0 15px;
+    border-bottom: 1px solid #d8d8d8;
+    border-right: 1px solid #d8d8d8;
+}
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+.xmxx {
+   
+    font-size: 12px;
+    line-height: 30px;
+    border: 1px solid #d8d8d8;
+    border-bottom: none;
+    border-right: none;
+}
+.slidebox-01{
+    position: relative;
+}
+.slidepic-01 li {
+    height: 341px;
+    overflow: hidden;
+    float: left;
+}
+.slidepic-01 li .photo img {
+    width: 477px;
+    height: 311px;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}

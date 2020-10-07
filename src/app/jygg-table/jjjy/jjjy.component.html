@@ -2,7 +2,7 @@
     <tr>
         <td width="76" height="31"    background="../../../assets/img/titbg5.jpg" class="titw">竞价交易</td>
         <td align="right" background="../../../assets/img/titbg6.jpg">
-            <a routerLink="/jingjia" target="_blank">更多 &gt;&gt;</a>&nbsp;&nbsp;</td>
+            <a routerLink="/jyggall/jingjiaxinxi" target="_blank">更多 &gt;&gt;</a>&nbsp;&nbsp;</td>
 
     </tr>
 </table>
@@ -11,16 +11,27 @@
         <td height="176"    valign="top" bgcolor="#FFFFFF">
             <table id="tzgglist" width="100%" border="0" cellspacing="0" cellpadding="0" class="jygg1">
                 <tr>
-                    <th width="15%" height="30"   >项目编号</th>
+                    <th width="15%" height="30"   >标段编号</th>
                     <th width="20%">项目名称</th>
                     <th width="10%">竞价方式</th>
-                    <th width="25%">交易地点</th>
                     <th width='15%'>报名截止时间</th>
                     <th width="15%" >竞价开始时间</th>
                 </tr>
 
+                <tr *ngFor="let item of jjxxList">
+                    <td height="28" class="num">&nbsp;{{item.jingJiaModel.bdxX_BiaoDuanBianHao}}</td>
+                    <td align="left" class="tit">
+                        <a routerLink = "/jjjydetail">
+                            <div class="xmmcrow" >&nbsp;{{item.jingJiaModel.bdxX_BiaoDuanMiaoShu}}</div>
+                        </a>
+                    </td>
+                    <td>{{item.jingJiaModel.bdxX_JiaoYiFangShi | jjfsType}}</td>
+                    <td    class="num">{{item.jingJiaModel.bmxX_BaoMingShiJian|date:'yyyy-MM-dd'}}</td>
+                    <td   >{{item.jingJiaModel.bdxX_JingPaiShiJian|date:'yyyy-MM-dd'}}</td>
+                </tr>
+
                 <tr>
-                    <td height="28" class="num">320826102N19030002</td>
+                    <td height="28" class="num">&nbsp;320826102N19030002</td>
                     <td align="left" class="tit">
                         <a routerLink = "/jjjydetail">
                             <div class="xmmcrow" >&nbsp;七百间新328国道14组北侧鱼塘出租</div>
@@ -28,12 +39,11 @@
                     </td>
                     <td>线上竞价</td>
                     <td   ><span class="tit">范县七百间 </span></td>
-                    <td    class="num">2019-03-27</td>
                     <td   >2020-05-01</td>
                 </tr>
 
                 <tr>
-                    <td height="28"    class="num">321204111D19030001</td>
+                    <td height="28"    class="num">&nbsp;321204111D19030001</td>
                     <td align="left" class="tit">
                         <a href="#">
                             <div class="xmmcrow" title="七百间新328国道14组北侧鱼塘出租">&nbsp;农村环境提升挖清树根项目</div>
@@ -41,11 +51,10 @@
                     </td>
                     <td>线下竞价</td>
                     <td   ><span class="tit">范县 </span></td>
-                    <td    class="num">2019-03-27</td>
                     <td   >2020-05-01</td>
                 </tr>
 
-                <tr>
+                <!-- <tr>
                     <td height="28"    class="num">321204111C19030001</td>
                     <td align="left" class="tit">
                         <a href="#" >
@@ -81,7 +90,9 @@
                     <td   ><span class="tit">范县 </span></td>
                     <td    class="num">2019-03-27</td>
                     <td   >2020-05-01</td>
-                </tr>
+                </tr> -->
+
+                
 
                 
 

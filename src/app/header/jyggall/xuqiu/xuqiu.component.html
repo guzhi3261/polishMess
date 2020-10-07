@@ -1,0 +1,37 @@
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td height="31" align="left" class="pos">当前位置：
+                <a>首页</a> &gt;
+                <a >交易公告</a> &gt;
+                <a >需求信息</a> &gt;
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="show_data">
+    <tbody>
+        <tr>
+            <th width="140" height="25" align="center">项目编号</th>
+            <th align="center">项目名称</th>
+            <th align="center">需求年限</th>
+            <th width="185" align="center">登记地点</th>
+            <th width="90" align="center">发布时间</th>
+        </tr>
+    
+        
+        <tr *ngFor="let item of xqxxList">
+            <td height="28" class="num">{{item.xuQiuXinXi.id}}</td>
+            <td align="left" class="tit">
+                <a [routerLink]="['/xqxxdetail', item.xuQiuXinXi.id]">
+                    <div class="xmmcrow num" >&nbsp;{{item.xuQiuXinXi.xiuqiumingcheng}}</div>
+                </a>
+            </td>
+            <td>{{item.xuQiuXinXi.xuqiunianxian}}</td>
+            <td   ><span class="tit">{{item.xuQiuXinXi.quyuweizhi}} </span></td>
+            <td   >{{item.xuQiuXinXi.creationTime|date:'yyyy-MM-dd'}}</td>
+        </tr>
+    
+        
+    </tbody>
+</table>

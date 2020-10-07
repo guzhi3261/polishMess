@@ -27,6 +27,12 @@ import { MyAuctionComponent } from './auction/my-auction/my-auction.component';
 import { AuctionRuleComponent } from './auction/auction-rule/auction-rule.component';
 import { AuctioningComponent } from './auction/auctioning/auctioning.component';
 import { LoginGuard } from './common/login/login.guard';
+import { ZhuanrangComponent } from './header/jyggall/zhuanrang/zhuanrang.component';
+import { XuqiuComponent } from './header/jyggall/xuqiu/xuqiu.component';
+import { ChengjiaoComponent } from './header/jyggall/chengjiao/chengjiao.component';
+import { JingjiaxinxiComponent } from './header/jyggall/jingjiaxinxi/jingjiaxinxi.component';
+import { XqxxDetailComponent } from './jygg-table/xqxx-detail/xqxx-detail.component';
+import { AppComponent } from './app.component';
 
 
 const routes: Routes = [
@@ -36,7 +42,12 @@ const routes: Routes = [
   {path: 'regist', component: RegistComponent},
   {path: 'xwzx', component: XwzxComponent},
   {path: 'zcfg', component: ZcfgComponent},
-  {path: 'jyggall', component: JyggAllComponent},
+  {path: 'jyggall', component: JyggAllComponent,children:[
+    {path: 'zhuanrang', component: ZhuanrangComponent},
+    {path: 'xuqiu', component: XuqiuComponent},
+    {path: 'jingjiaxinxi', component: JingjiaxinxiComponent},
+    {path: 'chengjiao', component: ChengjiaoComponent},
+  ]},
   {path: 'jygz', component: JygzComponent},
   {path: 'cjgg', component: CjggComponent},
   {path: 'zhcx', component: ZhcxComponent},
@@ -50,6 +61,7 @@ const routes: Routes = [
   {path: 'policydetail/:id', component: PolicyDetailComponent},
   {path: 'jingjia', component: JingjiaComponent},
   {path: 'zrxxdetail/:id', component: ZrxxDetailComponent},
+  {path: 'xqxxdetail/:id', component: XqxxDetailComponent},
   {path: 'cjggdetail/:id', component: CjggDetailComponent},
   {path: 'jjjydetail', component: JjjyDetailComponent},
   {path: 'auction', component: AuctionComponent,children:[
@@ -58,7 +70,7 @@ const routes: Routes = [
     {path: 'auctioning', component: AuctioningComponent}
   ],canActivate:[LoginGuard]},
   // {path: 'myAuction', component: MyAuctionComponent},
-  {path: '**', component: DashboradComponent},
+  {path: '**', component: DashboradComponent },
   
 ];
 

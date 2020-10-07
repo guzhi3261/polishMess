@@ -122,10 +122,10 @@
   resolved "https://registry.npm.taobao.org/@angular/animations/download/@angular/animations-9.1.12.tgz#1c9c1a792be4b52b196cab1e5c88bd319b60716d"
   integrity sha1-HJwaeSvktSsZbKseXIi9MZtgcW0=
 
-"@angular/cdk@^10.2.1":
-  version "10.2.1"
-  resolved "https://registry.npm.taobao.org/@angular/cdk/download/@angular/cdk-10.2.1.tgz#7ca0fe7220ca97bdf8e73a40105212749427a88f"
-  integrity sha1-fKD+ciDKl7345zpAEFISdJQnqI8=
+"@angular/cdk@^10.2.2":
+  version "10.2.2"
+  resolved "https://registry.npm.taobao.org/@angular/cdk/download/@angular/cdk-10.2.2.tgz#429816d2f8d15d1da99b85ee6810d54bf46e3d05"
+  integrity sha1-QpgW0vjRXR2pm4XuaBDVS/RuPQU=
   dependencies:
     tslib "^2.0.0"
   optionalDependencies:

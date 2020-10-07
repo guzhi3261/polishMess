@@ -59,7 +59,7 @@
 										<tbody>
                                             <tr *ngFor="let news of newses"> 
 												<td height="26" align="left">·
-													<a [routerLink]= "['/newsdetail']" [queryParams]="{title:news.news.title}" >{{news.news.title}} </a>
+													<a [routerLink]="['/newsdetail', news.news.id]">{{news.news.title}} </a>
 												</td>
 												<!-- <td width="90" align="center"></td> -->
 											</tr>

@@ -55,7 +55,7 @@
 									<tbody>
 										<tr *ngFor="let policy of policies">
 											<td height="26" align="left">·
-                                                <a [routerLink]="['/policydetail']" [queryParams]="{title:policy.zhengCeFaGui.title}">{{policy.zhengCeFaGui.title}} </a>
+                                                <a [routerLink]="['/policydetail', policy.zhengCeFaGui.id]">{{policy.zhengCeFaGui.title}} </a>
 
 												<!-- <a [routerLink]="['/policydetail',policy.zhengCeFaGui.id]">{{policy.zhengCeFaGui.title}} </a> -->
 											</td>

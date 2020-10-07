@@ -3,6 +3,9 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DashboradModule } from './dashborad/dashborad.module';
+import { HeaderModule } from './header/header.module';
+import { JyggTableModule } from './jygg-table/jygg-table.module';
 import { HeaderComponent } from './header/header/header.component';
 import { NewsComponent } from './content/news/news.component';
 import { ZrxxComponent } from './jygg-table/zrxx/zrxx.component';
@@ -34,15 +37,17 @@ import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import {ProgressBarModule} from 'primeng/progressbar';
 import { CardModule } from 'primeng';
+import {DropdownModule} from 'primeng/dropdown';
 
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ZrxxDetailComponent } from './jygg-table/zrxx-detail/zrxx-detail.component';
+import { XqxxDetailComponent } from './jygg-table/xqxx-detail/xqxx-detail.component';
 import { CjggDetailComponent } from './jygg-table/cjgg-detail/cjgg-detail.component';
 import { JjjyDetailComponent } from './jygg-table/jjjy-detail/jjjy-detail.component';
 import { XqxxComponent } from './jygg-table/xqxx/xqxx.component';
-import { xqTypePipe } from './model/dataPipe.model';
+import { xqTypePipe,jingJiaFangShiPipe } from './model/dataPipe.model';
 import { LoginComponent } from './common/login/login.component';
 import { RegistComponent } from './common/regist/regist.component';
 import { AuctionComponent } from './auction/auction.component';
@@ -51,21 +56,13 @@ import { AuctionRuleComponent } from './auction/auction-rule/auction-rule.compon
 import { AuctioningComponent } from './auction/auctioning/auctioning.component';
 import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
+import { ContentModule } from './content/content.module';
 
 
 
 @NgModule({
-  declarations: [
-    AppComponent,  NewsComponent, HeaderComponent, ZrxxComponent, JjjyComponent, CjggComponent,
-    JyggAllComponent, XwzxComponent, ZcfgComponent, 
-    JyggComponent, JygzComponent, DashboradComponent,
-    ZhcxComponent, HdjlComponent, LxwmComponent,
-    XwdtComponent, TpxwComponent, NewsDetailComponent,
-    GjzcComponent, DfzcComponent, PolicyDetailComponent,
-    JingjiaComponent, 
-    ZrxxDetailComponent, CjggDetailComponent, JjjyDetailComponent,
-    XqxxComponent,
-    xqTypePipe,
+  declarations: [ 
+    AppComponent,  
     LoginComponent,
     RegistComponent,
     AuctionComponent,
@@ -81,11 +78,17 @@ import { CookieService } from 'ngx-cookie-service';
     HttpClientModule,
     HttpClientJsonpModule,
     HttpModule,
+    DashboradModule,
+    HeaderModule,
+    ContentModule,
+    JyggTableModule,
     InputTextModule,
     ButtonModule, TabViewModule,DialogModule, 
     ProgressBarModule,
     FormsModule,
-    CardModule
+    CardModule,
+    DropdownModule,
+   
 
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],

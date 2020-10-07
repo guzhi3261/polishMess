@@ -2,7 +2,7 @@
     <tr>
         <td width="76" height="31" align="center"   background="../../../assets/img/titbg3.jpg" class="titw">需求信息</td>
         <td align="right" background="../../../assets/img/titbg4.jpg">
-            <a href="#!/zrxx" target="_blank">更多 &gt;&gt;</a>&nbsp;&nbsp;</td>
+            <a routerLink="/jyggall/xuqiu" target="_blank">更多 &gt;&gt;</a>&nbsp;&nbsp;</td>
     </tr>
 </table>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" class="ntrbord">
@@ -10,18 +10,18 @@
         <td height="176"    valign="top" bgcolor="#FFFFFF">
             <table width="100%" border="0" cellspacing="0" cellpadding="0" class="jygg1 xqxx">
                 <tr>
-                    <th width="15%" height="30">需求方</th>
-                    <th width="35%">需求类型</th>
+                    <th width="15%" height="30">项目编号</th>
+                    <th width="35%">项目名称</th>
                     <th width="10%">需求年限</th>
-                    <th width="15%" >发布区域</th>
+                    <th width="15%" >登记地点</th>
                     <th width='15%'>发布时间</th>
                 </tr>
 
                 <tr *ngFor="let item of xqxxList">
-                    <td height="28" class="num">{{item.xuQiuXinXi.xiuqiumingcheng}}</td>
+                    <td height="28" class="num">{{item.xuQiuXinXi.id}}</td>
                     <td align="left" class="tit">
-                        <a routerLink = "/jjjydetail">
-                            <div class="xmmcrow num" >&nbsp;{{item.xuQiuXinXi.zhuanruyongtu | xqType}}</div>
+                        <a [routerLink]="['/xqxxdetail', item.xuQiuXinXi.id]">
+                            <div class="xmmcrow num" >&nbsp;{{item.xuQiuXinXi.xiuqiumingcheng}}</div>
                         </a>
                     </td>
                     <td>{{item.xuQiuXinXi.xuqiunianxian}}</td>
