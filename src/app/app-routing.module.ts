@@ -33,6 +33,9 @@ import { ChengjiaoComponent } from './header/jyggall/chengjiao/chengjiao.compone
 import { JingjiaxinxiComponent } from './header/jyggall/jingjiaxinxi/jingjiaxinxi.component';
 import { XqxxDetailComponent } from './jygg-table/xqxx-detail/xqxx-detail.component';
 import { AppComponent } from './app.component';
+import { PropertyManageMethodComponent } from './header/jygz/propertyManageMethod/property-manage-method.component';
+import { ContactVisioComponent } from './header/jygz/contactVisio/contact-visio.component';
+import { FileDownloadComponent } from './header/jygz/fileDownload/file-download.component';
 
 
 const routes: Routes = [
@@ -48,7 +51,11 @@ const routes: Routes = [
     {path: 'jingjiaxinxi', component: JingjiaxinxiComponent},
     {path: 'chengjiao', component: ChengjiaoComponent},
   ]},
-  {path: 'jygz', component: JygzComponent},
+  {path: 'jygz', component: JygzComponent, children:[
+    {path: 'propertyMM', component:PropertyManageMethodComponent},
+    {path: 'contactV', component:ContactVisioComponent},
+    {path: 'filedownload', component:FileDownloadComponent},
+  ]},
   {path: 'cjgg', component: CjggComponent},
   {path: 'zhcx', component: ZhcxComponent},
   {path: 'hdjl', component: HdjlComponent},

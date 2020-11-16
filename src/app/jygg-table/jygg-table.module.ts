@@ -12,7 +12,6 @@ import { XqxxComponent } from './xqxx/xqxx.component';
 import { XqxxDetailComponent } from './xqxx-detail/xqxx-detail.component';
 import { CjggDetailComponent } from './cjgg-detail/cjgg-detail.component';
 import { JjjyDetailComponent } from './jjjy-detail/jjjy-detail.component';
-import { Zrxx } from '../model/Zrxx.model';
 import { ZrxxDetailComponent } from './zrxx-detail/zrxx-detail.component';
 import { jingJiaFangShiPipe, xqTypePipe } from '../model/dataPipe.model';
 

@@ -30,7 +30,9 @@ import { NewsDetailComponent } from './xwzx/news-detail/news-detail.component';
 import { DfzcComponent } from './zcfg/dfzc/dfzc.component';
 import { GjzcComponent } from './zcfg/gjzc/gjzc.component';
 import { PolicyDetailComponent } from './zcfg/policy-detail/policy-detail.component';
-import { JyggTableModule } from '../jygg-table/jygg-table.module';
+import { PropertyManageMethodComponent } from './jygz/propertyManageMethod/property-manage-method.component';
+import { ContactVisioComponent } from './jygz/contactVisio/contact-visio.component';
+import { FileDownloadComponent } from './jygz/fileDownload/file-download.component';
 
 
 @NgModule({
@@ -43,7 +45,8 @@ import { JyggTableModule } from '../jygg-table/jygg-table.module';
     ZhcxComponent,
     HdjlComponent,
     LxwmComponent,
-    JyggAllComponent, ZhuanrangComponent, XuqiuComponent, ChengjiaoComponent,JingjiaxinxiComponent
+    JyggAllComponent, ZhuanrangComponent, XuqiuComponent, ChengjiaoComponent,JingjiaxinxiComponent,
+    PropertyManageMethodComponent,ContactVisioComponent,FileDownloadComponent
     ],
   imports: [
     CommonModule, 

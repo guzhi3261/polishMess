@@ -21,7 +21,7 @@
     
        
         <tr *ngFor="let item of zrxx">
-            <td height="28"   class="num">{{item.gongYingXinXi.id}}</td>
+            <td height="28"   class="num" style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">{{item.gongYingXinXi.id}}</td>
             <td align="left" class="tit">
                 <a [routerLink]="['/zrxxdetail', item.gongYingXinXi.id]">
                     <div class="textDiv overText" >&nbsp;{{item.gongYingXinXi.xiangMuMingCheng}}</div>

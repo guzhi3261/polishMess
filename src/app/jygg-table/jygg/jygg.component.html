@@ -9,7 +9,7 @@
                         <tr>
                             <td width="149"><img src="../../../assets/img/jygg_t.jpg" width="149" height="30"></td>
                             <td align="right" background="../../../assets/img/titbg2.jpg">
-                                <a  routerLink="/jyggall/zhuanrang">更多 &nbsp;</a>》》&nbsp;&nbsp;</td>
+                                <a routerLink="/jyggall/zhuanrang">更多 &nbsp;</a>》》&nbsp;&nbsp;</td>
                         </tr>
                     </tbody>
                 </table>
@@ -18,8 +18,8 @@
                 <app-xqxx></app-xqxx>
                 <app-jjjy></app-jjjy>
                 <app-cjgg></app-cjgg>
-                
-                 <!-- <iframe src="index123.html" width="740" height="761" frameborder="0" scrolling="no"></iframe>  -->
+
+                <!-- <iframe src="index123.html" width="740" height="761" frameborder="0" scrolling="no"></iframe>  -->
             </td>
             <!--侧边几个表格：快速导航，政策法规，综合查询-->
             <td width="250" valign="top">
@@ -27,7 +27,8 @@
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tbody>
                         <tr>
-                            <td width="80" height="30" align="center" background="../../../assets/img/titbg.jpg" class="titw">快捷导航</td>
+                            <td width="80" height="30" align="center" background="../../../assets/img/titbg.jpg"
+                                class="titw">快捷导航</td>
                             <td align="right" background="../../../assets/img/titbg.jpg">&nbsp;</td>
                             <td width="22"><img src="../../../assets/img/titbg1.jpg" width="22" height="30"></td>
                         </tr>
@@ -44,10 +45,12 @@
                                             <td width="60" height="28" align="center">乡镇</td>
                                             <td align="left">
                                                 <!-- <p-dropdown [options]="town" [(ngModel)]="townsSelected" placeholder="选择一个乡镇" optionLabel="code" [showClear]="true"></p-dropdown> -->
-                                                <select id="selCity" name="town"  class="sea_select" [(ngModel)]="townsSelected" (ngModelChange)="getVillages()">
+                                                <select id="selCity" name="town" class="sea_select"
+                                                    [(ngModel)]="townsSelected" (ngModelChange)="getVillages()">
                                                     <option value="请选择" selected="selected">请选择</option>
-                                                    <option *ngFor="let t of town" [ngValue]="t.code">{{t.name}}</option>                                                  
-                                                   
+                                                    <option *ngFor="let t of town" [ngValue]="t.code">{{t.name}}
+                                                    </option>
+
                                                 </select>
                                                 <div></div>
                                             </td>
@@ -55,12 +58,14 @@
                                         <tr>
                                             <td height="28" align="center">村</td>
                                             <td align="left">
-                                                <select id="selCity" name="village"  class="sea_select" [(ngModel)]="villageSelected">
+                                                <select id="selCity" name="village" class="sea_select"
+                                                    [(ngModel)]="villageSelected">
                                                     <option value="请选择" selected="selected">请选择</option>
-                                                    <option *ngFor="let item of villages"[ngValue]="item.code">{{item.name}}</option>                                                  
-                                                   
+                                                    <option *ngFor="let item of villages" [ngValue]="item.code">
+                                                        {{item.name}}</option>
+
                                                 </select>
-                                               
+
                                             </td>
                                         </tr>
                                         <tr>
@@ -85,19 +90,20 @@
                         </tr>
                     </tbody>
                 </table>
-                
-                
+
+
                 <!--政策法规内容-->
                 <table width="100%" border="0" cellpadding="0" cellspacing="0" class="bormart">
                     <tbody>
                         <tr>
                             <td height="377" align="center" valign="top" bgcolor="#FFFFFF">
-                                <table width="92%" border="0" cellspacing="0" cellpadding="0" style="border-bottom:1px dotted #999; margin-top:5px;">
+                                <table width="92%" border="0" cellspacing="0" cellpadding="0"
+                                    style="border-bottom:1px dotted #999; margin-top:5px;">
                                     <tbody>
                                         <tr>
                                             <td align="left" class="tdStyle">国家政策法规</td>
                                             <td width="60" align="right">
-                                                <a href="#!/gjzcfg" target="_blank">更多 &gt;&gt;</a>
+                                                <a routerLink="/gjzcfg">更多 &gt;&gt;</a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -108,25 +114,27 @@
                                             <td align="left" valign="top">
                                                 <table width="92%" border="0" cellspacing="0" cellpadding="0">
                                                     <tbody>
-                                                        <tr *ngFor="let policy of policies; let i = index" >
+                                                        <tr *ngFor="let policy of policies; let i = index">
                                                             <td height="25" align="left" class="textCss" *ngIf="i < 5">
-                                                               ·  <a [routerLink]="['/policydetail', policy.zhengCeFaGui.id]"> {{policy.zhengCeFaGui.title}} </a>                                                               
+                                                                · <a
+                                                                    [routerLink]="['/policydetail', policy.zhengCeFaGui.id]">
+                                                                    {{policy.zhengCeFaGui.title}} </a>
                                                             </td>
                                                             <td width="70" align="center"></td>
                                                         </tr>
-                                                        
+
                                                     </tbody>
                                                 </table>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
-                                <table class="tableStyle" border="0" cellspacing="0" cellpadding="0" >
+                                <table class="tableStyle" border="0" cellspacing="0" cellpadding="0">
                                     <tbody>
                                         <tr>
                                             <td align="left" class="tdStyle">地方政策规章</td>
                                             <td width="60" align="right">
-                                                <a href="#!/dfzcfg" target="_blank">更多 &gt;&gt;</a>
+                                                <a routerLink="/dfzcfg">更多 &gt;&gt;</a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -138,12 +146,14 @@
                                                 <table width="92%" border="0" cellspacing="0" cellpadding="0">
 
                                                     <tbody>
-                                                        <tr *ngFor="let policy of policies; let i = index" >
+                                                        <tr *ngFor="let policy of policies; let i = index">
                                                             <td height="25" align="left" class="textCss" *ngIf="i <10">
-                                                               ·  <a [routerLink]="['/policydetail', policy.zhengCeFaGui.id]"> {{policy.zhengCeFaGui.title}} </a>                                                               
+                                                                · <a
+                                                                    [routerLink]="['/policydetail', policy.zhengCeFaGui.id]">
+                                                                    {{policy.zhengCeFaGui.title}} </a>
                                                             </td>
                                                             <td width="70" align="center"></td>
-                                                        </tr>                                                        
+                                                        </tr>
 
                                                     </tbody>
                                                 </table>
@@ -151,7 +161,7 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                                
+
                             </td>
                         </tr>
                     </tbody>
@@ -160,27 +170,31 @@
                 <!-- 互动 -->
                 <br>
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                    <tbody><tr>
-                        <td><a target="_blank"><img src="../../../assets/img/2014_snc_bt1.jpg" width="250" height="47"></a></td>
-                    </tr>
-                    <tr>
-                        <td height="7"></td>
-                    </tr>
-                    <tr>
-                        <td><a routerLink="hdjl"><img src="../../../assets/img/2014_snc_bt2.jpg" width="250" height="48"></a></td>
-                    </tr>      
+                    <tbody>
                         <tr>
-                        <td height="7"></td>
-                    </tr>
-                    <tr>
-                        <td><a routerLink="lxwm" target="_blank"><img src="../../../assets/img/2014_snc_bt3.jpg" width="250" height="47"></a></td>
-                    </tr>
-                    <tr>
-                        <td height="7"></td>
-                    </tr>
-                    <tr>
-                        <td><a routerLink="lxwm" target="_blank"><img src="../../../assets/img/2014_snc_bt4.jpg" width="250" height="47"></a><a></a></td>
-                    </tr>
+                            <td><a><img src="../../../assets/img/2014_snc_bt1.jpg" width="250" height="47"></a></td>
+                        </tr>
+                        <tr>
+                            <td height="7"></td>
+                        </tr>
+                        <tr>
+                            <td><a routerLink="/hdjl"><img src="../../../assets/img/2014_snc_bt2.jpg" width="250"
+                                        height="48"></a></td>
+                        </tr>
+                        <tr>
+                            <td height="7"></td>
+                        </tr>
+                        <tr>
+                            <td><a routerLink="/lxwm" target="_blank"><img src="../../../assets/img/2014_snc_bt3.jpg"
+                                        width="250" height="47"></a></td>
+                        </tr>
+                        <tr>
+                            <td height="7"></td>
+                        </tr>
+                        <tr>
+                            <td><a routerLink="/lxwm" target="_blank"><img src="../../../assets/img/2014_snc_bt4.jpg"
+                                        width="250" height="47"></a><a></a></td>
+                        </tr>
                     </tbody>
                 </table>
             </td>
