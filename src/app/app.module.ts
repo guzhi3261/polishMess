@@ -6,34 +6,17 @@ import { AppComponent } from './app.component';
 import { DashboradModule } from './dashborad/dashborad.module';
 import { HeaderModule } from './header/header.module';
 import { JyggTableModule } from './jygg-table/jygg-table.module';
-import { HeaderComponent } from './header/header/header.component';
-import { NewsComponent } from './content/news/news.component';
-import { ZrxxComponent } from './jygg-table/zrxx/zrxx.component';
-import { JjjyComponent } from './jygg-table/jjjy/jjjy.component';
-import { CjggComponent } from './jygg-table/cjgg/cjgg.component';
-import { JyggComponent } from './jygg-table/jygg/jygg.component';
-import { XwzxComponent } from './header/xwzx/xwzx.component';
-import { ZcfgComponent } from './header/zcfg/zcfg.component';
-import { JygzComponent } from './header/jygz/jygz.component';
-import { DashboradComponent } from './dashborad/dashborad/dashborad.component';
-import { JyggAllComponent } from './header/jyggall/jyggall.component';
-import { ZhcxComponent } from './header/zhcx/zhcx.component';
-import { HdjlComponent } from './header/hdjl/hdjl.component';
-import { LxwmComponent } from './header/lxwm/lxwm.component';
+
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { NewsService } from './model/News.service';
 import { HttpModule } from '@angular/http';
-import { XwdtComponent } from './header/xwzx/xwdt/xwdt.component';
-import { TpxwComponent } from './header/xwzx/tpxw/tpxw.component';
-import { NewsDetailComponent } from './header/xwzx/news-detail/news-detail.component';
-import { GjzcComponent } from './header/zcfg/gjzc/gjzc.component';
-import { DfzcComponent } from './header/zcfg/dfzc/dfzc.component';
-import { PolicyDetailComponent } from './header/zcfg/policy-detail/policy-detail.component';
-import { JingjiaComponent } from './jingjia/jingjia.component';
+
 
 import { InputTextModule } from 'primeng/inputtext';
 import {TabViewModule} from 'primeng/tabview';
 import { DialogModule } from 'primeng/dialog';
+import {PaginatorModule} from 'primeng/paginator';
+
 import { ButtonModule } from 'primeng/button';
 import {ProgressBarModule} from 'primeng/progressbar';
 import { CardModule } from 'primeng';
@@ -42,12 +25,7 @@ import {DropdownModule} from 'primeng/dropdown';
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ZrxxDetailComponent } from './jygg-table/zrxx-detail/zrxx-detail.component';
-import { XqxxDetailComponent } from './jygg-table/xqxx-detail/xqxx-detail.component';
-import { CjggDetailComponent } from './jygg-table/cjgg-detail/cjgg-detail.component';
-import { JjjyDetailComponent } from './jygg-table/jjjy-detail/jjjy-detail.component';
-import { XqxxComponent } from './jygg-table/xqxx/xqxx.component';
-import { xqTypePipe,jingJiaFangShiPipe } from './model/dataPipe.model';
+
 import { LoginComponent } from './common/login/login.component';
 import { RegistComponent } from './common/regist/regist.component';
 import { AuctionComponent } from './auction/auction.component';
@@ -83,11 +61,12 @@ import { ContentModule } from './content/content.module';
     ContentModule,
     JyggTableModule,
     InputTextModule,
-    ButtonModule, TabViewModule,DialogModule, 
+    ButtonModule, TabViewModule,DialogModule, PaginatorModule,
     ProgressBarModule,
     FormsModule,
     CardModule,
     DropdownModule,
+    
    
 
   ],

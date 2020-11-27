@@ -76,5 +76,16 @@ export class ZrxxDetailComponent implements OnInit {
           }
       });
   }
+  signUp(){
+    //TODO:判断登录与否，登录则向后台提交用户信息，没有登录则先登录
+    // if(localStorage){
+    //   this.http.post("http://baidu.com",{name:"",psw:""}).subscribe((res: Response) => {
+    //     console.log(res)
+    //   })
+    // }
+
+    alert("你已经报名！")
+  }
+
   }
 

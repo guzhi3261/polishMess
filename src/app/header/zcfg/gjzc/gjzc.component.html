@@ -73,38 +73,12 @@
 						<tr>
 
 							<td height="30" align="center">
-								<script type="text/javascript">
-									function check() {
-										var a = document.form1.list1.value;
-										window.open(a);
-									}
-								</script>
 								<form action="" name="form1" id="form1">
-									<a href="index.html">首页</a>
-									<a href="index.html">上一页</a>
-									<a href="index1.html">下一页</a>
-									<a href="index16.html">尾页</a> 页次:1/17 转到第
-									<select size="1" name="list1" id="list1">
-										<option value="index.html">1</option>
-										<option value="index1.html">2</option>
-										<option value="index2.html">3</option>
-										<option value="index3.html">4</option>
-										<option value="index4.html">5</option>
-										<option value="index5.html">6</option>
-										<option value="index6.html">7</option>
-										<option value="index7.html">8</option>
-										<option value="index8.html">9</option>
-										<option value="index9.html">10</option>
-										<option value="index10.html">11</option>
-										<option value="index11.html">12</option>
-										<option value="index12.html">13</option>
-										<option value="index13.html">14</option>
-										<option value="index14.html">15</option>
-										<option value="index15.html">16</option>
-										<option value="index16.html">17</option>
-									</select>页
-									<input type="button" value="确定" name="button1" onclick="check()">
+
+									<p-paginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10,20,30]"></p-paginator>
 								</form>
+								
+
 							</td>
 						</tr>
 					</tbody>

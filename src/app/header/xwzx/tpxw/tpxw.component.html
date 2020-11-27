@@ -82,14 +82,11 @@
 							<tr>
 
 								<td height="30" align="center">
+									<form action="" name="form1" id="form1">
+										<p-paginator [rows]="20" [totalRecords]="120" [rowsPerPageOptions]="[10,20,30]"></p-paginator>
+									</form>
 								
-								<form action="" name="form1" id="form1">
-										<a ng-click="first()">首页</a>
-										<a href="javascript:void(0)" ng-click="pre()">上一页</a>
-										页次:
-										<a href="javascript:void(0)" ng-click="next()">下一页</a>
-										<a ng-click="last()">尾页</a>
-								</form>
+								
 								</td>
 							</tr>
 						</tbody>

@@ -10,7 +10,7 @@ import { Response } from '@angular/http';
 })
 export class DfzcComponent implements OnInit {
 
-  public baseUrl = 'http://218.29.137.134:22742/api/services/app/ZhengCeFaGuies/GetAll?Filter=&TitleFilter=&contentFilter=&authorFilter=&imageFilter=&AtTopFilter=-1&ZhengCeFaGuiTypeZhengCeFaGuiTypeTitleFilter=%E5%9C%B0%E6%96%B9&SkipCount=0&MaxResultCount=10';
+  public baseUrl = 'http://218.29.137.134:22742/api/services/app/ZhengCeFaGuies/GetAll?Filter=&TitleFilter=&contentFilter=&authorFilter=&imageFilter=&AtTopFilter=-1&ZhengCeFaGuiTypeZhengCeFaGuiTypeTitleFilter=%E5%9C%B0%E6%96%B9&SkipCount=0&MaxResultCount=100';
   public policies: any = [];
   public policyTop: {} = {};
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PrimeNGConfig } from 'primeng';
 
 @Component({
   selector: 'app-jygz',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JygzComponent implements OnInit {
 
-  constructor() { }
+  constructor(private primengConfig: PrimeNGConfig) { }
 
   ngOnInit(): void {
+    this.primengConfig.ripple = true;
   }
 
 }

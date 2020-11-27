@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Response } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
+import { PrimeNGConfig } from 'primeng';
+
 
 @Component({
   selector: 'app-xwzx',
@@ -12,7 +14,7 @@ export class XwzxComponent implements OnInit {
   public newsTop: {} = {};
   public baseUrl: any = 'http://218.29.137.134:22742/api/services/app/Newses/GetAll';
 
-  constructor( private http: HttpClient) { }
+  constructor( private http: HttpClient, private primengConfig: PrimeNGConfig) { }
 
   ngOnInit(): void {
     // 请求数据
@@ -21,6 +23,8 @@ export class XwzxComponent implements OnInit {
       this.newsTop = this.newses[0];
       console.log(this.newses);
   });
+  this.primengConfig.ripple = true;
+
 
   
   }

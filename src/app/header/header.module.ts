@@ -7,7 +7,7 @@ import {TabViewModule} from 'primeng/tabview';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import {ProgressBarModule} from 'primeng/progressbar';
-import { CardModule } from 'primeng';
+import { CardModule, PaginatorModule } from 'primeng';
 import {DropdownModule} from 'primeng/dropdown';
 
 import { HeaderComponent } from './header/header.component';
@@ -56,7 +56,9 @@ import { FileDownloadComponent } from './jygz/fileDownload/file-download.compone
     DialogModule,
     ButtonModule,
     CardModule,
-    DropdownModule
+    DropdownModule,
+    PaginatorModule,
+    
   ],
   exports:[
     HeaderComponent

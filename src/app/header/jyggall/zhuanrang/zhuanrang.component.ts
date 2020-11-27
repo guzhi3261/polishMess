@@ -10,7 +10,7 @@ import { DatePipe } from '@angular/common';
 export class ZhuanrangComponent implements OnInit {
 
  
-  public baseUrl = "http://218.29.137.134:22742/api/services/app/GongYingXinXies/GetAll?ZhuanChuFangLeiXingFilter=-1&MaxResultCount=5";
+  public baseUrl = "http://218.29.137.134:22742/api/services/app/GongYingXinXies/GetAll?ZhuanChuFangLeiXingFilter=-1&MaxResultCount=100";
   public zrxx: any = [];
   public zrxxList: any = [];
   public id: any ;
