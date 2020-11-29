@@ -9,119 +9,29 @@
 						</tr>
 					</tbody>
 				</table>
-				<table width="100%" border="0" cellpadding="0" cellspacing="0" class="show_data">
-					<tbody>
-						
-						<tr>
-							<th width="140" height="25" align="center">项目编号</th>
-							<th align="center">项目名称</th>
-							<th width="185" align="center">交易地点</th>
-							<th width="90" align="center">公示日期</th>
-						</tr>
-						<tr *ngFor="let item of cjxx; let i = index">
-							<td height="28" class="num" >{{item.chengJiaoXinXi.id}}</td>
-							<td align="left" class="tit TheId">
-								<a [routerLink] = "['/cjggdetail',item.chengJiaoXinXi.id]"  >
-									<div class="textCss div1" >&nbsp;{{item.chengJiaoXinXi.xiangMuMingCheng}}</div>
-								</a>
-							</td>
-							<td   ><span class="tit">{{item.chengJiaoXinXi.biaoDiQuYu}}</span></td>
-							<td class="num">{{item.chengJiaoXinXi.chengJiaoShiJian | date:'yyyy-MM-dd'}}</td>
-						</tr>
-					
-						<tr>
-							<td height="24" align="center" class="num">321283124N19040035</td>
-							<td align="left" class="tit"><a onclick="tiaozhuanxiangxi('/nccqjy/portal.do?method=province_cj_gg_view&amp;&amp;proId=2c90041369b5a835016a19c471dc2242&amp;&amp;unitId=1')">二桥港南北两侧清杂、整坡</a></td>
-							<td align="center"><span class="tit">泰州市泰兴市虹桥镇 </span></td>
-							<td align="center" class="num">2019-04-14</td>
-						</tr>
-					
-						<tr class="chage">
-							<td height="24" align="center" class="num">320826114N19030029-1</td>
-							<td align="left" class="tit"><a onclick="tiaozhuanxiangxi('/nccqjy/portal.do?method=province_cj_gg_view&amp;&amp;proId=2c90041369b5a8350169e20b60cd443a&amp;&amp;unitId=1')">李庄村小型水利设施管护和疏浚工程</a></td>
-							<td align="center"><span class="tit">范县涟水县红窑镇 </span></td>
-							<td align="center" class="num">2019-04-14</td>
-						</tr>
-					
-						<tr>
-							<td height="24" align="center" class="num">320826114N19040008</td>
-							<td align="left" class="tit"><a onclick="tiaozhuanxiangxi('/nccqjy/portal.do?method=province_cj_gg_view&amp;&amp;proId=2c90041369b5a8350169e260953e5645&amp;&amp;unitId=1')">大金圩村土地整理项目</a></td>
-							<td align="center"><span class="tit">范县涟水县红窑镇 </span></td>
-							<td align="center" class="num">2019-04-14</td>
-						</tr>
-					
-						<tr class="chage">
-							<td height="24" align="center" class="num">321281101N19030007</td>
-							<td align="left" class="tit"><a onclick="tiaozhuanxiangxi('/nccqjy/portal.do?method=province_cj_gg_view&amp;&amp;proId=2c900411690590af0169a81b76a04a00&amp;&amp;unitId=1')">合陈镇张居村水环境整治</a></td>
-							<td align="center"><span class="tit">泰州市兴化市合陈镇 </span></td>
-							<td align="center" class="num">2019-04-14</td>
-						</tr>						
-					
-						<tr class="chage">
-							<td height="24" align="center" class="num">321283108P19020008</td>
-							<td align="left" class="tit"><a onclick="tiaozhuanxiangxi('/nccqjy/portal.do?method=province_cj_gg_view&amp;&amp;proId=2c90041269058fe6016909c991191be3&amp;&amp;unitId=1')">安乐村邵东南北路硬质化项目</a></td>
-							<td align="center"><span class="tit">泰州市泰兴市曲霞镇 </span></td>
-							<td align="center" class="num">2019-04-13</td>
-						</tr>
-					
-					
-						<tr class="chage">
-							<td height="24" align="center" class="num">321183106Q19030002</td>
-							<td align="left" class="tit"><a onclick="tiaozhuanxiangxi('/nccqjy/portal.do?method=province_cj_gg_view&amp;&amp;proId=2c90041269b5a5570169c213d6bd37a8&amp;&amp;unitId=1')">后白镇芦江村工业厂房对外招租</a></td>
-							<td align="center"><span class="tit">镇江市句容市后白镇 </span></td>
-							<td align="center" class="num">2019-04-13</td>
-						</tr>
-					
-						
-						<tr class="chage">
-							<td height="24" align="center" class="num">320381109A18110009</td>
-							<td align="left" class="tit"><a onclick="tiaozhuanxiangxi('/nccqjy/portal.do?method=province_cj_gg_view&amp;&amp;proId=40288d9f675d25aa01675e01ea1c57d5&amp;&amp;unitId=1')">宋山村四李桃树地流转</a></td>
-							<td align="center"><span class="tit">徐州市新沂市马陵山镇 </span></td>
-							<td align="center" class="num">2019-04-13</td>
-						</tr>
-					
-											
-						<tr class="chage">
-							<td height="24" align="center" class="num">320925401N19030001</td>
-							<td align="left" class="tit"><a onclick="tiaozhuanxiangxi('/nccqjy/portal.do?method=province_cj_gg_view&amp;&amp;proId=2c900413698062da01698e4ff88212b1&amp;&amp;unitId=1')">长沟村长东组路面破损维修招标</a></td>
-							<td align="center"><span class="tit">盐城市建湖县塘河街道 </span></td>
-							<td align="center" class="num">2019-04-13</td>
-						</tr>
-					
-						<tr>
-							<td height="24" align="center" class="num">321322001A19030003</td>
-							<td align="left" class="tit"><a onclick="tiaozhuanxiangxi('/nccqjy/portal.do?method=province_cj_gg_view&amp;&amp;proId=2c90041369058f78016976692d215a5e&amp;&amp;unitId=1')">沭城街道办事处叶庄居委会房屋出租（长安路西侧、双语学校南侧）</a></td>
-							<td align="center"><span class="tit">宿迁市沭阳县沭城街道 </span></td>
-							<td align="center" class="num">2019-04-13</td>
-						</tr>
-					
-						
-						<tr>
-							<td height="24" align="center" class="num">321322001Q19020004</td>
-							<td align="left" class="tit"><a onclick="tiaozhuanxiangxi('/nccqjy/portal.do?method=province_cj_gg_view&amp;&amp;proId=2c90041369058f7801692e324ef20d9c&amp;&amp;unitId=1')">沭城街道办事处怀文居委会房屋出租（居委会二楼四间5、6、7、8号）</a></td>
-							<td align="center"><span class="tit">宿迁市沭阳县沭城街道 </span></td>
-							<td align="center" class="num">2019-04-13</td>
-						</tr>
-					
-						<tr class="chage">
-							<td height="24" align="center" class="num">320826102N19040001</td>
-							<td align="left" class="tit"><a onclick="tiaozhuanxiangxi('/nccqjy/portal.do?method=province_cj_gg_view&amp;&amp;proId=2c90041369b5a8350169d661f76c5650&amp;&amp;unitId=1')">六舍村环境整治提升项目挖运树根工程</a></td>
-							<td align="center"><span class="tit">范县涟水县唐集镇 </span></td>
-							<td align="center" class="num">2019-04-13</td>
-						</tr>
-					
-						<tr>
-							<td height="24" align="center" class="num">320381003P19030001</td>
-							<td align="left" class="tit"><a onclick="tiaozhuanxiangxi('/nccqjy/portal.do?method=province_cj_gg_view&amp;&amp;proId=2c90041269058fe601698527c72077b1&amp;&amp;unitId=1')">新沂市墨河街道马场村村部办公楼工程</a></td>
-							<td align="center"><span class="tit">徐州市新沂市墨河街道 </span></td>
-							<td align="center" class="num">2019-04-12</td>
-						</tr>
-					
-						<tr class="chage">
-							<td height="24" align="center" class="num">321203101N18100023</td>
-							<td align="left" class="tit"><a onclick="tiaozhuanxiangxi('/nccqjy/portal.do?method=province_cj_gg_view&amp;&amp;proId=40288d9f669ed8280166aa25f5ce5d51&amp;&amp;unitId=1')">白马社区铺设一条简易汇车道</a></td>
-							<td align="center"><span class="tit">泰州市高港区白马镇 </span></td>
-							<td align="center" class="num">2019-04-12</td>
-						</tr>
-					</tbody>
-				</table>
+<div style="background-color: #EDFCF8; height: 700px;">
+	<br>
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="show_data">
+		<tbody >			
+			<tr class="title">
+				<td width="140" height="25" align="center">项目编号</td>
+				<td align="center">项目名称</td>
+				<td width="185" align="center">交易地点</td>
+				<td width="90" align="center">公示日期</td>
+			</tr>
+			<tr *ngFor="let item of cjxx; let i = index">
+				<td height="28" class="num" style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" >{{item.chengJiaoXinXi.id}}</td>
+				<td align="left" class="tit TheId">
+					<a [routerLink] = "['/cjggdetail',item.chengJiaoXinXi.id]"  >
+						<div class="textCss div1" >&nbsp;{{item.chengJiaoXinXi.xiangMuMingCheng}}</div>
+					</a>
+				</td>
+				<td   ><span class="tit">{{item.chengJiaoXinXi.biaoDiQuYu}}</span></td>
+				<td class="num">{{item.chengJiaoXinXi.chengJiaoShiJian | date:'yyyy-MM-dd'}}</td>
+			</tr>
+		
+			
+		</tbody>
+	</table>
+</div>
+

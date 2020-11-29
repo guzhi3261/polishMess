@@ -36,6 +36,7 @@ import { AppComponent } from './app.component';
 import { PropertyManageMethodComponent } from './header/jygz/propertyManageMethod/property-manage-method.component';
 import { ContactVisioComponent } from './header/jygz/contactVisio/contact-visio.component';
 import { FileDownloadComponent } from './header/jygz/fileDownload/file-download.component';
+import { JygzDetailComponent } from './header/jygz/jygz-detail/jygz-detail.component';
 
 
 const routes: Routes = [
@@ -56,6 +57,7 @@ const routes: Routes = [
     {path: 'contactV', component:ContactVisioComponent},
     {path: 'filedownload', component:FileDownloadComponent},
   ]},
+  {path: 'jygz-detail/:id', component:JygzDetailComponent},
   {path: 'cjgg', component: CjggComponent},
   {path: 'zhcx', component: ZhcxComponent},
   {path: 'hdjl', component: HdjlComponent},

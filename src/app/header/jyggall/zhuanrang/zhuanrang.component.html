@@ -9,28 +9,31 @@
         </tr>
     </tbody>
 </table>
-<table width="100%" border="0" cellpadding="0" cellspacing="0" class="show_data">
-    <tbody>
-        <tr>
-            <th width="140" height="25" align="center">项目编号</th>
-            <th align="center">项目名称</th>
-            <th width="185" align="center">交易地点</th>
-            <th width="90" align="center">公示日期</th>
-            
-        </tr>
-    
-       
-        <tr *ngFor="let item of zrxx">
-            <td height="28"   class="num" style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">{{item.gongYingXinXi.id}}</td>
-            <td align="left" class="tit">
-                <a [routerLink]="['/zrxxdetail', item.gongYingXinXi.id]">
-                    <div class="textDiv overText" >&nbsp;{{item.gongYingXinXi.xiangMuMingCheng}}</div>
-                </a>
-            </td>
-            <td  ><span class="tit">{{item.gongYingXinXi.faBuQuYu}} </span></td>
-            <td   class="num">{{item.gongYingXinXi.chuangJianRiQi|date:'yyyy-MM-dd'}}</td>
-        </tr>						
-    
+<div style="background-color: #EDFCF8; height: 700px;">
+    <br>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="show_data">
+        <tbody>
+            <tr class="title">
+                <td width="140" height="25" align="center">项目编号</td>
+                <td align="center">项目名称</td>
+                <td width="185" align="center">交易地点</td>
+                <td width="90" align="center">公示日期</td>
+                
+            </tr>
         
-    </tbody>
-</table>
+           
+            <tr *ngFor="let item of zrxx">
+                <td height="28"   class="num" style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">{{item.gongYingXinXi.id}}</td>
+                <td align="left" class="tit">
+                    <a [routerLink]="['/zrxxdetail', item.gongYingXinXi.id]">
+                        <div class="textDiv overText" >&nbsp;{{item.gongYingXinXi.xiangMuMingCheng}}</div>
+                    </a>
+                </td>
+                <td  ><span class="tit">{{item.gongYingXinXi.faBuQuYu}} </span></td>
+                <td   class="num">{{item.gongYingXinXi.chuangJianRiQi|date:'yyyy-MM-dd'}}</td>
+            </tr>						
+        
+            
+        </tbody>
+    </table>
+</div>

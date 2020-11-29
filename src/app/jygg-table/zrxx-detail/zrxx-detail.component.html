@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <div>
-    <table  border="0" align="center" cellpadding="0" cellspacing="0" class="MainTable">
+    <table border="0" align="center" cellpadding="0" cellspacing="0" class="MainTable">
         <tbody>
             <tr>
                 <td colspan="2">
@@ -18,63 +18,25 @@
             </tr>
             <tr>
                 <td width="497" height="341" align="left" valign="top">
-                    <div class="slidebox-01 swiper-container" >
+                    <div class="slidebox-01 swiper-container">
                         <div class="swiper-wrapper">
                             <ng-container *ngFor="let item of swiperList">
-                                <div class="swiper-slide" >
-                                    <img [src]="item.imgUrl" width="362px" height="278" alt=""> 
-                                </div>                            
+                                <div class="swiper-slide">
+                                    <img [src]="item.imgUrl" width="362px" height="278" alt="">
+                                </div>
                             </ng-container>
-                        </div>                    
+                        </div>
                         <!-- 如果需要分页器-->
                         <div class="swiper-pagination"></div>
-                        
+
                         <!-- 如果需要导航按钮 -->
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
-                        
+
                         <!-- 如果需要滚动条 -->
                         <div class="swiper-scrollbar"></div>
                     </div>
-                    <!-- <div class="slidebox-01">
-                        <ul class="slidepic-01" style="width: 954px; left: 0px;">
 
-                            <li>
-                                <div class="photo"><img
-                                        src="/nccqjy/portal.do?method=downLoadFile&amp;&amp;id=2c9004127444d4450174472d217e050e">
-                                </div>
-                                <div class="txt">
-
-
-                                    图片1
-
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="photo"><img
-                                        src="/nccqjy/portal.do?method=downLoadFile&amp;&amp;id=2c9004127444d4450174472d21ad050f">
-                                </div>
-                                <div class="txt">
-
-
-                                    图片2
-
-                                </div>
-                            </li>
-
-                        </ul>
-                        <div class="slidebtn-01">
-                            <ul>
-
-
-                                <li class="current">1</li>
-
-                                <li class="">2</li>
-
-                            </ul>
-                        </div>
-                    </div> -->
                 </td>
 
 
@@ -82,7 +44,7 @@
                     <table width="460" border="0" cellspacing="0" cellpadding="0">
                         <tbody>
                             <tr>
-                                <td height="40" align="center" class="head_l">{{xiangMuMingCheng}}</td>
+                                <td height="40" align="center" class="head_l">{{xiangMuMingCheng}}转让信息公示</td>
                             </tr>
                         </tbody>
                     </table>
@@ -93,45 +55,22 @@
                                 <td height="30" align="left" colspan="3">{{id}}</td>
                             </tr>
                             <tr>
-                                <td width="100" align="left" height="30">产权类型：</td>
-                                <td height="30" align="left" colspan="3">涉农资金项目</td>
+                                <td width="100" align="left" height="30">交易方式：</td>
+                                <td height="30" align="left" colspan="3">{{jiaoYiFangShi | jjfsType}}</td>
                             </tr>
                             <tr>
-                                <td width="100" align="left" height="30">
-
-                                    交易方式：
-                                </td>
+                                <td width="100" align="left" height="30"> 项目地址：</td>
+                                <td height="30" align="left" colspan="3">{{faBuQuYu}} </td>
+                            </tr>
+                            <tr>
+                                <td width="100" align="left" height="30">流转期限：</td>
                                 <td height="30" align="left" colspan="3">
-
-                                </td>
+                                    {{zhuanChuBegin | date:'yyyy-MM-dd'}}至{{zhuanChuEnd | date:'yyyy-MM-dd'}} </td>
                             </tr>
                             <tr>
-                                <td width="100" align="left" height="30">
-
-                                    交易期限：
-                                </td>
-                                <td height="30" align="left" colspan="3">
-                                    {{guaPaiQi}}
-                                </td>
+                                <td width="100" align="left" height="30">发布日期：</td>
+                                <td height="30" align="left" colspan="3">{{chuangJianRiQi | date:'yyyy-MM-dd'}} </td>
                             </tr>
-                            <tr>
-                                <td width="100" align="left" height="30">乡镇（街道）:</td>
-                                <td height="30" align="left" colspan="3">{{zhuanChuFangDiZhi}}</td>
-                            </tr>
-                            <tr>
-                                <td width="100" align="left" height="30">村（社区）:</td>
-                                <td height="30" align="left" colspan="3"></td>
-                            </tr>
-                            <tr>
-                                <td width="100" align="left" height="30">组别：</td>
-                                <td height="30" align="left" colspan="3"></td>
-                            </tr>
-                            <tr>
-                                <td width="100" align="left" height="30">登记日期：</td>
-                                <td height="30" align="left" colspan="3">{{chuangJianRiQi | date:'yyyy-MM-dd'}}</td>
-                            </tr>
-
-
 
 
                         </tbody>
@@ -151,46 +90,53 @@
                             <tbody>
                                 <tr>
                                     <td height="20" align="left"
-                                        style="font-size:17px; font-weight:bold; color:#222; padding-top:5px">产权基本信息
+                                        style="font-size:17px; font-weight:bold; color:#222; padding-top:5px">耕地信息
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
 
-                        <!-- 项目信息开始  -->
+                        <!-- 耕地信息开始  -->
 
                         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="xmxx"
                             style="margin-top:10px; table-layout:fixed;word-wrap:break-word;word-break:break-all;background:#ffffff">
                             <tbody>
 
                                 <tr>
-                                    <td align="left" colspan="3"><span>产权类型：</span>
-
-
-
-                                        其他&nbsp;
+                                    <td align="left" colspan="2" style="width: 50%;"><span>耕地名称：</span>
+                                        {{diKuaiMingCheng}}
                                     </td>
+                                    <td align="left"><span>坐落：</span>{{zuoLuo}}</td>
                                 </tr>
                                 <tr>
-                                    <td align="left"><span>建设单位：</span> </td>
-                                    <td align="left" colspan="2"><span>预算总额：</span>元</td>
+                                    <td align="left" style="width: 50%;"><span>转出面积：</span>{{mianJi}} </td>
+                                    <td align="left" colspan="2"><span>土地性质：</span>{{tuDiXingZhi}}</td>
                                 </tr>
                                 <tr>
-                                    <td align="left" colspan="3"><span>资金来源：</span>
-                                        其他&nbsp;
+                                    <td align="left" style="width: 50%;">
+                                        <span>转出期限</span>{{zhuanChuBegin | date:'yyyy-MM-dd'}}至{{zhuanChuEnd | date:'yyyy-MM-dd'}}
                                     </td>
+                                    <td align="left" colspan="2"><span>项目编号：</span>{{id}}</td>
                                 </tr>
+                                <tr>
+                                    <td align="left" rowspan="2"><span>土地四至：</span> </td>
+                                    <td>东：{{dongZhi}}</td>
+                                    <td>西：</td>
+                                </tr>
+                                <tr>
+                                    <td>南：{{nanZhi}}</td>
+                                    <td>北：{{beiZhi}}</td>
+                                </tr>
+                                <tr>
+                                    <td align="left" colspan="3"><span>地上附着物：</span> {{fuzhuowuList_mingCheng}} </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" colspan="3"><span>其他描述：</span>{{qiTa}}</td>
+                                </tr>
+
 
                                 <tr style="display:none;">
-                                    <td align="left" colspan="3"><span>项目周期：</span> </td>
-                                </tr>
-                                <tr>
-                                    <td align="left" colspan="3"><span>项目描述：</span>弶港居社区游园（西村部）室外照明等工程</td>
-                                </tr>
-
-
-                                <tr style="display:none;">
-                                    <td align="left" style="padding-bottom:10px;" colspan="3"><span>补充说明：</span></td>
+                                    <td align="left" style="padding-bottom:10px;" colspan="3"><span>转出土地用途：</span></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -208,7 +154,8 @@
                             <tbody>
                                 <tr>
                                     <td height="20" valign="left"
-                                        style="font-size:17px; font-weight:bold; color:#222; padding-top:5px;">标段信息</td>
+                                        style="font-size:17px; font-weight:bold; color:#222; padding-top:5px;">转出方信息
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -220,37 +167,74 @@
                             <tbody>
 
                                 <tr>
-                                    <td align="left" width="50%"><span>标段编号：</span>1</td>
-                                    <td align="left" width="50%"></td>
+                                    <td align="left" width="50%"><span>转让人：</span>{{zhuanChuFangMingCheng}}</td>
+                                    <td align="left" width="50%"><span>联系电话：</span>{{zhuanChuFang_dianHua}}</td>
                                 </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="usercenter" style="padding:0 13px 13px 13px; margin-top:13px">
+
+
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
                                 <tr>
-                                    <td align="left" colspan="2"><span>标段描述：</span>弶港居社区游园（西村部）室外照明等工程</td>
+                                    <td height="20" valign="left"
+                                        style="font-size:17px; font-weight:bold; color:#222; padding-top:5px;">转出信息</td>
                                 </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- 转出信息开始 -->
+
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="xmxx"
+                            style="margin-top:10px; table-layout:fixed;word-wrap:break-word;word-break:break-all;background:#ffffff">
+                            <tbody>
 
                                 <tr>
-                                    <td align="left" colspan="2"><span>报名费：</span>¥&nbsp;300</td>
-                                </tr>
-                                <tr>
-                                    <td align="left" colspan="2"><span>保证金：</span>¥&nbsp;70000</td>
-                                </tr>
-
-                                <tr style="display:none;">
-                                    <td align="left" colspan="2"><span>最高限价：</span>小写&nbsp;0元</td>
-                                </tr>
-
-
-                                <tr>
-                                    <td align="left"><span>交易方式：</span> 现场竞价
-
-
+                                    <td align="left" width="50%"><span>转出方式：</span>{{zhuanChuFangShi | zcfsType}}</td>
+                                    <td align="left" width="50%"><span>是否再次转出：</span>{{shiFouZaiCiZhuanChu | boolean}}
                                     </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" width="50%"><span>挂牌价格：</span>{{guaPaiJiaGe}}
+                                        &nbsp;{{guaPaiJiaGeDanWe | jgdwType}}</td>
+                                    <td align="left" width="50%"><span>交易价款付款方式：</span>{{zhiFuFangShi}}</td>
+                                </tr>
+                                <tr>
+                                    <td align="left" width="50%">
+                                        <span>与转让相关的其他条件：</span>{{zhuanRangXiangGuanQiTaTiaoJian}}</td>
+                                    <td align="left" width="50%"><span>受让方条件：</span>{{shouRangFangTiaoJian}}</td>
+                                </tr>
+                                <tr>
+                                    <td align="left" width="50%">
+                                        <span>是否缴纳保证金：</span>{{shiFouJiaoNaBaoZhengJin | boolean}}</td>
+                                    <td align="left" width="50%"><span>交易保证金：</span>{{jiaoYiBaoZhengJin}}</td>
+                                </tr>
+                                <tr>
+                                    <td align="left" width="50%"><span>缴纳形式：</span>{{jiaoNaXingShi}}</td>
+                                    <td align="left" width="50%"><span>挂牌公告期（工作日）</span>{{guaPaiQi}}</td>
+                                </tr>
+                                <tr>
+                                    <td align="left" width="50%">
+                                        <span>挂牌期满后，如未征集到满摘牌条件的意向受让方：</span>{{qiManChuLiFangShi}}</td>
+                                    <td align="left" width="50%"><span>交易方式：</span>{{jiaoYiFangShi | jjfsType}}</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="4" align="left"><span>价款划入账号：</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span>账户名称：</span>{{zhangHuMingCheng}}</td>
+                                </tr>
+                                <tr>
+                                    <td><span>开户银行：</span>{{kaiHuYinHang}}</td>
+                                </tr>
+                                <tr>
+                                    <td><span>账号：</span>{{jiaKuanHuaRuZhangHao}}</td>
+                                </tr>
 
-                                    <td align="left"><span>成交付款方式：</span>
-                                    </td>
-                                </tr>
-                                <tr style="display:none;">
-                                    <td align="left" colspan="2"><span>补充说明：</span></td>
-                                </tr>
                             </tbody>
                         </table>
 
@@ -258,7 +242,7 @@
 
                         <br>
                         <div style="width:100px;margin: 0 auto;display:block;">
-                            <button  class="btbm1" (click) = "signUp()">我要报名</button>
+                            <button class="btbm1" (click)="signUp()">我要报名</button>
                         </div>
                     </div>
 

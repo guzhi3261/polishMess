@@ -33,6 +33,7 @@ import { PolicyDetailComponent } from './zcfg/policy-detail/policy-detail.compon
 import { PropertyManageMethodComponent } from './jygz/propertyManageMethod/property-manage-method.component';
 import { ContactVisioComponent } from './jygz/contactVisio/contact-visio.component';
 import { FileDownloadComponent } from './jygz/fileDownload/file-download.component';
+import { JygzDetailComponent } from './jygz/jygz-detail/jygz-detail.component';
 
 
 @NgModule({
@@ -46,7 +47,7 @@ import { FileDownloadComponent } from './jygz/fileDownload/file-download.compone
     HdjlComponent,
     LxwmComponent,
     JyggAllComponent, ZhuanrangComponent, XuqiuComponent, ChengjiaoComponent,JingjiaxinxiComponent,
-    PropertyManageMethodComponent,ContactVisioComponent,FileDownloadComponent
+    PropertyManageMethodComponent,ContactVisioComponent,FileDownloadComponent, JygzDetailComponent
     ],
   imports: [
     CommonModule, 

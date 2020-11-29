@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import Swiper from 'swiper';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ZhuanChuInfo } from './zhuanchuxinxi';
 
 
 @Component({
@@ -16,11 +17,49 @@ export class ZrxxDetailComponent implements OnInit {
   }
   contentUrl = "http://218.29.137.134:22742/api/services/app/GongYingXinXies/GetGongYingXinXiForEdit?Id=";
   id:string;
-  zrxx: any;
-  public xiangMuMingCheng: string;
-  public chuangJianRiQi: string;
-  public zhuanChuFangDiZhi: string;
-  public guaPaiQi: string;
+  zrxx: any; 
+  public xiangMuMingCheng;
+  public jiaoYiFangShi;
+  public faBuQuYu;
+  public zhuanChuBegin;
+  public zhuanChuEnd;
+  public chuangJianRiQi;
+
+  
+    diKuaiMingCheng: string;
+    zuoLuo: string;
+    mianJi: string;
+    dongZhi: string;
+    nanZhi: string;
+    beiZhi: string;
+    // xiiZhi: string;
+    tuDiXingZhi: string;
+    fuzhuowuList_mingCheng: string;
+    fuzhuowuList_shuLiang: 0;
+    fuzhuowuList_quanShu :  string ;
+    qiTa: string;
+
+    public zhuanChuFangMingCheng;
+    public zhuanChuFang_dianHua;
+
+    public zhuanChuFangShi;
+    public shiFouZaiCiZhuanChu;
+    public guaPaiJiaGe;
+    public guaPaiJiaGeDanWei;
+    public zhiFuFangShi;
+    public zhuanRangXiangGuanQiTaTiaoJian;
+    public shouRangFangTiaoJian;
+    public shiFouJiaoNaBaoZhengJin;
+    public jiaoYiBaoZhengJin;
+    public jiaoNaXingShi;
+    public guaPaiQi;
+    public qiManChuLiFangShi;
+    public zhangHuMingCheng;
+    public kaiHuYinHang;
+    public jiaKuanHuaRuZhangHao;
+
+  
+ 
   
 
   swiperList: any [] = [
@@ -42,9 +81,45 @@ export class ZrxxDetailComponent implements OnInit {
       this.http.get(this.contentUrl + this.id).subscribe((res) => {
         this.zrxx = res['result']['gongYingXinXi']
         this.xiangMuMingCheng = this.zrxx.xiangMuMingCheng;
+        this.jiaoYiFangShi = this.zrxx.jiaoYiFangShi;
+        this.faBuQuYu = this.zrxx.faBuQuYu;
+        this.zhuanChuBegin = this.zrxx.zhuanChuBegin;
+        this.zhuanChuEnd = this.zrxx.zhuanChuEnd;
         this.chuangJianRiQi = this.zrxx.chuangJianRiQi;
-        this.zhuanChuFangDiZhi = this.zrxx.zhuanChuFangDiZhi;
+        
+        this.zhuanChuFangMingCheng = this.zrxx.zhuanChuFangMingCheng;
+        this.zhuanChuFang_dianHua = this.zrxx.dianHua;
+        this.zhuanChuFangShi = this.zrxx.zhuanChuFangShi;
+        this.shiFouZaiCiZhuanChu = this.zrxx.shiFouZaiCiZhuanChu;
+        this.guaPaiJiaGe = this.zrxx.guaPaiJiaGe;
+        this.guaPaiJiaGeDanWei = this.zrxx.guaPaiJiaGeDanWei;
+        this.zhiFuFangShi = this.zrxx.zhiFuFangShi;
+        this.zhuanRangXiangGuanQiTaTiaoJian = this.zrxx.zhuanRangXiangGuanQiTaTiaoJian;
+        this.shouRangFangTiaoJian = this.zrxx.shouRangFangTiaoJian;
+        this.shiFouJiaoNaBaoZhengJin = this.zrxx.shiFouJiaoNaBaoZhengJin;
+        this.jiaoYiBaoZhengJin = this.zrxx.jiaoYiBaoZhengJin;
+        this.jiaoNaXingShi = this.zrxx.jiaoNaXingShi;
         this.guaPaiQi = this.zrxx.guaPaiQi;
+        this.qiManChuLiFangShi = this.zrxx.qiManChuLiFangShi;
+        this.zhangHuMingCheng = this.zrxx.zhangHuMingCheng;
+        this.kaiHuYinHang = this.zrxx.kaiHuYinHang;
+        this.jiaKuanHuaRuZhangHao = this.zrxx.jiaKuanHuaRuZhangHao;
+
+
+
+        this.diKuaiMingCheng = this.zrxx.diKuaiList.diKuaiMingCheng;
+        this.zuoLuo = this.zrxx.diKuaiList.zuoLuo;
+        this.qiTa = this.zrxx.diKuaiList.qiTa;
+        // this.tuDiXingZhi = this.zrxx.diKuaiList.tuDiXingZhi;
+        this.dongZhi = this.zrxx.diKuaiList.dongZhi;
+        this.nanZhi = this.zrxx.diKuaiList.nanZhi;
+        this.beiZhi = this.zrxx.diKuaiList.beiZhi;
+        this.fuzhuowuList_mingCheng = this.zrxx.diKuaiList.fuzhuowuList.mingCheng;
+        this.fuzhuowuList_shuLiang = this.zrxx.diKuaiList.fuzhuowuList.shuLiang;
+        this.fuzhuowuList_quanShu = this.zrxx.diKuaiList.fuzhuowuList.quanShu;
+
+
+      
         console.log(this.zrxx);
     });
   }
@@ -77,12 +152,7 @@ export class ZrxxDetailComponent implements OnInit {
       });
   }
   signUp(){
-    //TODO:判断登录与否，登录则向后台提交用户信息，没有登录则先登录
-    // if(localStorage){
-    //   this.http.post("http://baidu.com",{name:"",psw:""}).subscribe((res: Response) => {
-    //     console.log(res)
-    //   })
-    // }
+    
 
     alert("你已经报名！")
   }

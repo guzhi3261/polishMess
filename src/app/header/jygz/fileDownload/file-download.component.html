@@ -23,15 +23,18 @@
                                 <div></div>
                                 <div class="card">
                                     <p-tabView>
-                                        <p-tabPanel header="合同模板">
-                                           Content 1
+                                        <ul *ngFor="let item of fileList">
+                                            <li (click)="getDownload(item.ziLiaoXiaZai.id)">· {{item.ziLiaoXiaZai.title}}</li>
+                                        </ul>
+                                       <!--  <p-tabPanel header="合同模板">                                           
+                                            
                                         </p-tabPanel>
                                         <p-tabPanel header="转让相关">
                                             Content 2
                                         </p-tabPanel>
                                         <p-tabPanel header="政策相关">
                                             Content 3
-                                        </p-tabPanel>
+                                        </p-tabPanel> -->
                                     </p-tabView>
                                 </div>
                             </td>

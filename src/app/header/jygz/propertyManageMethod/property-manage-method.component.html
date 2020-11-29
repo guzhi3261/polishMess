@@ -20,7 +20,9 @@
                     <tbody>
                         <tr>
                             <td height="26" align="left">
-                                <a> · 暂无数据</a>
+                                <ul *ngFor="let item of jygz">
+                                    <li><a [routerLink]="['/jygz-detail', item.jiaoYiGuiZe.id]">· {{item.jiaoYiGuiZe.title}}</a></li>
+                                </ul>
                             </td>
                             <!-- <td width="90" align="center">2019-04-01</td> -->
                         </tr>

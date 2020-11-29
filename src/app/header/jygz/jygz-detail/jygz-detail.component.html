@@ -1,0 +1,53 @@
+<app-header></app-header>
+
+
+<table width="998" border="0"align="center" cellpadding="0" cellspacing="0" class="mart7">
+	<tbody>
+		<tr>
+			<td height="27" align="center" valign="top" bgcolor="#FFFFFF">
+				<table width="80%" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px">
+					<tbody>
+						<tr>
+							<td class="td1" height="40" align="center" >
+							<h3>{{title}}</h3></td>
+						</tr>
+						<tr>
+							<td height="24" align="center">发布时间：&nbsp;&nbsp;
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table width="90%" border="0" cellspacing="0" cellpadding="0" style="margin-top:8px">
+					<tbody>
+						<tr>
+							<td height="2" bgcolor="#A7A7A7">{{author}} </td>
+						</tr>
+					</tbody>
+				</table>
+				<table width="90%" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px" ng-bind-html=jygz.title>
+					<tbody>
+						<tr>
+							<td align="left" valign="top" id="fontzoom">
+								<div [innerHTML] = "jygzContent"></div>
+								<p style="text-align: center"><span style="font-size: medium"><span style="font-family: 宋体"></span></span>
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+                <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td height="50" align="right">
+                                <a style="CURSOR: pointer" href="javascript:window.print();">【打印此文】</a>
+                                <a href="javascript:window.external.AddFavorite('http://218.29.137.134:3000','西峡农村')">【加入收藏】</a>
+                                <a href="javascript:window.opener=null;window.close()">【关&nbsp;&nbsp;闭】</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+				
