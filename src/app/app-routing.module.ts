@@ -72,7 +72,7 @@ const routes: Routes = [
   {path: 'zrxxdetail/:id', component: ZrxxDetailComponent},
   {path: 'xqxxdetail/:id', component: XqxxDetailComponent},
   {path: 'cjggdetail/:id', component: CjggDetailComponent},
-  {path: 'jjjydetail', component: JjjyDetailComponent},
+  {path: 'jjjydetail/:id', component: JjjyDetailComponent},
   {path: 'auction', component: AuctionComponent,children:[
     {path: 'myAuction', component: MyAuctionComponent},
     {path: 'auctionRule', component: AuctionRuleComponent},

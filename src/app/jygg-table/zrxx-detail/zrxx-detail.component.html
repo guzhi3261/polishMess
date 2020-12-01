@@ -100,17 +100,17 @@
 
                         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="xmxx"
                             style="margin-top:10px; table-layout:fixed;word-wrap:break-word;word-break:break-all;background:#ffffff">
-                            <tbody>
+                            <tbody *ngFor="let item of diKuaiList">
 
                                 <tr>
                                     <td align="left" colspan="2" style="width: 50%;"><span>耕地名称：</span>
-                                        {{diKuaiMingCheng}}
+                                        {{item.diKuaiMingCheng}}
                                     </td>
-                                    <td align="left"><span>坐落：</span>{{zuoLuo}}</td>
+                                    <td align="left"><span>坐落：</span>{{item.zuoLuo}}</td>
                                 </tr>
                                 <tr>
-                                    <td align="left" style="width: 50%;"><span>转出面积：</span>{{mianJi}} </td>
-                                    <td align="left" colspan="2"><span>土地性质：</span>{{tuDiXingZhi}}</td>
+                                    <td align="left" style="width: 50%;"><span>转出面积：</span>{{item.mianJi}} </td>
+                                    <td align="left" colspan="2"><span>土地性质：</span>{{tuDiXingZhi | tdxz}}</td>
                                 </tr>
                                 <tr>
                                     <td align="left" style="width: 50%;">
@@ -120,12 +120,12 @@
                                 </tr>
                                 <tr>
                                     <td align="left" rowspan="2"><span>土地四至：</span> </td>
-                                    <td>东：{{dongZhi}}</td>
-                                    <td>西：</td>
+                                    <td>东：{{item.dongZhi}}</td>
+                                    <td>西：{{item.xiZhi}}</td>
                                 </tr>
                                 <tr>
-                                    <td>南：{{nanZhi}}</td>
-                                    <td>北：{{beiZhi}}</td>
+                                    <td>南：{{item.nanZhi}}</td>
+                                    <td>北：{{item.beiZhi}}</td>
                                 </tr>
                                 <tr>
                                     <td align="left" colspan="3"><span>地上附着物：</span> {{fuzhuowuList_mingCheng}} </td>
@@ -136,7 +136,7 @@
 
 
                                 <tr style="display:none;">
-                                    <td align="left" style="padding-bottom:10px;" colspan="3"><span>转出土地用途：</span></td>
+                                    <td align="left" style="padding-bottom:10px;" colspan="3"><span>转出土地用途：</span>{{zhuanChuYongTu}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -200,8 +200,8 @@
                                 </tr>
                                 <tr>
                                     <td align="left" width="50%"><span>挂牌价格：</span>{{guaPaiJiaGe}}
-                                        &nbsp;{{guaPaiJiaGeDanWe | jgdwType}}</td>
-                                    <td align="left" width="50%"><span>交易价款付款方式：</span>{{zhiFuFangShi}}</td>
+                                        &nbsp;{{guaPaiJiaGeDanWei | jgdwType}}</td>
+                                    <td align="left" width="50%"><span>交易价款付款方式：</span>{{zhiFuFangShi | zffsType}}</td>
                                 </tr>
                                 <tr>
                                     <td align="left" width="50%">
@@ -214,12 +214,12 @@
                                     <td align="left" width="50%"><span>交易保证金：</span>{{jiaoYiBaoZhengJin}}</td>
                                 </tr>
                                 <tr>
-                                    <td align="left" width="50%"><span>缴纳形式：</span>{{jiaoNaXingShi}}</td>
+                                    <td align="left" width="50%"><span>缴纳形式：</span>{{jiaoNaXingShi | jnxs}}</td>
                                     <td align="left" width="50%"><span>挂牌公告期（工作日）</span>{{guaPaiQi}}</td>
                                 </tr>
                                 <tr>
                                     <td align="left" width="50%">
-                                        <span>挂牌期满后，如未征集到满摘牌条件的意向受让方：</span>{{qiManChuLiFangShi}}</td>
+                                        <span>挂牌期满后，如未征集到满摘牌条件的意向受让方：</span>{{qiManChuLiFangShi | qmclType}}</td>
                                     <td align="left" width="50%"><span>交易方式：</span>{{jiaoYiFangShi | jjfsType}}</td>
                                 </tr>
                                 <tr>

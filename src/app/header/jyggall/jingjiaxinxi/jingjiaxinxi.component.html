@@ -22,7 +22,7 @@
     
             <tr *ngFor="let item of jingjiaList">
                 <td height="24" align="center" class="num" style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">{{item.jingJiaModel.bdxX_BiaoDuanBianHao}}</td>
-                <td align="left" class="tit" ><a>{{item.jingJiaModel.bdxX_BiaoDuanMiaoShu}}</a>
+                <td align="left" class="tit" ><a [routerLink]="['/jjjydetail', item.jingJiaModel.id]">{{item.jingJiaModel.bdxX_BiaoDuanMiaoShu}}</a>
                 </td>
                 <td align="center"><span class="tit">{{item.jingJiaModel.bmxX_JiaoYiDiDian}} </span></td>
                 <td align="center" class="num">{{item.jingJiaModel.cqxX_DengJiRiQi | date:'yyyy-MM-dd'}}  </td>

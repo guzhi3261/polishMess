@@ -14,6 +14,7 @@ export class PolicyDetailComponent implements OnInit {
   public author: string;
   public title: string;
   public content: any;
+  public creationTime: any;
 
 
   constructor(private http: HttpClient, protected activatedroute: ActivatedRoute, private route: Router ) {
@@ -28,6 +29,7 @@ export class PolicyDetailComponent implements OnInit {
       this.content = this.policy.content;
       this.author = this.policy.author;
       this.title = this.policy.title;
+      this.creationTime = this.policy.creationTime;
       console.log(res);
   });
 

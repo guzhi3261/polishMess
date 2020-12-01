@@ -100,4 +100,51 @@ export class zhiFuFangShiPipe implements PipeTransform{
         }        
     }
 }
+// 期满处理方式
+@Pipe({ name: 'qmclType' })
+
+export class qiManChuLiPipe implements PipeTransform{
+    transform(value): string{
+        if(value == 0){            
+            return "信息发布终结";
+        }else if(value ==1){
+            return "延长信息发布"
+        }else{
+            return "变更公告内容重新挂牌"
+        }        
+    }
+}
+// 缴纳形式
+@Pipe({ name: 'jnxs' })
+
+export class jiaoNaXingShiPipe implements PipeTransform{
+    transform(value): string{
+        if(value == 0){            
+            return "现金汇缴";
+        }else if(value ==1){
+            return "支票"
+        }else if(value ==1){
+            return "汇票"
+        }else{
+            return "电汇"
+        }        
+    }
+}
+// 土地性质
+@Pipe({ name: 'tdxz' })
+
+export class tuDiXingZhiPipe implements PipeTransform{
+    transform(value): string{
+        if(value == 0){            
+            return "家庭承包地";
+        }else if(value ==1){
+            return "机动地"
+        }else if(value ==1){
+            return "四荒地"
+        }else{
+            return "其他"
+        }        
+    }
+}
+
 

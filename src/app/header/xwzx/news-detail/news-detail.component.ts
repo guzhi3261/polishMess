@@ -15,6 +15,7 @@ export class NewsDetailComponent implements OnInit {
   public id: number;
   public author: string;
   public title: string;
+  public creationTime: string;
   public newsContent: any;
 
   constructor(private http: HttpClient, protected activatedroute: ActivatedRoute, private route: Router, private service: NewsService) {
@@ -28,6 +29,7 @@ export class NewsDetailComponent implements OnInit {
       this.newsContent = this.news.content;
       this.author = this.news.author;
       this.title = this.news.title;
+      this.creationTime = this.news.creationTime;
       console.log(res);
   });
 }

@@ -10,7 +10,7 @@ import { Response } from '@angular/http';
 export class XwdtComponent implements OnInit {
   public newses: any = [];
   public newsTop: {} = {};
-  public baseUrl: any = 'http://218.29.137.134:22742/api/services/app/Newses/GetAll??Filter=&NewsTypeNewsTypeTitleFilter=%E6%96%87%E5%AD%97%E6%96%B0%E9%97%BB'
+  public baseUrl: any = 'http://218.29.137.134:22742/api/services/app/Newses/GetAll?Filter=&TitleFilter=&contentFilter=&authorFilter=&imageFilter=&AtTopFilter=-1&NewsTypeNewsTypeTitleFilter=%E6%96%87%E5%AD%97%E6%96%B0%E9%97%BB&SkipCount=0&MaxResultCount=100'
 
 
   constructor(private http:HttpClient) { }

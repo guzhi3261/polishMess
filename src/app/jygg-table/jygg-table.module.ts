@@ -13,13 +13,13 @@ import { XqxxDetailComponent } from './xqxx-detail/xqxx-detail.component';
 import { CjggDetailComponent } from './cjgg-detail/cjgg-detail.component';
 import { JjjyDetailComponent } from './jjjy-detail/jjjy-detail.component';
 import { ZrxxDetailComponent } from './zrxx-detail/zrxx-detail.component';
-import { xqTypePipe, jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeDanWeiPipe, zhiFuFangShiPipe,  } from '../model/dataPipe.model';
+import { xqTypePipe, jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeDanWeiPipe, zhiFuFangShiPipe, qiManChuLiPipe, jiaoNaXingShiPipe, tuDiXingZhiPipe} from '../model/dataPipe.model';
 
 
 
 @NgModule({
   declarations: [
-    xqTypePipe, jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeDanWeiPipe, zhiFuFangShiPipe, 
+    xqTypePipe, jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeDanWeiPipe, zhiFuFangShiPipe, qiManChuLiPipe, jiaoNaXingShiPipe, tuDiXingZhiPipe,
     JyggComponent,
     CjggComponent, CjggDetailComponent,
     JjjyComponent, JjjyDetailComponent,

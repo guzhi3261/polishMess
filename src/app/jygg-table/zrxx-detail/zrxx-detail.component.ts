@@ -24,8 +24,9 @@ export class ZrxxDetailComponent implements OnInit {
   public zhuanChuBegin;
   public zhuanChuEnd;
   public chuangJianRiQi;
+  public zhuanChuYongTu;
 
-  
+    diKuaiList: [];
     diKuaiMingCheng: string;
     zuoLuo: string;
     mianJi: string;
@@ -86,6 +87,8 @@ export class ZrxxDetailComponent implements OnInit {
         this.zhuanChuBegin = this.zrxx.zhuanChuBegin;
         this.zhuanChuEnd = this.zrxx.zhuanChuEnd;
         this.chuangJianRiQi = this.zrxx.chuangJianRiQi;
+        this.tuDiXingZhi = this.zrxx.tuDiXingZhi;
+        this.zhuanChuYongTu = this.zrxx.zhuanChuYongTu;
         
         this.zhuanChuFangMingCheng = this.zrxx.zhuanChuFangMingCheng;
         this.zhuanChuFang_dianHua = this.zrxx.dianHua;
@@ -106,14 +109,8 @@ export class ZrxxDetailComponent implements OnInit {
         this.jiaKuanHuaRuZhangHao = this.zrxx.jiaKuanHuaRuZhangHao;
 
 
-
-        this.diKuaiMingCheng = this.zrxx.diKuaiList.diKuaiMingCheng;
-        this.zuoLuo = this.zrxx.diKuaiList.zuoLuo;
-        this.qiTa = this.zrxx.diKuaiList.qiTa;
-        // this.tuDiXingZhi = this.zrxx.diKuaiList.tuDiXingZhi;
-        this.dongZhi = this.zrxx.diKuaiList.dongZhi;
-        this.nanZhi = this.zrxx.diKuaiList.nanZhi;
-        this.beiZhi = this.zrxx.diKuaiList.beiZhi;
+        this.diKuaiList = this.zrxx.diKuaiList;
+       
         this.fuzhuowuList_mingCheng = this.zrxx.diKuaiList.fuzhuowuList.mingCheng;
         this.fuzhuowuList_shuLiang = this.zrxx.diKuaiList.fuzhuowuList.shuLiang;
         this.fuzhuowuList_quanShu = this.zrxx.diKuaiList.fuzhuowuList.quanShu;

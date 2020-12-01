@@ -11,7 +11,7 @@
                         <tbody>
                             <tr>
                                 <td height="31" style="padding-left:20px" align="left" class="pos">当前位置：<a>首页</a>
-                                    -&gt; <a>交易公告</a> -&gt; <a>通知公告</a></td>
+                                    -&gt; <a>交易公告</a> -&gt; <a>竞价公告</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -39,7 +39,7 @@
                     <table width="460" border="0" cellspacing="0" cellpadding="0">
                         <tbody>
                             <tr>
-                                <td height="40" align="center" class="head_l">界集镇毕沟村五组段水库埂土地经营权对外出租</td>
+                                <td height="40" align="center" class="head_l">{{BiaoDuanMiaoShu}}--竞价公告</td>
                             </tr>
                         </tbody>
                     </table>
@@ -47,7 +47,7 @@
                         <tbody>
                             <tr>
                                 <td width="100" align="left" height="30">项目编号：</td>
-                                <td height="30" align="left" colspan="3">321324111B20090004</td>
+                                <td height="30" align="left" colspan="3">{{bianHao}}</td>
                             </tr>
                             <tr>
                                 <td width="100" align="left" height="30">产权类型：</td>
@@ -69,25 +69,25 @@
                             </tr>
                             <tr>
                                 <td width="100" align="left" height="30">报名时间:</td>
-                                <td height="30" align="left" colspan="3">2020-09-07 14:30
-                                    &nbsp;至&nbsp;2020-09-13 18:00
+                                <td height="30" align="left" colspan="3">{{BaoMingShiJian | date: 'yyyy-MM-dd'}}
+                                    <!-- &nbsp;至&nbsp;2020-09-13 18:00 -->
                                 </td>
                             </tr>
                             <tr>
                                 <td width="100" align="left" height="30">报名地点:</td>
-                                <td height="30" align="left" colspan="3">界集镇农村产权交易服务中心或网上报名</td>
+                                <td height="30" align="left" colspan="3">{{BaoMingDiDian}}或网上报名</td>
                             </tr>
                             <tr>
-                                <td width="100" align="left" height="30">交易开始时间：</td>
-                                <td height="30" align="left" colspan="3">2020-09-14 15:45</td>
+                                <td width="100" align="left" height="30">竞拍开始时间：</td>
+                                <td height="30" align="left" colspan="3">{{JingPaiShiJian | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
                             </tr>
                             <tr>
                                 <td width="100" align="left" height="30">交易地点：</td>
-                                <td height="30" align="left" colspan="3">界集镇农村产权交易服务中心</td>
+                                <td height="30" align="left" colspan="3">{{JiaoYiDiDian}}</td>
                             </tr>
                             <tr>
                                 <td width="100" align="left" height="30">公告日期：</td>
-                                <td height="30" align="left" colspan="3">2020-09-07</td>
+                                <td height="30" align="left" colspan="3">{{GongShiRiQi | date:'yyyy-MM-dd'}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -113,44 +113,42 @@
                             style="table-layout:fixed;word-wrap:break-word;word-break:break-all;background:#ffffff">
                             <tbody>
                                 <tr>
-                                    <td align="left" width="35%"><span>乡镇（街道）:</span>界集镇</td>
+                                    <td align="left" width="35%"><span>乡镇（街道）:</span>{{DiZhi}}</td>
                                     <td align="left" width="35%"><span>村（社区）:</span></td>
                                     <td align="left" width="30%"><span>组别：</span></td>
                                 </tr>
                                 <tr>
-                                    <td align="left" colspan="3"><span>登记日期：</span>
-                                        2020-09-05</td>
+                                    <td align="left" colspan="3"><span>登记日期：</span>{{DengJiRiQi | date: 'yyyy-MM-dd'}}</td>
                                 </tr>
                                 <tr>
-                                    <td align="left"><span>所有权人：</span>毕沟村村民委员会</td>
-                                    <td align="left"><span>权证编号：</span></td>
-                                    <td align="left"><span>权证年限：</span> </td>
+                                    <td align="left"><span>所有权人：</span>{{SuoYouQuanRen}}</td>
+                                    <td align="left"><span>权证编号：</span>{{QuanZhengBianHao}}</td>
+                                    <td align="left"><span>权证年限：</span>{{QuanZhengNianXian}}</td>
                                 </tr>
                                 <tr>
-                                    <td align="left"><span>是否续租：</span> 否 </td>
+                                    <td align="left"><span>是否续租：</span>{{ShiFouXuZu | boolean}}</td>
                                 </tr>
                                 <tr>
-                                    <td align="left" colspan="3"><span>项目描述：</span>界集镇毕沟村五组段水库埂土地经营权对外出租；东至：渠，南至：六组交界，
-                                        西至：沟， 北至：二组交界；交易面积5.5亩，用于栽树</td>
+                                    <td align="left" colspan="3"><span>项目描述：</span>{{BiaoDuanMiaoShu}}</td>
                                 </tr>
                                 <tr>
                                     <td align="left" colspan="3"><span> 交易面积：</span>
-                                        5.5亩
+                                       {{JiaoYiMianJi}}亩
                                     </td>
                                 </tr>
-                                <tr style="display:none;">
+                                 <!-- <tr style="display:none;">
                                     <td align="left" colspan="3"><span>质量等级：</span></td>
                                 </tr>
-                                <tr style="display:none;">
+                               <tr style="display:none;">
                                     <td align="left" colspan="3"><span>利用现状：</span></td>
-                                </tr>
-                                <tr style="display:none;">
+                                </tr> -->
+                                <!-- <tr style="display:none;">
                                     <td align="left" colspan="3"><span>项目位置：</span></td>
-                                </tr>
+                                </tr> -->
                                 <tr>
-                                    <td align="left" colspan="3"><span>项目四至：</span>东至：渠，南至：六组交界， 西至：沟， 北至：二组交界 </td>
+                                    <td align="left" colspan="3"><span>项目四至：</span>{{SiZhi}}</td>
                                 </tr>
-                                <tr style="display:none;">
+                                <!-- <tr style="display:none;">
                                     <td align="left" colspan="3"><span>坐标拐点：</span></td>
                                 </tr>
                                 <tr style="display:none;">
@@ -160,33 +158,33 @@
                                 <tr style="display:none;">
                                     <td align="left" colspan="3"><span>附属设施：</span>
                                     </td>
-                                </tr>
+                                </tr> -->
                                 <tr>
                                     <td align="left" colspan="3"><span>流转用途：</span>
                                         其他&nbsp;
                                     </td>
                                 </tr>
-                                <tr style="display:none;">
+                                <!-- <tr style="display:none;">
                                     <td align="left" colspan="3"><span>种养品种：</span></td>
                                 </tr>
                                 <tr style="display:none;">
                                     <td align="left" colspan="3" style="padding-bottom:10px;"><span>补充说明：</span></td>
-                                </tr>
+                                </tr> -->
                                 <tr>
-                                    <td align="left"><span>承包权人：</span></td>
+                                    <td align="left"><span>承包权人：</span>{{ChengBaoQuanRen}}</td>
                                     <td align="left" colspan="2"><span>经营权人：</span></td>
                                 </tr>
                                 <tr>
-                                    <td align="left"><span>农村土地承包经营权证名称：</span></td>
-                                    <td align="left" colspan="2"><span>权属类型：</span> 集体
+                                    <td align="left"><span>农村土地承包经营权证名称：</span>{{ChengBaoQuanRen}}</td>
+                                    <td align="left" colspan="2"><span>权属类型：</span> {{QuanShuLeiXing}}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="left"><span>是否存在其他权利人：</span> 否 </td>
-                                    <td align="left" colspan="2"><span>他项权利人：</span></td>
+                                    <td align="left"><span>是否存在其他权利人：</span>  </td>
+                                    <td align="left" colspan="2"><span>他项权利人：</span>{{QiTaQuanLiRen}} </td>
                                 </tr>
                                 <tr style="display:none;">
-                                    <td align="left" colspan="3"><span>他项权利内容：</span></td>
+                                    <td align="left" colspan="3"><span>他项权利内容：</span>{{QiTaQuanLiRen}}</td>
                                 </tr>
                                 <tr>
                                     <td align="left" rowspan="2" style="width:10px"><span>项目审批信息</span></td>
@@ -236,13 +234,13 @@
                                                                 <tr>
                                                                     <td align="left"><span>
                                                                             单位名称/姓名：
-                                                                        </span>泗洪县界集镇农业经济技术服务中心</td>
+                                                                        </span>{{DanWeiXingMing}}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td align="left"><span>联系人：</span>张浩德</td>
+                                                                    <td align="left"><span>联系人：</span>{{lcf_LianXiRen}}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td align="left"><span>联系电话：</span>18361890468</td>
+                                                                    <td align="left"><span>联系电话：</span>{{lcf_LianXiDianHua}}</td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -267,13 +265,13 @@
                                             style="table-layout:fixed;word-wrap:break-word;word-break:break-all;background:#ffffff">
                                             <tbody>
                                                 <tr>
-                                                    <td align="left" width="200" height="33"><span>姓名：</span></td>
+                                                    <td align="left" width="200" height="33"><span>姓名：</span>{{XingMing}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="left" height="33"><span>联系电话：</span></td>
+                                                    <td align="left" height="33"><span>联系电话：</span>{{bwtr_LianXiDianHua}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="left"><span></span></td>
+                                                    <td align="left"><span>工作单位：</span>{{GongZuoDanWei}}</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -294,14 +292,14 @@
                                             style="table-layout:fixed;word-wrap:break-word;word-break:break-all;background:#ffffff">
                                             <tbody>
                                                 <tr>
-                                                    <td align="left"><span>评估机构：</span></td>
+                                                    <td align="left"><span>评估机构：</span>{{PingGuJiGou}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="left"><span>评估基准日：</span>
+                                                    <td align="left"><span>评估基准日：</span>{{PingGuJiZhunRi}}
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="left"><span>评估值：</span></td>
+                                                    <td align="left"><span>评估值：</span>{{PingGuZhi}}</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -323,21 +321,21 @@
                             style="table-layout:fixed;word-wrap:break-word;word-break:break-all;background:#ffffff">
                             <tbody>
                                 <tr>
-                                    <td align="left"><span>报名时间：</span> 2020-09-07 14:30
-                                        &nbsp;至&nbsp;2020-09-13 18:00
+                                    <td align="left"><span>报名时间：</span> {{BaoMingShiJian | date:'yyyy-MM-dd'}}
+                                        &nbsp;至
                                     </td>
-                                    <td align="left"><span>报名地点：</span>界集镇农村产权交易服务中心或网上报名</td>
+                                    <td align="left"><span>报名地点：</span>{{BaoMingDiDian}}或网上报名</td>
                                 </tr>
                                 <tr>
-                                    <td align="left"><span>成交缴款截止时间：</span> </td>
-                                    <td align="left"><span>交易时间：</span> 2020-09-14 15:45</td>
+                                    <td align="left"><span>成交缴款截止时间：</span>{{ChengJiaoJiaoKuanJieZhiShiJian | date:'yyyy-MM-dd'}} </td>
+                                    <td align="left"><span>交易时间：</span> {{JingPaiShiJian}}</td>
                                 </tr>
                                 <tr>
-                                    <td align="left"><span>联系人：</span>李达</td>
-                                    <td align="left"><span>交易地点：</span>界集镇农村产权交易服务中心</td>
+                                    <td align="left"><span>联系人：</span>{{LianXiRen}}</td>
+                                    <td align="left"><span>交易地点：</span>{{JiaoYiDiDian}}</td>
                                 </tr>
                                 <tr>
-                                    <td align="left" colspan="2"><span>联系人电话：</span>80823061</td>
+                                    <td align="left" colspan="2"><span>联系人电话：</span>{{LianXiDianHua}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -357,34 +355,32 @@
                                 style="table-layout:fixed;word-wrap:break-word;word-break:break-all;">
                                 <tbody>
                                     <tr>
-                                        <td align="left" width="50%"><span>标段编号：</span>1</td>
+                                        <td align="left" width="50%"><span>标段编号：</span>{{bianHao}}</td>
                                         <td align="left" width="50%"><span>流转期限：</span>
                                             12年
                                         </td>
                                     </tr>
                                     <tr>
                                         <td align="left" colspan="2">
-                                            <span>标段描述：</span>界集镇毕沟村五组段水库埂土地经营权对外出租；东至：渠，南至：六组交界， 西至：沟，
-                                            北至：二组交界；交易面积5.5亩，用于栽树</td>
+                                            <span>标段描述：</span>{{BiaoDuanMiaoShu}}</td>
                                     </tr>
                                     <tr>
                                         <td align="left" colspan="2"><span>交易面积：</span>
-                                            5.5亩</td>
+                                            {{JiaoYiMianJi}}亩</td>
                                     </tr>
                                     <tr>
-                                        <td align="left" colspan="2"><span>报名费：</span>¥&nbsp;100</td>
+                                        <td align="left" colspan="2"><span>报名费：</span>¥&nbsp;{{BaoMingFei}} </td>
                                     </tr>
                                     <tr>
-                                        <td align="left" colspan="2"><span>保证金：</span>¥&nbsp;1000</td>
+                                        <td align="left" colspan="2"><span>保证金：</span>¥&nbsp; {{BaoZhengJin}}</td>
                                     </tr>
                                     <tr>
-                                        <td align="left" colspan="2"><span>预期价格：</span>小写&nbsp;450
+                                        <td align="left" colspan="2"><span>底价：</span>小写&nbsp;{{DiJia}}
                                             元/年/亩</td>
                                     </tr>
                                     <tr>
                                         <td align="left"><span>交易方式：</span>
-                                            在线自由竞价
-                                            正向
+                                            {{JiaoYiFangShi}}
                                         </td>
                                         <td align="left"><span>成交缴款方式：</span>
                                             现金支付&nbsp;
@@ -404,19 +400,19 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <span>出价延时：</span> 10秒/次</td>
+                                            <span>出价延时：</span>{{ChuJiaYanShi}}</td>
                                         <td>
-                                            <span> 底价：</span>450.00元/年/亩</td>
+                                            <span> 底价：</span>{{DiJia}}</td>
                                     </tr>
                                     <tr>
                                         <td colspan="2">
-                                            <span>加价幅度：</span>10.00元/年/亩</td>
-                                        <td style="display:none;">
-                                            <span>最高限价：</span>元/年/亩</td>
+                                            <span>加价幅度：</span>{{JiaJiaFuDu}}</td>
+                                        <!-- <td style="display:none;">
+                                            <span>最高限价：</span>元/年/亩</td> -->
                                     </tr>
-                                    <tr style="display:none;">
+                                    <!-- <tr style="display:none;">
                                         <td align="left" colspan="2"><span>补充说明：</span></td>
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                             </table>
                             <br>
@@ -480,12 +476,7 @@
         联系电话：025-83393917 苏ICP备14008292号</td>
       </tr>
     </table> -->
-    <script>
-        $(function () {
-            // $('.clappr-style').html('');
-            $('.clappr-style').remove();
-        });
-    </script>
+    
     <div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div>
     <div id="lightbox" class="lightbox" style="display: none;">
         <div class="lb-outerContainer">
@@ -501,115 +492,5 @@
             </div>
         </div>
     </div>
-    <div class="panel window" style="display: none; top: 200px; width: 888px; left: 42.5px;">
-        <div class="panel-header panel-header-noborder window-header" style="width: 883px;">
-            <div class="panel-title">在线直播</div>
-            <div class="panel-tool"><a class="panel-tool-close" href="javascript:void(0)"></a></div>
-        </div>
-        <div id="dlg2" class="easyui-dialog panel-body panel-body-noborder window-body" title="" buttons="#dlg-buttons"
-            closed="true" style="overflow: hidden; width: 886px; height: 551px;">
-            <div class="panel" style="display: block; top: 200px; width: 886px;">
-                <div style="width: 872px; height: 537px; padding: 7px; top: 200px;" title=""
-                    class="panel-body panel-body-noheader panel-body-noborder dialog-content">
-                    <div class="zbbt">
-                        <h1 style="text-align: center">界集镇毕沟村五组段水库埂土地经营权对外出租项目招标在线直播</h1>
-                        <div class="zbcon" style="padding:0px">
-                            <div id="player">
-                                <div data-player="" tabindex="9999" class="" style="height: 420px; width: 800px;">
-                                    <div class="media-control w320" data-media-control="">
-                                        <div class="seek-time" data-seek-time="" style="display: none; left: -100%;">
-                                            <span data-seek-time=""></span>
-                                            <span data-duration="" style="display: none;"></span>
-                                        </div>
-                                    </div>
-                                    <div class="container" data-container="">
-                                        <div data-spinner="" class="spinner-three-bounce" style="display: none;">
-                                            <div data-bounce1=""></div>
-                                            <div data-bounce2=""></div>
-                                            <div data-bounce3=""></div>
-                                        </div>
-                                        <div data-no-op=""><canvas data-no-op-canvas=""></canvas>
-                                            <p data-no-op-msg="">Your browser does not support the playback of this
-                                                video. Please try using a different browser.</p>
-                                            <p>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <script>
-                                var playerElement = document.getElementById("player");
-                                var player = new Clappr.Player({
-                                    source: '',
-                                    poster: 'img/img.jpg',
-                                    mute: true,
-                                    height: 420,
-                                    width: 800
-                                });
-                                player.attachTo(playerElement);
-                            </script>
-                        </div>
-                    </div>
-                    <script>
-                        $(function () {
-                            //如何当前项目不能在线播放则隐藏在线播放按钮
-                            proIdLimit();
-                        });
-                        // 初始化弹窗位置
-                        function showPop(self) {
-                            var bottom = self.getBoundingClientRect().bottom;
-                            var height = $('.panel').innerHeight();
-                            if ($(window).innerHeight() - bottom < height) {
-                                top = $(window).scrollTop() + $(window).innerHeight() - height;
-                            }
-                            if (proIdLimit()) {//项目编号限制
-                                // if(timeLimit()){//播放时间段限制
-                                $('#dlg2').window('open');
-                                // }
-                            }
-                        }
-                        //在线播放时的项目id限制
-                        function proIdLimit() {
-                            var proId = '321324111B20090004';//当前页面中的项目id
-                            var arrowProIds = [
-                                '320924102P20020001',
-                                '320924104N20010034',
-                                '320924102N20020003',
-                                '320924102N20020001'
-                            ];//允许播放的项目的id列表
-                            var candisplay = $.inArray(proId, arrowProIds) !== -1;
-                            if (!candisplay) {
-                                $('.online-play').hide();
-                                return false;
-                            }
-                            return candisplay;
-                        }
-                        //在线播放时的播放时间段限制
-                        function timeLimit() {
-                            //获取系统时间
-                            var sysTime = new Date();
-                            //获取交易的时间
-                            var jyTime = new Date('2020-09-14 15:45:00.0');
-                            //交易开始时间的前半小时时间
-                            var beforeTime = new Date('2020-09-14 15:45:00.0');
-                            beforeTime.setMinutes(beforeTime.getMinutes() - 30);
-                            //交易开始时间的前半小时时间
-                            var afterTime = new Date('2020-09-14 15:45:00.0');
-                            afterTime.setHours(afterTime.getHours() + 2);
-                            if (sysTime < beforeTime) {
-                                alert('未到直播时间');
-                                return false;
-                            } else if (sysTime <= afterTime) {
-                                return true;
-                            } else if (sysTime > afterTime) {
-                                alert('直播时间已过');
-                                return false;
-                            }
-                        }
-                    </script>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="window-shadow" style="display: none; left: 42.5px; top: 200px;"></div>
+    
 </body>

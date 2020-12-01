@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class TpxwComponent implements OnInit {
   public newses: any = [];
   public newsTop: {} = {};
-  public baseUrl: any = 'http://218.29.137.134:22742/api/services/app/Newses/GetAll??Filter=&NewsTypeNewsTypeTitleFilter=%E5%9B%BE%E7%89%87%E6%96%B0%E9%97%BB';
+  public baseUrl: any = 'http://218.29.137.134:22742/api/services/app/Newses/GetAll?Filter=&TitleFilter=&contentFilter=&authorFilter=&imageFilter=&AtTopFilter=-1&NewsTypeNewsTypeTitleFilter=%E5%9B%BE%E7%89%87%E6%96%B0%E9%97%BB&SkipCount=0&MaxResultCount=100';
 
 
   constructor(private http: HttpClient) { }
