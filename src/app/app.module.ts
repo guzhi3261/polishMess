@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboradModule } from './dashborad/dashborad.module';
@@ -32,9 +34,9 @@ import { AuctionComponent } from './auction/auction.component';
 import { MyAuctionComponent } from './auction/my-auction/my-auction.component';
 import { AuctionRuleComponent } from './auction/auction-rule/auction-rule.component';
 import { AuctioningComponent } from './auction/auctioning/auctioning.component';
-import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { ContentModule } from './content/content.module';
+import { ProtocolComponent } from './common/protocol/protocol.component';
 
 
 
@@ -47,11 +49,14 @@ import { ContentModule } from './content/content.module';
     MyAuctionComponent,
     AuctionRuleComponent,
     AuctioningComponent,
+    ProtocolComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientJsonpModule,

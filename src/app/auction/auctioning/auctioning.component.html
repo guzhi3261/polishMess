@@ -1,11 +1,23 @@
-<p>竞拍时间</p>
+<br>
+<div>
+    <p>竞拍时间</p>
+</div>
+<div class = "countdown">
+   {{remainTime}}
+</div>
+
+<br>
 <p-progressBar [value]="value"></p-progressBar>
+<br>
+<div>
+    <span>尊敬的x：本次竞拍为一次性报价，您可以在规定时间内在下方填写您的报价，然后提交。注意：提交以后不可更改，请谨慎报价。</span>
+</div>
 <br>
 <div>
     <input type="number" pInputText [(ngModel)]="bidPrice">
     <button pButton pRipple type="button" label="出价" class="p-button-success" (click)="getPrice()"></button>
 </div>
-<div class="bidHistory">
+<div class="bidHistory" style="display: none;">
     <table>
         <tr>
             <th>时间</th>

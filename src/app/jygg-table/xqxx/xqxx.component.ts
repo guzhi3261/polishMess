@@ -22,14 +22,5 @@ export class XqxxComponent implements OnInit {
       console.log(this.xqxxList[0].xuQiuXinXi.zhuanruyongtu)    
     })
   }
-  // getXqxxList(){
-  //   for( var i = 0;i < this.xqxxList.length; i++) {
-
-  //   }
-  // }
-  // xuQiuType(num){
   
-  //   if(this.xqxxList)
-  // }
-
 }

@@ -3,7 +3,7 @@
         <ul>
             <li class="reg1">
                 <h1>农村产权交易信息服务平台</h1>
-                <div id="return"><a routrrLink="index">返回首页</a></div>
+                <div id="return"><a routerLink="/home">返回首页</a></div>
                 <!-- <div id="return"><a href="#">返回首页</a></div> -->
             </li>
         </ul>
@@ -81,7 +81,7 @@
                         <div class="p-col-12 p-md-6">
                             <div class="p-inputgroup">
                                 <input type="checkbox">   &nbsp;&nbsp;   
-                                <span >我已阅读并同意<a>《农村产权交易系统会员注册协议》</a></span>
+                                <span >我已阅读并同意<a routerLink = "/protocol">《农村产权交易系统会员注册协议》</a></span>
                             </div>
                         </div>
                     </div>
@@ -91,9 +91,6 @@
                 
                 
             </p-tabPanel>
-
-
-
 
             <p-tabPanel header="单位用户">
                 <form (ngSubmit)="register()">
@@ -166,7 +163,7 @@
                         <div class="p-col-12 p-md-6">
                             <div class="p-inputgroup">
                                 <input type="checkbox">   &nbsp;&nbsp;   
-                                <span >我已阅读并同意<a>《农村产权交易系统会员注册协议》</a></span>
+                                <span >我已阅读并同意<a routerLink = "/protocol">《农村产权交易系统会员注册协议》</a></span>
                             </div>
                         </div>
                     </div>
@@ -179,6 +176,5 @@
            
         </p-tabView>
         </div>
-
 </div>
     

@@ -37,13 +37,15 @@ import { PropertyManageMethodComponent } from './header/jygz/propertyManageMetho
 import { ContactVisioComponent } from './header/jygz/contactVisio/contact-visio.component';
 import { FileDownloadComponent } from './header/jygz/fileDownload/file-download.component';
 import { JygzDetailComponent } from './header/jygz/jygz-detail/jygz-detail.component';
+import { ProtocolComponent } from './common/protocol/protocol.component';
 
 
 const routes: Routes = [
 
-  
+  { path: 'home', component: DashboradComponent },
   {path: 'login', component: LoginComponent},
   {path: 'regist', component: RegistComponent},
+  {path: 'protocol', component: ProtocolComponent},
   {path: 'xwzx', component: XwzxComponent},
   {path: 'zcfg', component: ZcfgComponent},
   {path: 'jyggall', component: JyggAllComponent,children:[

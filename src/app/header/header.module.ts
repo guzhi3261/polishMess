@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+
 import { RouterModule, } from '@angular/router';
 
 import { InputTextModule } from 'primeng/inputtext';
@@ -10,6 +12,7 @@ import {ProgressBarModule} from 'primeng/progressbar';
 import { CardModule, PaginatorModule } from 'primeng';
 import {DropdownModule} from 'primeng/dropdown';
 
+import { TimeHeaderComponent } from './time-header/time-header.component';
 import { HeaderComponent } from './header/header.component';
 import { ZhuanrangComponent } from './jyggall/zhuanrang/zhuanrang.component';
 import { XuqiuComponent } from './jyggall/xuqiu/xuqiu.component';
@@ -38,6 +41,7 @@ import { JygzDetailComponent } from './jygz/jygz-detail/jygz-detail.component';
 
 @NgModule({
   declarations: [
+    TimeHeaderComponent,
     HeaderComponent,
     XwzxComponent, NewsDetailComponent, XwdtComponent, TpxwComponent,
     ZcfgComponent,DfzcComponent,GjzcComponent,PolicyDetailComponent,
@@ -47,10 +51,12 @@ import { JygzDetailComponent } from './jygz/jygz-detail/jygz-detail.component';
     HdjlComponent,
     LxwmComponent,
     JyggAllComponent, ZhuanrangComponent, XuqiuComponent, ChengjiaoComponent,JingjiaxinxiComponent,
-    PropertyManageMethodComponent,ContactVisioComponent,FileDownloadComponent, JygzDetailComponent
+    PropertyManageMethodComponent,ContactVisioComponent,FileDownloadComponent, JygzDetailComponent, 
     ],
   imports: [
     CommonModule, 
+    FormsModule,
+    ReactiveFormsModule ,
     RouterModule,
     InputTextModule,
     TabViewModule,
@@ -62,6 +68,7 @@ import { JygzDetailComponent } from './jygz/jygz-detail/jygz-detail.component';
     
   ],
   exports:[
+    TimeHeaderComponent,
     HeaderComponent
   ]
 })

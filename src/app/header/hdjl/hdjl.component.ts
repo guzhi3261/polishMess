@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-hdjl',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HdjlComponent implements OnInit {
 
-  constructor() { }
+  hdjlForm= new FormGroup({
+  title: new FormControl(''),
+  name: new FormControl(''),
+  phone: new FormControl(''),
+  address: new FormControl(''),
+  email: new FormControl(''),
+  postcodes: new FormControl(''),
+  content: new FormControl(''),
+})
+  constructor(private http: HttpClient){ }
 
   ngOnInit(): void {
   }
-
+  save(){
+    console.log(this.hdjlForm.value)
+  }
 }
