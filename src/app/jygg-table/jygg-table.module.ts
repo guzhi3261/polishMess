@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LiteLoginComponent } from '../common/lite-login/lite-login.component';
+
 import { HeaderModule } from '../header/header.module';
 import { CjggComponent } from './cjgg/cjgg.component';
 import { JyggComponent } from './jygg/jygg.component';
@@ -19,6 +21,7 @@ import { xqTypePipe, jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeD
 
 @NgModule({
   declarations: [
+    LiteLoginComponent,
     xqTypePipe, jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeDanWeiPipe, zhiFuFangShiPipe, qiManChuLiPipe, jiaoNaXingShiPipe, tuDiXingZhiPipe,
     JyggComponent,
     CjggComponent, CjggDetailComponent,
@@ -31,6 +34,7 @@ import { xqTypePipe, jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeD
     CommonModule,
     RouterModule,
     FormsModule,
+    ReactiveFormsModule,
     HeaderModule
   ],
   exports:[

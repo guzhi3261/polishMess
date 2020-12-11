@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { GetUsernameService } from 'src/app/model/get-username.service';
 
 @Component({
   selector: 'app-header',
@@ -6,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  user=""
+  public sucription: Subscription;
 
-  constructor() { }
+  constructor(private getUser: GetUsernameService) { 
+    this.getUser.username.subscribe(user => this.user = user);
+    console.log(this.user)
+    
+  }
 
   ngOnInit(): void {
   }

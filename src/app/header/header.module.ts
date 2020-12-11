@@ -37,6 +37,8 @@ import { PropertyManageMethodComponent } from './jygz/propertyManageMethod/prope
 import { ContactVisioComponent } from './jygz/contactVisio/contact-visio.component';
 import { FileDownloadComponent } from './jygz/fileDownload/file-download.component';
 import { JygzDetailComponent } from './jygz/jygz-detail/jygz-detail.component';
+import { AskServiceComponent } from './hdjl/ask-service/ask-service.component';
+import { CommonAskComponent } from './hdjl/common-ask/common-ask.component';
 
 
 @NgModule({
@@ -51,7 +53,7 @@ import { JygzDetailComponent } from './jygz/jygz-detail/jygz-detail.component';
     HdjlComponent,
     LxwmComponent,
     JyggAllComponent, ZhuanrangComponent, XuqiuComponent, ChengjiaoComponent,JingjiaxinxiComponent,
-    PropertyManageMethodComponent,ContactVisioComponent,FileDownloadComponent, JygzDetailComponent, 
+    PropertyManageMethodComponent,ContactVisioComponent,FileDownloadComponent, JygzDetailComponent, AskServiceComponent, CommonAskComponent, 
     ],
   imports: [
     CommonModule, 

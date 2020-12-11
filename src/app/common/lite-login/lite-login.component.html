@@ -1,0 +1,30 @@
+<div class="lite-login" id="lite" [class.hide]="isActive">
+    <div class="closeBar">
+        <div class="barTitle">
+            <div style="position: relative; left: 4px;">用户登录</div>
+            <!-- <div class="close" (click)="close()">X</div> -->
+        </div>
+    </div>
+    <div>
+    <br>
+    <div class="content" >
+        <form [formGroup]="loginForm">
+            <div class="loginUserName">
+                <label>用户名：</label>
+                <input type="text" placeholder="请填写正确的用户名" pInputText formControlName="userNameOrEmailAddress">  
+            </div>
+            <br>
+            <div class="loginPassword">
+                <label>密码：&nbsp;</label>
+                <input type="password" placeholder="请输入密码" pInputText formControlName="password">
+            </div>
+        </form>
+        <div class="foot">
+            <button (click)="close()">取消</button>
+            <button (click)="submit()">登录</button>
+        </div>
+    </div>
+
+    </div>
+    
+</div>

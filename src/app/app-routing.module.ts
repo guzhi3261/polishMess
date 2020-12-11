@@ -38,6 +38,8 @@ import { ContactVisioComponent } from './header/jygz/contactVisio/contact-visio.
 import { FileDownloadComponent } from './header/jygz/fileDownload/file-download.component';
 import { JygzDetailComponent } from './header/jygz/jygz-detail/jygz-detail.component';
 import { ProtocolComponent } from './common/protocol/protocol.component';
+import { AskServiceComponent } from './header/hdjl/ask-service/ask-service.component';
+import { CommonAskComponent } from './header/hdjl/common-ask/common-ask.component';
 
 
 const routes: Routes = [
@@ -62,7 +64,10 @@ const routes: Routes = [
   {path: 'jygz-detail/:id', component:JygzDetailComponent},
   {path: 'cjgg', component: CjggComponent},
   {path: 'zhcx', component: ZhcxComponent},
-  {path: 'hdjl', component: HdjlComponent},
+  {path: 'hdjl', component: HdjlComponent, children:[
+    {path: 'ask-service', component: AskServiceComponent},
+    {path: 'common-ask', component: CommonAskComponent}
+  ]},
   {path: 'lxwm', component: LxwmComponent},
   {path: 'xwdt', component: XwdtComponent},
   {path: 'tpxw', component: TpxwComponent},

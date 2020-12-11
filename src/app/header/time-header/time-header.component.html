@@ -3,10 +3,16 @@
         <li class="reg">
             <!-- <div>今天是 <span>{{y}}</span>年<span>{{m}}</span>月<span>{{date}}</span>日 星期<span>{{day}}</span> 服务器时间 <span>{{hs}}:{{ms}}:{{ss}}</span></div> -->
             <div>现在时间：{{currentDate | date:'yyyy-MM-dd hh:mm:ss'}}</div>
-            <div id="user">
+            <div id="beforeLogin" *ngIf="username==''">
                 <a routerLink="/login">用户登录</a> / 
                 <a routerLink="/regist">注册</a> | 
-                <a >常见问题</a> 
+                <a routerLink = "/hdjl/common-ask">常见问题</a> 
+            </div>
+            <div id="afterLogin" *ngIf="username != ''">
+                <span>尊敬的{{username}}：您好</span> | 
+                <!-- <a routerLink="/login">用户登录</a> / 
+                <a routerLink="/regist">注册</a> |  -->
+                <a routerLink = "/hdjl/common-ask">常见问题</a> 
             </div>
         </li>
     </ul>

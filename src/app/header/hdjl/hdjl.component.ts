@@ -9,20 +9,10 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class HdjlComponent implements OnInit {
 
-  hdjlForm= new FormGroup({
-  title: new FormControl(''),
-  name: new FormControl(''),
-  phone: new FormControl(''),
-  address: new FormControl(''),
-  email: new FormControl(''),
-  postcodes: new FormControl(''),
-  content: new FormControl(''),
-})
+  
   constructor(private http: HttpClient){ }
 
   ngOnInit(): void {
   }
-  save(){
-    console.log(this.hdjlForm.value)
-  }
+  
 }
