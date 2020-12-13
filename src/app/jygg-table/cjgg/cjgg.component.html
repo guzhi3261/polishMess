@@ -17,14 +17,14 @@
                 </tr>
 
                 <tr *ngFor="let item of cjxx; let i = index">
-                    <td height="28" class="num" >{{item.chengJiaoXinXi.id}}</td>
-                    <td align="left" class="tit TheId">
+                    <td height="28" class="num" *ngIf="i < 5">{{item.chengJiaoXinXi.id}}</td>
+                    <td align="left" class="tit TheId" *ngIf="i < 5">
                         <a [routerLink] = "['/cjggdetail',item.chengJiaoXinXi.id]"  >
                             <div class="textCss div1" >&nbsp;{{item.chengJiaoXinXi.xiangMuMingCheng}}</div>
                         </a>
                     </td>
-                    <td   ><span class="tit">{{item.chengJiaoXinXi.biaoDiQuYu}}</span></td>
-                    <td class="num">{{item.chengJiaoXinXi.chengJiaoShiJian | date:'yyyy-MM-dd'}}</td>
+                    <td   *ngIf="i < 5"><span class="tit">{{item.chengJiaoXinXi.biaoDiQuYu}}</span></td>
+                    <td class="num" *ngIf="i < 5">{{item.chengJiaoXinXi.chengJiaoShiJian | date:'yyyy-MM-dd'}}</td>
                 </tr>
 
                 <!-- <tr>

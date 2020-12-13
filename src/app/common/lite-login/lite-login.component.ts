@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { EventEmitter } from 'protractor';
 import { GetUsernameService } from 'src/app/model/get-username.service';
+import * as g from '../../model/globals'
+
 
 @Component({
   selector: 'app-lite-login',
@@ -51,6 +53,7 @@ submit(){
     this.user = this.loginForm.value.userNameOrEmailAddress;
     this.getUser.getUser(this.user);
     //TODO: 供应报名人信息发送到后台
+   
   }else {
     this.http.post(this.baseUrl,this.loginForm.value).subscribe( res =>{
       this.accessToken = res['result'].accessToken;

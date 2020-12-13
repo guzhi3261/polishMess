@@ -42,7 +42,7 @@ import { xqTypePipe, jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeD
     CjggComponent, CjggDetailComponent,
     JjjyComponent, JjjyDetailComponent,
     XqxxComponent, XqxxDetailComponent,
-    ZrxxComponent,ZrxxDetailComponent,
+    ZrxxComponent,ZrxxDetailComponent,LiteLoginComponent
 
   ]
 })

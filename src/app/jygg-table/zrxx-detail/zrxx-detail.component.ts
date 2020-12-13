@@ -4,6 +4,9 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ZhuanChuInfo } from './zhuanchuxinxi';
 import { LiteLoginComponent } from 'src/app/common/lite-login/lite-login.component';
+import * as g from '../../model/globals'
+import { GetUsernameService } from 'src/app/model/get-username.service';
+
 
 
 @Component({
@@ -13,16 +16,20 @@ import { LiteLoginComponent } from 'src/app/common/lite-login/lite-login.compone
 })
 export class ZrxxDetailComponent implements OnInit {
 
-  @ViewChild('liteLogin') loginShow: LiteLoginComponent;
+  // @ViewChild('liteLogin') loginShow: LiteLoginComponent;
   isActive :boolean = false
 
-  constructor(private http: HttpClient, protected activatedroute: ActivatedRoute, private route: Router) {
+  constructor(
+    private http: HttpClient, 
+    protected activatedroute: ActivatedRoute, 
+    private route: Router,
+    private GetUsernameService: GetUsernameService) {
     this.id = this.activatedroute.snapshot.params['id'];
   }
   contentUrl = "http://218.29.137.134:22742/api/services/app/GongYingXinXies/GetGongYingXinXiForEdit?Id=";
   id: string;
   zrxx: any;
-  user="金子"
+  user: string ;
   public xiangMuMingCheng;
   public jiaoYiFangShi;
   public faBuQuYu;
@@ -116,9 +123,9 @@ export class ZrxxDetailComponent implements OnInit {
 
       this.diKuaiList = this.zrxx.diKuaiList;
 
-      this.fuzhuowuList_mingCheng = this.zrxx.diKuaiList.fuzhuowuList.mingCheng;
-      this.fuzhuowuList_shuLiang = this.zrxx.diKuaiList.fuzhuowuList.shuLiang;
-      this.fuzhuowuList_quanShu = this.zrxx.diKuaiList.fuzhuowuList.quanShu;
+      // this.fuzhuowuList_mingCheng = this.zrxx.diKuaiList.fuzhuowuList.mingCheng;
+      // this.fuzhuowuList_shuLiang = this.zrxx.diKuaiList.fuzhuowuList.shuLiang;
+      // this.fuzhuowuList_quanShu = this.zrxx.diKuaiList.fuzhuowuList.quanShu;
 
       console.log(this.zrxx);
     });
@@ -153,9 +160,19 @@ export class ZrxxDetailComponent implements OnInit {
     });
   }
   signUp() {
-    this.isActive = true;
-    // alert("你已经报名！")
+    this.GetUsernameService.username.subscribe((user) => 
+      {this.user = user
+        g.global.xiangMuID = this.id;        
+        console.log(g.global.xiangMuID)
+      });
+      if(this.user){
+        alert("你已经报名！")
+      }else{
+        this.isActive = true;
+      }
+   
   }
-
-}
+    
+  }    
+    
 

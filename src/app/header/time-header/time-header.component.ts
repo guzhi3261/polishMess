@@ -1,4 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { GetUsernameService } from 'src/app/model/get-username.service';
+import * as g from '../../model/globals'
 
 @Component({
   selector: 'app-time-header',
@@ -7,14 +10,24 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TimeHeaderComponent implements OnInit {
   @Input() username: string;
+  // @ViewChild('liteLogin') 
 
-  constructor() { }
   public currentDate;
   public timer;
+  public isActive: boolean = false;
+  constructor(){
+    g.global.userName = this.username;
+  }
 
   ngOnInit(): void {
-    console.log(this.username)
+    console.log(this.username)    
     this.timer = setInterval(() => { this.currentDate = new Date()},1000)
   }
+  signIn(){
+    this.isActive = true;
+    console.log("login")
+
+  }
+
 
 }

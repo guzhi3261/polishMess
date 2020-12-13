@@ -18,9 +18,9 @@
                     <th width="15%" >竞价开始时间</th>
                 </tr>
 
-                <tr *ngFor="let item of jjxxList">
-                    <td height="28" class="num">&nbsp;{{item.jingJiaModel.bdxX_BiaoDuanBianHao}}</td>
-                    <td align="left" class="tit">
+                <tr *ngFor="let item of jjxxList ;">
+                    <td height="28" class="num" >&nbsp;{{item.jingJiaModel.bdxX_BiaoDuanBianHao}}</td>
+                    <td align="left" class="tit" > 
                         <a [routerLink]="['/jjjydetail', item.jingJiaModel.id]">
                             <div class="xmmcrow" >&nbsp;{{item.jingJiaModel.bdxX_BiaoDuanMiaoShu}}</div>
                         </a>

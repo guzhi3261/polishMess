@@ -39,6 +39,7 @@ import { FileDownloadComponent } from './jygz/fileDownload/file-download.compone
 import { JygzDetailComponent } from './jygz/jygz-detail/jygz-detail.component';
 import { AskServiceComponent } from './hdjl/ask-service/ask-service.component';
 import { CommonAskComponent } from './hdjl/common-ask/common-ask.component';
+import { LiteLoginComponent } from '../common/lite-login/lite-login.component';
 
 
 @NgModule({

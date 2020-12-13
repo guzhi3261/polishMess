@@ -8,7 +8,7 @@
     <div>
     <br>
     <div class="content" >
-        <form [formGroup]="loginForm">
+        <form [formGroup]="loginForm" *ngIf="! accessToken">
             <div class="loginUserName">
                 <label>用户名：</label>
                 <input type="text" placeholder="请填写正确的用户名" pInputText formControlName="userNameOrEmailAddress">  
@@ -19,6 +19,9 @@
                 <input type="password" placeholder="请输入密码" pInputText formControlName="password">
             </div>
         </form>
+        <!-- <div class="successTip" *ngIf="accessToken">
+            <span>登录成功</span>
+        </div> -->
         <div class="foot">
             <button (click)="close()">取消</button>
             <button (click)="submit()">登录</button>
