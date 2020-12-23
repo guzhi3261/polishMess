@@ -27,7 +27,6 @@ export class JygzDetailComponent implements OnInit {
       this.jygzContent = this.jygz.content;
       this.author = this.jygz.author;
       this.title = this.jygz.title;
-      console.log(res);
   });
 
   }

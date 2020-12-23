@@ -2,9 +2,9 @@
     <tbody>
         <tr>
             <td height="31" align="left" class="pos">当前位置：
-                <a>首页</a> &gt;
-                <a>交易公告</a> &gt;
-                <a>竞价信息</a> &gt;
+                <a routerLink="/home">首页</a> &gt;
+                <a routerLink = "/jyggall/xuqiu">交易公告</a> &gt;
+                <a routerLink = "/jyggall/xuqiu">竞价信息</a> &gt;
             </td>
         </tr>
     </tbody>
@@ -16,15 +16,15 @@
             <tr class="title">
                 <td width="140" height="25" align="center">项目编号</td>
                 <td align="center">项目名称</td>
-                <td width="185" align="center">交易地点</td>
+                <td width="185" align="center">底价</td>
                 <td width="90" align="center">公示日期</td>
             </tr>
     
             <tr *ngFor="let item of jingjiaList">
                 <td height="24" align="center" class="num" style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">{{item.jingJiaModel.bdxX_BiaoDuanBianHao}}</td>
-                <td align="left" class="tit" ><a [routerLink]="['/jjjydetail', item.jingJiaModel.id]">{{item.jingJiaModel.bdxX_BiaoDuanMiaoShu}}</a>
+                <td align="center" class="tit" ><a [routerLink]="['/jjjydetail', item.jingJiaModel.id]">{{item.jingJiaModel.bdxX_BiaoDuanMiaoShu}}</a>
                 </td>
-                <td align="center"><span class="tit">{{item.jingJiaModel.bmxX_JiaoYiDiDian}} </span></td>
+                <td align="center"><span class="tit">{{item.jingJiaModel.bdxX_DiJia}} 元</span></td>
                 <td align="center" class="num">{{item.jingJiaModel.cqxX_DengJiRiQi | date:'yyyy-MM-dd'}}  </td>
             </tr>
     

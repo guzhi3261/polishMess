@@ -1,6 +1,7 @@
 import { Pipe ,PipeTransform } from '@angular/core';
 
 // 需求类型
+
 @Pipe({ name: 'xqType' })
 
 export class xqTypePipe implements PipeTransform{
@@ -143,6 +144,36 @@ export class tuDiXingZhiPipe implements PipeTransform{
             return "四荒地"
         }else{
             return "其他"
+        }        
+    }
+}
+// 转让方类型
+@Pipe({ name: 'zrfType' })
+
+export class zhuanRangFangTypePipe implements PipeTransform{
+    transform(value): string{
+        if(value == 0){            
+            return "集体";
+        }else if(value ==1){
+            return "个人"
+        }else if(value ==1){
+            return "公司"
+        }else{
+            return "合作社"
+        }        
+    }
+}
+// 需求方类型
+@Pipe({ name: 'xqfType' })
+
+export class xuQiuFangTypePipe implements PipeTransform{
+    transform(value): string{
+        if(value == 0){            
+            return "集体";
+        }else if(value ==1){
+            return "个人"
+        }else{
+            return "企业"
         }        
     }
 }

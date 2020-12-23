@@ -67,3 +67,13 @@ ul {
     margin-inline-end: 0px;
     padding-inline-start: 40px;
 }
+.txt{
+    position: relative;
+    top: -12px;
+    text-align: center;
+    
+}
+.txt span {
+    position: relative;
+    left: -14px;
+}

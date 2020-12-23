@@ -29,6 +29,7 @@ import {DropdownModule} from 'primeng/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LoginComponent } from './common/login/login.component';
+import { LiteLoginComponent } from './common/lite-login/lite-login.component';
 import { RegistComponent } from './common/regist/regist.component';
 import { AuctionComponent } from './auction/auction.component';
 import { MyAuctionComponent } from './auction/my-auction/my-auction.component';
@@ -71,10 +72,8 @@ import { ProtocolComponent } from './common/protocol/protocol.component';
     FormsModule,
     CardModule,
     DropdownModule,
-    
-   
-
   ],
+  
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [NewsService,CookieService],
   bootstrap: [AppComponent],

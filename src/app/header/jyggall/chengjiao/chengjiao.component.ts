@@ -19,7 +19,7 @@ export class ChengjiaoComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get(this.baseUrl).subscribe((res: Response) => {
-      this.cjxx = res['result']['items']    
+      this.cjxx = res['result']['items'].reverse();   
     })
   }
 

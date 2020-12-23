@@ -3,13 +3,7 @@
 <body>
     <input type="hidden" id="bmjzsj" value="2020-09-13 18:00:00">
     <input type="hidden" id="bdjysj" value="2020-09-14 15:45:00">
-
-    <!--在线直播按钮-->
-    <div id="right" class="online-play"
-        style="position: fixed; top: 70px; right: 50%; margin-right: -500px; height: 100px; display: none;">
-        <a href="javasript:void(0)" onclick="showPop(this);return false;"><img src="wsjjys/images/zxzb.png" width="103"
-                height="75"></a></div>
-
+    
     <!--在线直播内容-->
 
     <table width="1002" border="0" align="center" cellpadding="0" cellspacing="0" style=" background-color:#ffffff; ">
@@ -21,8 +15,11 @@
                         cellspacing="0">
                         <tbody>
                             <tr>
-                                <td height="31" style="padding-left:20px" align="left" class="pos">当前位置：<a>首页</a>
-                                    -&gt; <a>交易公告</a> -&gt; <a>需求信息</a></td>
+                                <td height="31" style="padding-left:20px" align="left" class="pos">当前位置：
+                                    <a routerLink="/home">首页</a >-&gt; 
+                                    <a routerLink="/jyggall/xuqiu">交易公告</a> -&gt; 
+                                    <a>需求信息</a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -36,17 +33,16 @@
 
                             <li>
                                 <div class="photo">
-                                    <img src="/nccqjy/wsjjys/images/mrtp.gif">
+                                    <img src={{photo}}>
                                 </div>
-                                <div class="txt">项目图片</div>
+                                <div class="txt"><span>项目图片</span></div>
                             </li>
                         </ul>
-                        <div class="slidebtn-01">
+                        <!-- <div class="slidebtn-01">
                             <ul>
-
                                 <li class="current">1</li>
                             </ul>
-                        </div>
+                        </div> -->
                     </div>
                 </td>
 
@@ -54,7 +50,7 @@
                     <table width="460" border="0" cellspacing="0" cellpadding="0">
                         <tbody>
                             <tr>
-                                <td height="40" align="center" class="head_l">{{xiuqiumingcheng}}</td>
+                                <td height="40" align="center" class="head_l">{{xiangmumingcheng}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -62,7 +58,7 @@
                         <tbody>
                             <tr>
                                 <td width="100" align="left" height="30">需求方类型：</td>
-                                <td height="30" align="left" colspan="3">{{xuqiufang}}</td>
+                                <td height="30" align="left" colspan="3">{{xuqiufang | xqfType}}</td>
                             </tr>
                             <tr>
                                 <td width="100" align="left" height="30">需求方名称：</td>
@@ -80,7 +76,7 @@
 
                             </tr>
                             <tr>
-                                <td width="100" align="left" height="30">需求人所在区域：
+                                <td width="100" align="left" height="30">区域位置：
 
                                 </td>
                                 <td height="30" align="left" colspan="3">{{quyuweizhi}}
@@ -96,7 +92,7 @@
                                 <td width="100" align="left" height="30">证件号码:</td>
                                 <td height="30" align="left" colspan="3">{{lianxirenzhengjianhaoma}}</td>
                             </tr>
-                            
+
                         </tbody>
                     </table>
 
@@ -125,7 +121,7 @@
                             <tbody>
 
                                 <tr>
-                                    <td align="left" width="50%"><span>项目名称:</span>{{xiuqiumingcheng}}</td>
+                                    <td align="left" width="50%"><span>项目名称:</span>{{xiangmumingcheng}}</td>
                                     <td align="left" width="50%"><span>项目编号:</span>{{id}}</td>
                                 </tr>
                                 <tr>
@@ -133,11 +129,11 @@
                                 </tr>
 
                                 <tr>
-                                    <td align="left" colspan="2"><span>承受价格：</span>{{chengshoujiage}}</td>                                   
-                                    
+                                    <td align="left" colspan="2"><span>承受价格：</span>{{chengshoujiage}}</td>
+
                                 </tr>
                                 <tr>
-                                    <td align="left" colspan="2"><span>流转需求期限：</span>{{xuqiunianxian}}</td>
+                                    <td align="left" colspan="2"><span>流转需求年限：</span>{{xuqiunianxian}} 年</td>
                                 </tr>
                                 <tr>
                                     <td align="left" colspan="2"><span>土地用途：</span> {{zhuanruyongtu | xqType}}</td>
@@ -151,31 +147,34 @@
                                 </tr>
                                 <tr>
                                     <td align="left" colspan="2"><span> 其他披露事项：</span>
-                                      
+
                                     </td>
                                     <td></td>
                                 </tr>
-                                
+
                             </tbody>
                         </table>
                         <br>
                         <div style="width:100px;margin: 0 auto;display:block;">
                             <a class="btbm1" (click)="submitUser()"
-                                style=" text-align:center;width:120px; height:30px; line-height:30px; font-size:15px; display:block; background:#FF6E00; color:#fff; margin-top:0px;"
-                                routerLink="login"> 我能提供</a>
+                            style=" text-align:center;width:120px; 
+                            height:30px; 
+                            line-height:30px; 
+                            font-size:15px; 
+                            display:block; 
+                            background:#FF6E00; 
+                            color:#fff; 
+                            margin-top:0px;"> 我能提供</a>
                         </div>
 
                     </div>
 
-                   
+
                 </td>
             </tr>
         </tbody>
     </table>
 
-
-
-
-
     <div class="window-shadow" style="display: none; left: 42.5px; top: 200px;"></div>
 </body>
+<app-lite-login #liteLogin *ngIf="isActive"> </app-lite-login>

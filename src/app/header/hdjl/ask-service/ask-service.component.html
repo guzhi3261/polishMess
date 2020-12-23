@@ -2,7 +2,7 @@
     <tbody>
         <tr>
             <td height="31" align="left" class="pos">当前位置：
-                <a>首页</a>&gt;
+                <a routerLink = "/home">首页</a>&gt;
                 <a>互动交流</a>&gt;
                 <a>咨询服务</a>
             </td>
@@ -17,7 +17,7 @@
         <input id="unitId" name="unitId.unitId" type="hidden" value="1">
         <input id="type" name="type" type="hidden" value="4">
         <input type="hidden" id="page" name="page" value="1">
-
+ 
         <table width="725" border="0" cellspacing="0" cellpadding="0" style="border:1px solid #eaeaea;">
             <tbody>
                 <tr>
@@ -102,3 +102,4 @@
 
     </form>
 </div>
+<app-lite-login #liteLogin *ngIf="isActive"> </app-lite-login>

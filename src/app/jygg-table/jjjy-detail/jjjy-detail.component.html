@@ -11,8 +11,10 @@
                         cellspacing="0">
                         <tbody>
                             <tr>
-                                <td height="31" style="padding-left:20px" align="left" class="pos">当前位置：<a>首页</a>
-                                    -&gt; <a>交易公告</a> -&gt; <a>竞价公告</a></td>
+                                <td height="31" style="padding-left:20px" align="left" class="pos">当前位置：
+                                    <a routerLink="/home">首页</a> -> 
+                                    <a routerLink="/jyggall/jingjiaxinxi">交易公告</a> -&gt; 
+                                    <a>竞价信息</a></td> 
                             </tr>
                         </tbody>
                     </table>
@@ -113,11 +115,11 @@
                         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="xmxx"
                             style="table-layout:fixed;word-wrap:break-word;word-break:break-all;background:#ffffff">
                             <tbody>
-                                <tr>
+                                <!-- <tr>
                                     <td align="left" width="35%"><span>乡镇（街道）:</span>{{DiZhi}}</td>
                                     <td align="left" width="35%"><span>村（社区）:</span></td>
                                     <td align="left" width="30%"><span>组别：</span></td>
-                                </tr>
+                                </tr> -->
                                 <tr>
                                     <td align="left" colspan="3"><span>登记日期：</span>{{DengJiRiQi | date: 'yyyy-MM-dd'}}</td>
                                 </tr>

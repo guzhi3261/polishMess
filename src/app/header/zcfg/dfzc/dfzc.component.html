@@ -39,9 +39,9 @@
 					<tbody>
 						<tr>
 							<td height="31" align="left" class="pos">当前位置：
-								<a >首页</a> &gt;
-                                <a>政策法规</a> &gt;
-                                <a>地方政策规章</a> &gt;
+								<a routerLink = "/home">首页</a> &gt;
+                                <a routerLink = "/zcfg">政策法规</a> &gt;
+                                <a  routerLink = "/dfzcfg">地方政策规章</a> &gt;
 							</td>
 						</tr>
 					</tbody>
@@ -59,7 +59,7 @@
 
 												<!-- <a [routerLink]="['/policydetail',policy.zhengCeFaGui.id]">{{policy.zhengCeFaGui.title}} </a> -->
 											</td>
-											<td width="90" align="center"></td>
+											<td width="90" align="center">{{policy.zhengCeFaGui.creationTime | date:"yyyy-MM-dd"}}</td>
 										</tr>
 									</tbody>
 								</table>

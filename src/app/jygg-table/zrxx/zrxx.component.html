@@ -11,19 +11,19 @@
     <tr>
         <th class="thSty" >项目编号</th>
         <th >项目名称</th>
-        <th width="185">登记地点</th>
+        <th width="185">挂牌价格</th>
         <th width="90">登记日期</th>
     </tr>
 
     <tr *ngFor="let item of zrxx; let i = index">
-        <td height="28"   class="num" *ngIf="i < 5">{{item.gongYingXinXi.id}}</td>
-        <td align="left" class="tit">
+        <td height="28" class="num" *ngIf="i < 5">{{item.gongYingXinXi.id}}</td>
+        <td align="center" class="tit">
             <a [routerLink]="['/zrxxdetail', item.gongYingXinXi.id]">
                 <div class="textDiv overText" >&nbsp;{{item.gongYingXinXi.xiangMuMingCheng}}</div>
             </a>
         </td>
-        <td  ><span class="tit">{{item.gongYingXinXi.faBuQuYu}} </span></td>
-        <td   class="num">{{item.gongYingXinXi.chuangJianRiQi|date:'yyyy-MM-dd'}}</td>
+        <td  align="center"><span class="tit"> {{item.gongYingXinXi.guaPaiJiaGe}}&nbsp;{{item.gongYingXinXi.guaPaiJiaGeDanWei | jgdwType}} </span></td>
+        <td align="center" class="num">{{item.gongYingXinXi.chuangJianRiQi|date:'yyyy-MM-dd'}}</td>
     </tr>						
     
 </table>

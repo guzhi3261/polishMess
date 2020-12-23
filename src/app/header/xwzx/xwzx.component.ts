@@ -19,7 +19,7 @@ export class XwzxComponent implements OnInit {
   ngOnInit(): void {
     // 请求数据
     this.http.get(this.baseUrl).subscribe((res: Response) => {
-      this.newses = res['result']['items'];
+      this.newses = res['result']['items'].reverse();
       this.newsTop = this.newses[0];
       console.log(this.newses);
   });

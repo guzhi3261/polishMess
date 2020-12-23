@@ -2,7 +2,7 @@
     <tbody>
         <tr>
             <td height="31" align="left" class="pos">当前位置：
-                <a>首页</a> &gt;
+                <a routerLink = "/home">首页</a> &gt;
                 <a>交易规则</a> &gt;
                 <a>文件下载</a> &gt;
 
@@ -23,18 +23,30 @@
                                 <div></div>
                                 <div class="card">
                                     <p-tabView>
-                                        <ul *ngFor="let item of fileList">
-                                            <li (click)="getDownload(item.ziLiaoXiaZai.id)">· {{item.ziLiaoXiaZai.title}}</li>
-                                        </ul>
-                                       <!--  <p-tabPanel header="合同模板">                                           
+                                        
+                                        <p-tabPanel header="合同模板">   
+                                            <table  width="95%" border="0" cellspacing="0" cellpadding="0"  id="idData" style="margin:6px 0">
+                                                <tbody>
+                                                    <tr *ngFor="let item of fileList"> 
+                                                        <td height="26" align="left">·
+                                                            <a (click)="getDownload(item.ziLiaoXiaZai.id)">{{item.ziLiaoXiaZai.title}}</a>
+                                                        </td>
+                                                        <!-- <td width="90" align="center"></td> -->
+                                                    </tr>
+                                                    
+                                                </tbody>
+                                            </table> 
+                                            <!-- <ul *ngFor="let item of fileList">
+                                                <li (click)="getDownload(item.ziLiaoXiaZai.id)"><a>· {{item.ziLiaoXiaZai.title}}</a></li>
+                                            </ul>                                       -->
                                             
                                         </p-tabPanel>
-                                        <p-tabPanel header="转让相关">
+                                        <p-tabPanel header="土地流转相关">
                                             Content 2
                                         </p-tabPanel>
-                                        <p-tabPanel header="政策相关">
+                                        <p-tabPanel header="其他">
                                             Content 3
-                                        </p-tabPanel> -->
+                                        </p-tabPanel>
                                     </p-tabView>
                                 </div>
                             </td>

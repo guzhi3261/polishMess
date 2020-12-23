@@ -5,12 +5,6 @@
     color: #009a65;
     font-weight: bold;
 }
-.num{
-    width: 250px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space:nowrap; 
-}
 
 .xmmcrow{
     width: 205px;

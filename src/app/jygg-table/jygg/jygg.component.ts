@@ -24,11 +24,9 @@ export class JyggComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get(this.baseUrl).subscribe((res: Response) => {
-      this.policies = res['result']['items']
-      console.log(res);
+      this.policies = res['result']['items'].reverse();
     });
     this.getTowns();
-    console.log(this.townsSelected)    
   }
 
   //get towms and village

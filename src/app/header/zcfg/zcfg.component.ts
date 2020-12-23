@@ -20,7 +20,7 @@ export class ZcfgComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get(this.baseUrl).subscribe((res: Response)=>{
-      this.policies = res['result']['items'];
+      this.policies = res['result']['items'].reverse();
       this.policyTop = this.policies[0];
 
     })

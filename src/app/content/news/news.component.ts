@@ -25,7 +25,7 @@ ngOnInit(): void {
     // 请求数据
     // this.getNewses();
     this.http.get(this.baseUrl).subscribe((res: Response) => {
-    this.newses = res['result']['items'];
+    this.newses = res['result']['items'].reverse();
     this.newsTop =  this.newses[0]['news']['title'];
     this.news = this.newses[0].news;
     this.id = this.news.id

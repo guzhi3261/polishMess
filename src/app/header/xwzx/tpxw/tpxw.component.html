@@ -43,9 +43,9 @@
 						<tbody>
 							<tr>
 								<td height="31" align="left" class="pos">当前位置：
-									<a>首页</a> &gt;
-                                    <a>新闻中心</a> &gt;
-                                    <a>图片新闻</a> &gt;
+									<a routerLink="/home">首页</a> &gt;
+                                    <a routerLink="/tpxw">新闻中心</a> &gt;
+                                    <a routerLink="/tpxw">图片新闻</a> &gt;
 									
 								</td>
 							</tr>
@@ -61,7 +61,7 @@
 												<td height="26" align="left">·
 													<a [routerLink]="['/newsdetail', news.news.id]">{{news.news.title}}</a>
 												</td>
-												<td width="90" align="center"></td>
+												<td width="90" align="center">{{news.news.creationTime | date:"yyyy-MM-dd"}}</td>
 												
 											</tr>			
 											
@@ -83,7 +83,13 @@
 
 								<td height="30" align="center">
 									<form action="" name="form1" id="form1">
-										<p-paginator [rows]="20" [totalRecords]="120" [rowsPerPageOptions]="[5,10,20]"></p-paginator>
+										<p-paginator 
+										#paginator
+										(onPageChange)="getTpxwNews($event)"
+										[rows]="5" 
+										[totalRecords]="totalRecords" 
+										[rowsPerPageOptions]="[5,10,20]"
+										></p-paginator>
 									</form>
 								
 								

@@ -21,7 +21,8 @@ export class ZhuanrangComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get(this.baseUrl).subscribe((res: Response) => {
-      this.zrxx = res['result']['items']      
+      this.zrxx = res['result']['items'].reverse();
+      console.log(this.zrxx)
     })
   }
 

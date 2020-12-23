@@ -9,22 +9,31 @@
                         cellspacing="0">
                         <tbody>
                             <tr>
-                                <td height="31" style="padding-left:20px" align="left" class="pos">当前位置：<a>首页</a> -&gt;
-                                    <a>交易公告</a> -&gt; <a>转让信息</a></td>
+                                <td height="31" style="padding-left:20px" align="left" class="pos">当前位置：
+                                    <a routerLink="/home">首页</a> -> 
+                                    <a routerLink="/jyggall/zhuanrang">交易公告</a> -&gt; 
+                                    <a>转让信息</a></td> 
                             </tr>
                         </tbody>
                     </table>
                 </td>
             </tr>
             <tr>
-                <td width="497" height="341" align="left" valign="top">
+                <td width="497" height="341" align="left" valign="top" >
                     <div class="slidebox-01 swiper-container">
                         <div class="swiper-wrapper">
-                            <ng-container *ngFor="let item of swiperList">
+                            <!-- 展示图片只有一张时 -->
+                            <ng-container>
+                                <div class="swiper-slide">
+                                    <img [src]="swiperList" width="362px" height="278" alt="">
+                                </div>
+                            </ng-container>
+                            <!-- 展示图片有多张时
+                                <ng-container *ngFor="let item of swiperList">
                                 <div class="swiper-slide">
                                     <img [src]="item.imgUrl" width="362px" height="278" alt="">
                                 </div>
-                            </ng-container>
+                            </ng-container> -->
                         </div>
                         <!-- 如果需要分页器-->
                         <div class="swiper-pagination"></div>
@@ -71,6 +80,10 @@
                                 <td width="100" align="left" height="30">发布日期：</td>
                                 <td height="30" align="left" colspan="3">{{chuangJianRiQi | date:'yyyy-MM-dd'}} </td>
                             </tr>
+                            <tr>
+                                <td width="100" align="left" height="30">转让方类型</td>
+                                <td height="30" align="left" colspan="3">{{zhuanChuFangLeiXing | zrfType}} </td>
+                            </tr>
 
 
                         </tbody>
@@ -114,7 +127,8 @@
                                 </tr>
                                 <tr>
                                     <td align="left" style="width: 50%;">
-                                        <span>转出期限</span>{{zhuanChuBegin | date:'yyyy-MM-dd'}}至{{zhuanChuEnd | date:'yyyy-MM-dd'}}
+                                        <span>转出期限</span>{{zhuanChuBegin | date:'yyyy-MM-dd'}}至{{zhuanChuEnd |
+                                        date:'yyyy-MM-dd'}}
                                     </td>
                                     <td align="left" colspan="2"><span>项目编号：</span>{{id}}</td>
                                 </tr>
@@ -136,7 +150,8 @@
 
 
                                 <tr style="display:none;">
-                                    <td align="left" style="padding-bottom:10px;" colspan="3"><span>转出土地用途：</span>{{zhuanChuYongTu}}</td>
+                                    <td align="left" style="padding-bottom:10px;" colspan="3">
+                                        <span>转出土地用途：</span>{{zhuanChuYongTu}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -205,12 +220,14 @@
                                 </tr>
                                 <tr>
                                     <td align="left" width="50%">
-                                        <span>与转让相关的其他条件：</span>{{zhuanRangXiangGuanQiTaTiaoJian}}</td>
+                                        <span>与转让相关的其他条件：</span>{{zhuanRangXiangGuanQiTaTiaoJian}}
+                                    </td>
                                     <td align="left" width="50%"><span>受让方条件：</span>{{shouRangFangTiaoJian}}</td>
                                 </tr>
                                 <tr>
                                     <td align="left" width="50%">
-                                        <span>是否缴纳保证金：</span>{{shiFouJiaoNaBaoZhengJin | boolean}}</td>
+                                        <span>是否缴纳保证金：</span>{{shiFouJiaoNaBaoZhengJin | boolean}}
+                                    </td>
                                     <td align="left" width="50%"><span>交易保证金：</span>{{jiaoYiBaoZhengJin}}</td>
                                 </tr>
                                 <tr>
@@ -219,8 +236,14 @@
                                 </tr>
                                 <tr>
                                     <td align="left" width="50%">
-                                        <span>挂牌期满后，如未征集到满摘牌条件的意向受让方：</span>{{qiManChuLiFangShi | qmclType}}</td>
+                                        <span>挂牌期满后，如未征集到满摘牌条件的意向受让方：</span>{{qiManChuLiFangShi | qmclType}}
+                                    </td>
                                     <td align="left" width="50%"><span>交易方式：</span>{{jiaoYiFangShi | jjfsType}}</td>
+                                </tr>
+                                <tr>
+                                    <td align="left" width="50%" colspan="2">
+                                        <span>其他描述：</span>{{fuJian}}
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td rowspan="4" align="left"><span>价款划入账号：</span></td>
@@ -262,7 +285,7 @@
           建设单位：河南省信息中心 技术支持：南京南大尚诚软件科技有限公司<br />
         联系电话：025-83393917 苏ICP备14008292号</td>
       </tr>
-    </table> -->   
-    
+    </table> -->
+
 </div>
 <app-lite-login #liteLogin *ngIf="isActive"> </app-lite-login>

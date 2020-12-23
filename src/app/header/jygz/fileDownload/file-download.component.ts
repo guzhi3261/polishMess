@@ -20,7 +20,8 @@ export class FileDownloadComponent implements OnInit {
 
  getFileList(){
    this.http.get(this.url).subscribe((res : Response)=>{
-     this.fileList = res['result']['items'];
+     this.fileList = res['result']['items'].reverse();
+     console.log(this.fileList)
    })
  }
  getDownload(id){
@@ -28,7 +29,7 @@ export class FileDownloadComponent implements OnInit {
    this.http.get(url).subscribe(data => {  
      this.downUrl = this.addImageIp(data['result']['ziLiaoXiaZai'].image)      
    })
-   window.open(this.downUrl)
+   window.open(this.downUrl,"_self")
    return this.downUrl;
  }
  addImageIp(images0: string): string {

@@ -40,10 +40,12 @@ import { JygzDetailComponent } from './jygz/jygz-detail/jygz-detail.component';
 import { AskServiceComponent } from './hdjl/ask-service/ask-service.component';
 import { CommonAskComponent } from './hdjl/common-ask/common-ask.component';
 import { LiteLoginComponent } from '../common/lite-login/lite-login.component';
+import { xqTypePipe,jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeDanWeiPipe, zhiFuFangShiPipe, qiManChuLiPipe, jiaoNaXingShiPipe, tuDiXingZhiPipe, zhuanRangFangTypePipe, xuQiuFangTypePipe, } from '../model/dataPipe.model';
 
 
 @NgModule({
   declarations: [
+    LiteLoginComponent,
     TimeHeaderComponent,
     HeaderComponent,
     XwzxComponent, NewsDetailComponent, XwdtComponent, TpxwComponent,
@@ -55,6 +57,8 @@ import { LiteLoginComponent } from '../common/lite-login/lite-login.component';
     LxwmComponent,
     JyggAllComponent, ZhuanrangComponent, XuqiuComponent, ChengjiaoComponent,JingjiaxinxiComponent,
     PropertyManageMethodComponent,ContactVisioComponent,FileDownloadComponent, JygzDetailComponent, AskServiceComponent, CommonAskComponent, 
+    xqTypePipe, jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeDanWeiPipe, zhiFuFangShiPipe, qiManChuLiPipe, jiaoNaXingShiPipe, tuDiXingZhiPipe, zhuanRangFangTypePipe, xuQiuFangTypePipe
+
     ],
   imports: [
     CommonModule, 
@@ -72,7 +76,11 @@ import { LiteLoginComponent } from '../common/lite-login/lite-login.component';
   ],
   exports:[
     TimeHeaderComponent,
-    HeaderComponent
+    HeaderComponent,
+    LiteLoginComponent,
+    xqTypePipe, jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeDanWeiPipe, zhiFuFangShiPipe, qiManChuLiPipe, jiaoNaXingShiPipe, tuDiXingZhiPipe, zhuanRangFangTypePipe, xuQiuFangTypePipe
+
+
   ]
 })
 export class HeaderModule { }

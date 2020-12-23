@@ -14,7 +14,7 @@ export class PropertyManageMethodComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get(this.url).subscribe(res => {
-      this.jygz = res['result']['items']
+      this.jygz = res['result']['items'].reverse();
 
     })
   }

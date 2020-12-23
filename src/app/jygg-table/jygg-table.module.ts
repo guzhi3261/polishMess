@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LiteLoginComponent } from '../common/lite-login/lite-login.component';
 
 import { HeaderModule } from '../header/header.module';
 import { CjggComponent } from './cjgg/cjgg.component';
@@ -15,14 +14,13 @@ import { XqxxDetailComponent } from './xqxx-detail/xqxx-detail.component';
 import { CjggDetailComponent } from './cjgg-detail/cjgg-detail.component';
 import { JjjyDetailComponent } from './jjjy-detail/jjjy-detail.component';
 import { ZrxxDetailComponent } from './zrxx-detail/zrxx-detail.component';
-import { xqTypePipe, jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeDanWeiPipe, zhiFuFangShiPipe, qiManChuLiPipe, jiaoNaXingShiPipe, tuDiXingZhiPipe} from '../model/dataPipe.model';
+import { xqTypePipe, jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeDanWeiPipe, zhiFuFangShiPipe, qiManChuLiPipe, jiaoNaXingShiPipe, tuDiXingZhiPipe, zhuanRangFangTypePipe} from '../model/dataPipe.model';
+import { LiteLoginComponent } from '../common/lite-login/lite-login.component';
 
 
 
 @NgModule({
   declarations: [
-    LiteLoginComponent,
-    xqTypePipe, jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeDanWeiPipe, zhiFuFangShiPipe, qiManChuLiPipe, jiaoNaXingShiPipe, tuDiXingZhiPipe,
     JyggComponent,
     CjggComponent, CjggDetailComponent,
     JjjyComponent, JjjyDetailComponent,
@@ -35,15 +33,14 @@ import { xqTypePipe, jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeD
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    HeaderModule
+    HeaderModule,
   ],
   exports:[
     JyggComponent,
     CjggComponent, CjggDetailComponent,
     JjjyComponent, JjjyDetailComponent,
     XqxxComponent, XqxxDetailComponent,
-    ZrxxComponent,ZrxxDetailComponent,LiteLoginComponent
-
+    ZrxxComponent,ZrxxDetailComponent,
   ]
 })
 export class JyggTableModule { }

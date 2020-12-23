@@ -43,9 +43,9 @@
 						<tbody>
 							<tr>
 								<td height="31" align="left" class="pos">当前位置：
-									<a>首页</a> &gt;
-                                    <a>新闻中心</a> &gt;
-                                    <a>新闻动态</a> &gt;
+									<a routerLink="/home">首页</a> &gt;
+                                    <a routerLink="/xwdt">新闻中心</a> &gt;
+                                    <a routerLink="/xwdt">新闻动态</a> &gt;
 									
 								</td>
 							</tr>
@@ -61,7 +61,7 @@
 												<td height="26" align="left">·
 													<a [routerLink]="['/newsdetail', news.news.id]">{{news.news.title}} </a>
 												</td>
-												<!-- <td width="90" align="center"></td> -->
+												<td width="90" align="center">{{news.news.creationTime | date:"yyyy-MM-dd"}}</td>
 											</tr>
 											
 										</tbody>

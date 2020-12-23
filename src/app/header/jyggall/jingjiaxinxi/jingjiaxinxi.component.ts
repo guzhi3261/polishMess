@@ -14,8 +14,7 @@ export class JingjiaxinxiComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get(this.url).subscribe( res => {
-      this.jingjiaList = res['result']['items']
-      console.log(res)
+      this.jingjiaList = res['result']['items'].reverse();
     })
   }
 

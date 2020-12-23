@@ -18,8 +18,7 @@ export class XqxxComponent implements OnInit {
   constructor(private http: HttpClient) { }
   ngOnInit(): void {
     this.http.get(this.baseUrl).subscribe((res: Response) => {
-      this.xqxxList = res['result']['items']  
-      console.log(this.xqxxList[0].xuQiuXinXi.zhuanruyongtu)    
+      this.xqxxList = res['result']['items'].reverse();
     })
   }
   

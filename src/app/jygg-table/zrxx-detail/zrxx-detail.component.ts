@@ -26,8 +26,10 @@ export class ZrxxDetailComponent implements OnInit {
     private GetUsernameService: GetUsernameService) {
     this.id = this.activatedroute.snapshot.params['id'];
   }
+
   contentUrl = "http://218.29.137.134:22742/api/services/app/GongYingXinXies/GetGongYingXinXiForEdit?Id=";
   id: string;
+  userId: number;
   zrxx: any;
   user: string ;
   public xiangMuMingCheng;
@@ -37,6 +39,7 @@ export class ZrxxDetailComponent implements OnInit {
   public zhuanChuEnd;
   public chuangJianRiQi;
   public zhuanChuYongTu;
+  public zhuanChuFangLeiXing;
 
   diKuaiList: [];
   diKuaiMingCheng: string;
@@ -70,22 +73,31 @@ export class ZrxxDetailComponent implements OnInit {
   public zhangHuMingCheng;
   public kaiHuYinHang;
   public jiaKuanHuaRuZhangHao;
+  public zhanShiTuPian;
+  public fuJian;
 
 
-
-
+  public baoMingRequestUrl = 'http://218.29.137.134:22742/api/services/app/BaoMingXinXies/CreateOrEdit';
+  public time = new Date()
+  public baoMingRequestBody = {
+    'createTime': this.time.toISOString(),
+    'projectID': '',
+    'userId': 0,
+    'projectName': '',
+    'userName': ''
+  };
 
   swiperList: any[] = [
-    {
-      imgUrl: 'http://www.yyth.com.cn/uploadDir/jpg/20190111/1547185316391.jpg'
-    },
-    {
-      imgUrl: 'http://www.yyth.com.cn/uploadDir/jpg/20181229/1546050204895.jpg'
-    },
-    {
-      imgUrl: 'http://www.yyth.com.cn/uploadDir/jpg/20181229/1546061999592.jpg'
-    }
-  ];;
+    // {
+    //   imgUrl: 'http://www.yyth.com.cn/uploadDir/jpg/20190111/1547185316391.jpg'
+    // },
+    // {
+    //   imgUrl: 'http://www.yyth.com.cn/uploadDir/jpg/20181229/1546050204895.jpg'
+    // },
+    // {
+    //   imgUrl: 'http://www.yyth.com.cn/uploadDir/jpg/20181229/1546061999592.jpg'
+    // }
+  ];
 
   ngOnInit(): void {
     setTimeout(() => {
@@ -101,6 +113,9 @@ export class ZrxxDetailComponent implements OnInit {
       this.chuangJianRiQi = this.zrxx.chuangJianRiQi;
       this.tuDiXingZhi = this.zrxx.tuDiXingZhi;
       this.zhuanChuYongTu = this.zrxx.zhuanChuYongTu;
+      this.zhuanChuFangLeiXing = this.zrxx.zhuanChuFangLeiXing;
+      this.zhanShiTuPian = this.zrxx.zhanShiTuPian;
+
 
       this.zhuanChuFangMingCheng = this.zrxx.zhuanChuFangMingCheng;
       this.zhuanChuFang_dianHua = this.zrxx.dianHua;
@@ -119,9 +134,11 @@ export class ZrxxDetailComponent implements OnInit {
       this.zhangHuMingCheng = this.zrxx.zhangHuMingCheng;
       this.kaiHuYinHang = this.zrxx.kaiHuYinHang;
       this.jiaKuanHuaRuZhangHao = this.zrxx.jiaKuanHuaRuZhangHao;
+      this.fuJian = this.zrxx.fuJian;
 
 
       this.diKuaiList = this.zrxx.diKuaiList;
+      this.swiperList = this.zrxx.zhanShiTuPian
 
       // this.fuzhuowuList_mingCheng = this.zrxx.diKuaiList.fuzhuowuList.mingCheng;
       // this.fuzhuowuList_shuLiang = this.zrxx.diKuaiList.fuzhuowuList.shuLiang;
@@ -160,15 +177,26 @@ export class ZrxxDetailComponent implements OnInit {
     });
   }
   signUp() {
-    this.GetUsernameService.username.subscribe((user) => 
-      {this.user = user
-        g.global.xiangMuID = this.id;        
-        console.log(g.global.xiangMuID)
-      });
+    //登录成功拿到用户id
+    this.GetUsernameService.userId.subscribe(id => this.userId = id) 
+    //登录成功拿到用户名
+    this.GetUsernameService.username.subscribe(user => this.user = user);
+      this.baoMingRequestBody = {
+        'createTime': this.time.toISOString(),
+        'projectID': this.id,
+        'userId': this.userId,
+        'projectName': this.xiangMuMingCheng,
+        'userName': this.user
+      }
       if(this.user){
-        alert("你已经报名！")
+        //整合用户名和供应id，创建一个报名信息
+        this.http.post(this.baoMingRequestUrl,this.baoMingRequestBody).subscribe((res)=> {
+          if(res['success']){
+            alert("你已经报名！");
+          }
+        })
       }else{
-        this.isActive = true;
+        this.isActive =  this.isActive == true ? false: true;
       }
    
   }

@@ -40,9 +40,9 @@
 					<tbody>
 						<tr>
 							<td height="31" align="left" class="pos">当前位置：
-								<a >首页</a> &gt;
-                                <a>政策法规</a> &gt;
-                                <a>国家政策法规</a> &gt;
+								<a routerLink="/home">首页</a> &gt;
+								<a routerLink="/zcfg">政策法规</a> &gt;
+								<a routerLink="/gjzcfg">国家政策规章</a> &gt;
 							</td>
 						</tr>
 					</tbody>
@@ -60,7 +60,7 @@
 
 												<!-- <a [routerLink]="['/policydetail',policy.zhengCeFaGui.id]">{{policy.zhengCeFaGui.title}} </a> -->
 											</td>
-											<td width="90" align="center"></td>
+											<td width="90" align="center">{{policy.zhengCeFaGui.creationTime | date:"yyyy-MM-dd"}}</td>
 										</tr>
 									</tbody>
 								</table>
@@ -75,11 +75,9 @@
 
 							<td height="30" align="center">
 								<form action="" name="form1" id="form1">
-
 									<p-paginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10,20,30]"></p-paginator>
 								</form>
 								
-
 							</td>
 						</tr>
 					</tbody>
