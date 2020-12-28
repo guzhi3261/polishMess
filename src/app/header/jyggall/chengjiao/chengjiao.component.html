@@ -10,7 +10,29 @@
 					</tbody>
 				</table>
 <div style="background-color: #EDFCF8; height: 700px;">
-	<br>
+	<p-table [columns]="cols" [value]="cjxx" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5,10,15,20]"
+        totalRecords="totalRecords" pageLinks="3">
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th *ngFor="let col of columns">
+                    {{col.header}}
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData>
+            <tr>
+                <td height="28" class="num" style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" >{{rowData.chengJiaoXinXi.id}}</td>
+				<td align="center" class="tit TheId">
+					<a [routerLink] = "['/cjggdetail',rowData.chengJiaoXinXi.id]"  >
+						<div class="textCss div1" >&nbsp;{{rowData.chengJiaoXinXi.xiangMuMingCheng}}</div>
+					</a>
+				</td>
+				<td align="center"><span class="tit">{{rowData.chengJiaoXinXi.chengJiaoJiaGe}} {{rowData.chengJiaoXinXi.chengJiaoJiaGeDanWei | jgdwType}}</span></td>
+				<td class="num" align="center">{{rowData.chengJiaoXinXi.chengJiaoShiJian | date:'yyyy-MM-dd'}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+	<!-- <br>
 	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="show_data">
 		<tbody >			
 			<tr class="title">
@@ -29,9 +51,7 @@
 				<td align="center"><span class="tit">{{item.chengJiaoXinXi.chengJiaoJiaGe}} {{item.chengJiaoXinXi.chengJiaoJiaGeDanWei | jgdwType}}</span></td>
 				<td class="num" align="center">{{item.chengJiaoXinXi.chengJiaoShiJian | date:'yyyy-MM-dd'}}</td>
 			</tr>
-		
-			
 		</tbody>
-	</table>
+	</table> -->
 </div>
 

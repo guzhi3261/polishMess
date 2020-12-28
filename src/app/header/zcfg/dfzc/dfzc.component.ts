@@ -16,12 +16,17 @@ export class DfzcComponent implements OnInit {
 
 
 
+  totalRecords;
+
+
+
   constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
     this.http.get(this.baseUrl).subscribe((res: Response)=>{
-      this.policies = res['result']['items'].reverse();
+      this.policies = res['result']['items'];
       this.policyTop = this.policies[0];
+      this.totalRecords = res["result"].totalCount;
 
     })
   }

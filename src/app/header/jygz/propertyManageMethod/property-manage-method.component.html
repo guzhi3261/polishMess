@@ -2,15 +2,63 @@
     <tbody>
         <tr>
             <td height="31" align="left" class="pos">当前位置：
-                <a  routerLink = "/home">首页</a> &gt;
-                <a >交易规则</a> &gt;
+                <a routerLink="/home">首页</a> &gt;
+                <a>交易规则</a> &gt;
                 <a>交易管理办法</a> &gt;
 
             </td>
         </tr>
     </tbody>
 </table>
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<style>
+    ::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+        text-align: left;
+        background-color: #edfcf8;
+    }
+
+    ::ng-deep .p-paginator {
+        background: #edfcf8;
+    }
+
+    .p-datatable,
+    .p-component {
+        background-color: #edfcf8;
+    }
+
+    .pTable {
+        background-color: #edfcf8;
+    }
+
+    .rowDataCenter {
+        position: relative;
+        left: 15%;
+    }
+
+    .rowDataLeft {
+        position: relative;
+        left: 10%;
+    }
+
+    .rowDataRight {
+        position: relative;
+        right: 30%;
+    }
+</style>
+<p-table [value]="jygz" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5,10,15,20]" totalRecords="totalRecords"
+    pageLinks="3">
+
+    <ng-template pTemplate="body" let-rowData>
+        <tr>
+            <td align="center" class="tit TheId">
+                <a [routerLink]="['/jygz-detail',rowData.jiaoYiGuiZe.id]">
+                    <div class="textCss div1">&nbsp;{{rowData.jiaoYiGuiZe.title}}</div>
+                </a>
+            </td>
+
+        </tr>
+    </ng-template>
+</p-table>
+<!-- <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="729" height="560" align="center" valign="top" bgcolor="#edfcf8">
@@ -24,7 +72,7 @@
                                     <li><a [routerLink]="['/jygz-detail', item.jiaoYiGuiZe.id]">· {{item.jiaoYiGuiZe.title}}</a></li>
                                 </ul>
                             </td>
-                            <!-- <td width="90" align="center"></td> -->
+                            <td width="90" align="center"></td>
                         </tr>
 
                     </tbody>
@@ -32,4 +80,4 @@
             </td>
         </tr>
     </tbody>
-</table>
+</table> -->

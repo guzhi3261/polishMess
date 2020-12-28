@@ -9,7 +9,7 @@ import {TabViewModule} from 'primeng/tabview';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import {ProgressBarModule} from 'primeng/progressbar';
-import { CardModule, PaginatorModule } from 'primeng';
+import { CardModule, PaginatorModule, TableModule } from 'primeng';
 import {DropdownModule} from 'primeng/dropdown';
 
 import { TimeHeaderComponent } from './time-header/time-header.component';
@@ -72,6 +72,7 @@ import { xqTypePipe,jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeDa
     CardModule,
     DropdownModule,
     PaginatorModule,
+    TableModule
     
   ],
   exports:[

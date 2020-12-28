@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './file-download.component.html',
 })
 export class FileDownloadComponent implements OnInit {
+  totalRecords: any;
+  heTongList: [];
+  tuQuanList: [];
+  qiTaList: [];
 
   constructor(private http: HttpClient) { }
   public url = 'http://218.29.137.134:22742/api/services/app/ZiLiaoXiaZaies/GetAll';
@@ -20,8 +24,13 @@ export class FileDownloadComponent implements OnInit {
 
  getFileList(){
    this.http.get(this.url).subscribe((res : Response)=>{
-     this.fileList = res['result']['items'].reverse();
-     console.log(this.fileList)
+     this.heTongList = res['result']['items']
+        .filter(hetong => hetong.ziLiaoXiaZaiTypeZiLiaoXiaZaiTypeTitle == "合同模板" );
+     this.tuQuanList = res['result']['items']
+        .filter(tuquan => tuquan.ziLiaoXiaZaiTypeZiLiaoXiaZaiTypeTitle == "土地流转相关");
+     this.qiTaList = res['result']['items']
+        .filter(tuquan => tuquan.ziLiaoXiaZaiTypeZiLiaoXiaZaiTypeTitle == "其他");
+     this.totalRecords = res['result'].totalCount;
    })
  }
  getDownload(id){

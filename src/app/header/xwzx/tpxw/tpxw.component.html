@@ -55,34 +55,38 @@
 						<tbody>
 							<tr>
 								<td width="729" height="560" align="center" valign="top" bgcolor="#edfcf8">
-									<table  width="95%" border="0" cellspacing="0" cellpadding="0"  id="idData" style="margin:6px 0">
-										<tbody>
-											<tr *ngFor="let news of newses">
-												<td height="26" align="left">·
-													<a [routerLink]="['/newsdetail', news.news.id]">{{news.news.title}}</a>
+									<p-table [value]="newses" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5,10,15]"
+									totalRecords="totalRecords" >
+									
+										<ng-template pTemplate="body" let-rowData let-columns="columns">
+											<tr>
+												<td width=80%>
+												  {{rowData.news.title}}
 												</td>
-												<td width="90" align="center">{{news.news.creationTime | date:"yyyy-MM-dd"}}</td>
-												
-											</tr>			
+												<td text-align="right">
+													<span  class="rowDataSpan">
+														{{rowData.news.creationTime | date:"yyyy-MM-dd"}}
+													</span>
+												</td>
+											  </tr>											
+										</ng-template>										
 											
-											
-										</tbody>
-									</table>
+									</p-table>
 								</td>
 							</tr>
 						</tbody>
 					</table>
-					<table width="60%" align="right">
+					<!-- <table width="60%" align="right">
 						<tr><td><div id="barcon" name="barcon"></div></td></tr>
-					</table>
+					</table> -->
 					
-
-					<table bgcolor="#edfcf8" width="729" border="0" cellpadding="0" cellspacing="0">
+					<!-- <table bgcolor="#edfcf8" width="729" border="0" cellpadding="0" cellspacing="0">
 						<tbody>
 							<tr>
 
 								<td height="30" align="center">
 									<form action="" name="form1" id="form1">
+										<p-paginator *ngIf="total>pageSize" rows="{{ pageSize }}" totalRecords="{{ total }}" (onPageChange)="onPage($event)"></p-paginator>
 										<p-paginator 
 										#paginator
 										(onPageChange)="getTpxwNews($event)"
@@ -96,7 +100,7 @@
 								</td>
 							</tr>
 						</tbody>
-					</table>
+					</table> -->
 
 				</td>
 			</tr>

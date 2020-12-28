@@ -55,7 +55,23 @@
 						<tbody>
 							<tr>
 								<td width="729" height="560" align="center" valign="top" bgcolor="#edfcf8">
-									<table  width="95%" border="0" cellspacing="0" cellpadding="0"  id="idData" style="margin:6px 0">
+									<p-table [value]="newses" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5,10,15]"
+									totalRecords="totalRecords" >
+									
+										<ng-template pTemplate="body" let-rowData let-columns="columns">
+											<tr>
+												<td width=80%>
+												  {{rowData.news.title}}
+												</td>
+												<td align="right">
+													<span class="rowDataSpan" >
+														{{rowData.news.creationTime | date:"yyyy-MM-dd"}}
+													</span>
+												</td>
+											  </tr>											
+										</ng-template>
+									</p-table>
+									<!-- <table  width="95%" border="0" cellspacing="0" cellpadding="0"  id="idData" style="margin:6px 0">
 										<tbody>
                                             <tr *ngFor="let news of newses"> 
 												<td height="26" align="left">·
@@ -65,7 +81,7 @@
 											</tr>
 											
 										</tbody>
-									</table>
+									</table> -->
 								</td>
 							</tr>
 						</tbody>

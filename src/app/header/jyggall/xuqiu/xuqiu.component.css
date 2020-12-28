@@ -9,3 +9,28 @@ tr{
 }
 .show_data{
 }
+::ng-deep .p-datatable .p-datatable-tbody > tr > td{
+    text-align: left;
+    background-color: #edfcf8;
+}
+::ng-deep .p-paginator {
+    background: #edfcf8 ;
+    }
+ .p-datatable, .p-component {
+        background-color: #edfcf8;
+    }
+.pTable{
+        background-color: #edfcf8;
+    }
+    .rowDataCenter{
+        position: relative;
+        left: 15%;
+    }
+    .rowDataLeft{
+        position: relative;
+        left: 10%;
+    }
+    .rowDataRight{
+        position: relative;
+        right: 30%;
+    }

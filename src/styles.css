@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+::ng-deep .p-paginator {
+    background: #edfcf8 ;
+    }
+ .p-datatable, .p-component {
+        background-color: #edfcf8;
+    }
+.pTable{
+        background-color: #edfcf8;
+    }
+    ::ng-deep .p-datatable .p-datatable-tbody > tr > td{
+        text-align: left;
+        background-color: #edfcf8;
+    }
+    .rowDataSpan{
+        position: relative;
+        left: 40%;
+    }
+    ::ng-deep
+        .p-tabview .p-tabview-nav {
+            background: #edfcf8;
+    }

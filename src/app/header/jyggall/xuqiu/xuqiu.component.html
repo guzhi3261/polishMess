@@ -10,8 +10,33 @@
     </tbody>
 </table>
 <div style="background-color: #EDFCF8; height: 700px;">
-<br>
-    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="show_data">
+    <p-table [columns]="cols" [value]="xqxxList" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5,10,15,20]"
+    totalRecords="totalRecords" pageLinks="3">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns">
+                {{col.header}}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData>
+        <tr>
+            <td height="28" class="num" >{{rowData.xuQiuXinXi.id}}</td>
+                <td  class="tit">
+                    <a [routerLink]="['/xqxxdetail', rowData.xuQiuXinXi.id]" align="center">
+                        <div class=" rowDataRight" >&nbsp;
+                            {{rowData.xuQiuXinXi.xiangmumingcheng}}</div>
+                    </a>
+                </td>
+                <td >
+                    <span class="rowDataCenter">{{rowData.xuQiuXinXi.xuqiunianxian}}</span>
+                </td>
+                <td align="center"><span class="tit">{{rowData.xuQiuXinXi.zhuanruyongtu | xqType}}</span></td>
+                <td  align="center">{{rowData.xuQiuXinXi.creationTime|date:'yyyy-MM-dd'}}</td>
+        </tr>
+    </ng-template>
+</p-table>
+    <!-- <table width="100%" border="0" cellpadding="0" cellspacing="0" class="show_data">
         <tbody>
             <tr class="title">
                 <td width="140" height="25" align="center">项目编号</td>
@@ -36,5 +61,5 @@
         
             
         </tbody>
-    </table>
+    </table> -->
 </div>

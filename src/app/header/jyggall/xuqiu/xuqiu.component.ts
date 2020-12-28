@@ -26,11 +26,22 @@ export class XuqiuComponent implements OnInit {
   public xuqiufang: any ;
   public type: any ;
   public chuangJianRiQi: any ;
+  totalRecords: any;
+  cols: { field: string; header: string; }[];
+
   constructor(private http: HttpClient) { }
   ngOnInit(): void {
     this.http.get(this.baseUrl).subscribe((res: Response) => {
-      this.xqxxList = res['result']['items'].reverse(); 
+      this.xqxxList = res['result']['items'].reverse();
+      this.totalRecords = res["result"].totalCount;
     })
-  }
+    this.cols = [
+      { field: 'name', header: '项目编号' },
+      {field: 'author', header: '项目名称' },
+      { field: 'price', header: '需求年限' },   
+      { field: 'price', header: '用途' }  ,    
+      { field: 'price', header: '发布时间' }      
+  ];
+}
 
 }
