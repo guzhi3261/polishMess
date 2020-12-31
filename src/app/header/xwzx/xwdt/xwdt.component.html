@@ -61,7 +61,7 @@
 										<ng-template pTemplate="body" let-rowData let-columns="columns">
 											<tr>
 												<td width=80%>
-												  {{rowData.news.title}}
+													<a [routerLink]="['/newsdetail', rowData.news.id]">{{rowData.news.title}}</a>
 												</td>
 												<td align="right">
 													<span class="rowDataSpan" >

@@ -11,7 +11,7 @@ export class ZhuanrangComponent implements OnInit {
 
  
   // public baseUrl = "http://218.29.137.134:22742/api/services/app/GongYingXinXies/GetAll?ZhuanChuFangLeiXingFilter=-1&MaxResultCount=100";
-  public baseUrl = "http://218.29.137.134:22742/api/services/app/GongYingXinXies/GetAll?ZhuanChuFangLeiXingFilter=-1&JiaoYiFangShiFilter=-1&ZaiCiZhuanChuFangShiFilter=-1&DiLeiTypeFilter=-1&StatusFilter=3"
+  public baseUrl = "http://218.29.137.134:22742/api/services/app/GongYingXinXies/GetAll?ZhuanChuFangLeiXingFilter=-1&JiaoYiFangShiFilter=4&ZaiCiZhuanChuFangShiFilter=-1&DiLeiTypeFilter=-1&StatusFilter=3"
 
   public zrxx: any = [];
   public zrxxList: any = [];

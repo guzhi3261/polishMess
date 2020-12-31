@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./jingjiaxinxi.component.css']
 })
 export class JingjiaxinxiComponent implements OnInit {
-  public url = 'http://218.29.137.134:22742/api/services/app/JingJiaModels/GetAll';
+  public url = 'http://10.10.10.225:22742/api/services/app/JingJiaModels/GetAll?BDXX_JiaoYiFangShiFilter=-1&CQXX_ShiFouXuZuFilter=-1&StatusFilter=3';
   public jingjiaList ; 
   cols: { field: string; header: string; }[];
   totalRecords: any;
@@ -16,7 +16,7 @@ export class JingjiaxinxiComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get(this.url).subscribe( res => {
-      this.jingjiaList = res['result']['items'].reverse();
+      this.jingjiaList = res['result']['items'];
       this.totalRecords = res["result"].totalCount;
     })
     this.cols = [

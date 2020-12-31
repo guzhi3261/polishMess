@@ -8,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JjjyComponent implements OnInit {
 
-  public url = 'http://218.29.137.134:22742/api/services/app/JingJiaModels/GetAll?MaxResultCount=5'
+  public url = 'http://10.10.10.225:22742/api/services/app/JingJiaModels/GetAll?BDXX_JiaoYiFangShiFilter=-1&CQXX_ShiFouXuZuFilter=-1&StatusFilter=3&MaxResultCount=5'
   public jjxxList
   constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
     this.http.get(this.url).subscribe((res)=> {
-      this.jjxxList = res['result']['items'].reverse();
+      this.jjxxList = res['result']['items'];
     })
   }
 
