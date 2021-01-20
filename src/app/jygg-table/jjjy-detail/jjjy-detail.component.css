@@ -67,3 +67,15 @@ ul {
     margin-inline-end: 0px;
     padding-inline-start: 40px;
 }
+button{
+    text-align:center;
+    width:120px; 
+    height:30px; 
+    line-height:30px; 
+    font-size:15px; 
+    display:block; 
+    background:#FF6E00; 
+    color:#fff; 
+    margin-top:0px;
+    border: 0px #FF6E00;
+}

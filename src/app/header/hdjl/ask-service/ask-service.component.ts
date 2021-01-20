@@ -43,20 +43,20 @@ export class AskServiceComponent implements OnInit {
   save(){
     //先判断用是否登录    
     //登录成功拿到用户名
-    this.getUser.username.subscribe(user => this.user = user);
-    if(this.user){
-      this.hdjlForm.value.userName = this.user;
-      this.http.post(this.baseUrl,this.hdjlForm.value).subscribe(res => {
-        if(res['success']){
-          alert('您已经成功提交！')
-        }else{
-          alert('发生未知错误，请重试！')
-        }
-      })
-    }else{
-      this.isActive = this.isActive? false: true;
-    }
-    console.log(this.hdjlForm.value)
+    // this.getUser.username.subscribe(user => this.user = user);
+    // if(this.user){
+    //   this.hdjlForm.value.userName = this.user;
+    //   this.http.post(this.baseUrl,this.hdjlForm.value).subscribe(res => {
+    //     if(res['success']){
+    //       alert('您已经成功提交！')
+    //     }else{
+    //       alert('发生未知错误，请重试！')
+    //     }
+    //   })
+    // }else{
+    //   this.isActive = this.isActive? false: true;
+    // }
+    // console.log(this.hdjlForm.value)
     alert("您已经提交，请持续关注本页面等待管理员回复哟~")
     this.hdjlForm.reset();
   }

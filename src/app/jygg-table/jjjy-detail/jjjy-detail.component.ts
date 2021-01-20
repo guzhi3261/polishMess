@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { GetUsernameService } from 'src/app/model/get-username.service';
+
 
 @Component({
   selector: 'app-jjjy-detail',
@@ -12,7 +14,8 @@ export class JjjyDetailComponent implements OnInit {
   jjxx;
   public bianHao: string;
   public GongShiRiQi: string;
-  public JingPaiShiJian: string;
+  public JingPaiShiJian: any;
+  public JingPaiShiJianEnd: any;
   public BiaoDuanMiaoShu: string;
   public BaoMingFei: string;
   public BaoZhengJin: string;
@@ -20,7 +23,7 @@ export class JjjyDetailComponent implements OnInit {
   public BaoLiuJia: string;
   public DiJia: string;
   public JiaJiaFuDu: string;
-  public JiaoYiFangShi: string;
+  public JiaoYiFangShi: 0;
 
   public BaoMingShiJian: string;
   public ChengJiaoJiaoKuanJieZhiShiJian: string;
@@ -32,6 +35,8 @@ export class JjjyDetailComponent implements OnInit {
   public PingGuJiGou: string;
   public PingGuJiZhunRi: string;
   public PingGuZhi: string;
+
+  public jingJiaFangShi: 0;
 
   public DiZhi: string;
   public DengJiRiQi: string;
@@ -56,20 +61,60 @@ export class JjjyDetailComponent implements OnInit {
   public XingMing: string;
   public bwtr_LianXiDianHua: string;
   public GongZuoDanWei: string;
-  
-  
 
-  url = 'http://218.29.137.134:22742/api/services/app/JingJiaModels/GetJingJiaModelForEdit?Id=';
-  constructor(private http:HttpClient, protected activatedroute: ActivatedRoute, private route: Router) { 
+//附件下载
+  public cqxX_XiangMuShenPiXinXi: string;
+  public cqxX_CunMinDaiBiaoDaHuiYiJianBiao: string;
+  public fJ_YiXiangLiuRuFangChengNuoShu: string;
+  public fJ_ShouQuanWeiTuoShu: string;
+  public fJ_JiaoYiGongGao: string;
+  
+  
+  
+  jingjiaUrl = 'http://218.29.137.134:22742/api/services/app/JingJiaModels/GetJingJiaModelForEdit?Id=';
+  gongyingUrl = 'http://218.29.137.134:22742/api/services/app/GongYingXinXies/GetGongYingXinXiForEdit?Id=';
+  gyxx;
+  public jiaoNaXingShi: number;
+  public zhuanChuBegin: number;
+  public zhuanChuEnd: number;
+  public years: number;
+
+  userId: number;
+  user: string ;
+  isActive:boolean;
+
+  public time = new Date()
+  public baoMingRequestUrl = 'http://218.29.137.134:22742/api/services/app/BaoMingXinXies/CreateOrEdit';
+  public baoMingRequestBody = {
+    'projectID': '',
+    'userId': 0,
+    'projectName': '',
+    'createTime': this.time.toISOString(),
+    'userName': '',
+    "projectType": 0,
+    "status": 0,
+    "jingJiaKaiShiShiJian": this.time.toISOString(),
+    "jiaoYiFangShi": 0,
+    "jingJiaFangShi": 0,
+    "shiFouZhongBiao": true,
+    "jiaGe": 0,
+    
+  };
+  
+  constructor(
+    private http:HttpClient, 
+    protected activatedroute: ActivatedRoute, 
+    private route: Router, 
+    private GetUsernameService: GetUsernameService) { 
     this.id = this.activatedroute.snapshot.params['id'];
   }
 
   ngOnInit(): void {
-    this.http.get(this.url+this.id).subscribe(res => {
+    this.http.get(this.jingjiaUrl+this.id).subscribe(res => {
       this.jjxx = res['result']['jingJiaModel'];
       this.bianHao = this.jjxx.bdxX_BiaoDuanBianHao;
       this.GongShiRiQi = this.jjxx.bdxX_GongShiRiQi;
-      this.JingPaiShiJian = this.jjxx.bdxX_JingPaiShiJian;
+      this.JingPaiShiJian = new Date(this.jjxx.bdxX_JingPaiShiJian);
       this.BiaoDuanMiaoShu = this.jjxx.bdxX_BiaoDuanMiaoShu;
       this.BaoMingFei = this.jjxx.bdxX_BaoMingFei;
       this.BaoZhengJin = this.jjxx.bdxX_BaoZhengJin;
@@ -109,14 +154,57 @@ export class JjjyDetailComponent implements OnInit {
       this.lcf_LianXiRen = this.jjxx.lcF_LianXiRen;
       this.lcf_LianXiDianHua = this.jjxx.lcF_LianXiDianHua;
 
+      this.cqxX_XiangMuShenPiXinXi = this.jjxx.cqxX_XiangMuShenPiXinXi;
+      this.cqxX_CunMinDaiBiaoDaHuiYiJianBiao = this.jjxx.cqxX_CunMinDaiBiaoDaHuiYiJianBiao;
+      this.fJ_YiXiangLiuRuFangChengNuoShu = this.jjxx.fJ_YiXiangLiuRuFangChengNuoShu;
+      this.fJ_ShouQuanWeiTuoShu = this.jjxx.fJ_ShouQuanWeiTuoShu;
+      this.fJ_JiaoYiGongGao = this.jjxx.fJ_JiaoYiGongGao;
+
       this.XingMing = this.jjxx.bwtR_XingMing;
       this.bwtr_LianXiDianHua = this.jjxx.bwtR_LianXiDianHua;
       this.GongZuoDanWei = this.jjxx.bwtR_GongZuoDanWei;
+      this.JingPaiShiJianEnd = this.JingPaiShiJian.getTime() + 1000*60*30
+      this.http.get(this.gongyingUrl + this.bianHao).subscribe(res => {
+        this.gyxx = res['result'].gongYingXinXi;
+        this.jiaoNaXingShi = this.gyxx.jiaoNaXingShi;
+        this.zhuanChuBegin = new Date(this.gyxx.zhuanChuBegin).getFullYear();
+        this.zhuanChuEnd = new Date(this.gyxx.zhuanChuEnd).getFullYear();
+        this.years = this.zhuanChuEnd - this.zhuanChuBegin;
+        this.jingJiaFangShi = this.gyxx.jingJiaFangShi;;
 
-
-      
-
+      })
     })
+  }
+  signUp() {
+    //登录成功拿到用户id
+    this.GetUsernameService.userId.subscribe(id => this.userId = id) 
+    //登录成功拿到用户名
+    this.GetUsernameService.username.subscribe(user => this.user = user);
+      this.baoMingRequestBody = {
+        'projectID': this.id,
+        'userId': this.userId,
+        'projectName': this.BiaoDuanMiaoShu,
+        'createTime': this.time.toISOString(),
+        'userName': this.user,
+        "projectType": 2,
+        "status": 0,
+        "jingJiaKaiShiShiJian": this.time.toISOString(),
+        "jiaoYiFangShi": this.JiaoYiFangShi,
+        "jingJiaFangShi": this.jingJiaFangShi,
+        "shiFouZhongBiao": false,
+        "jiaGe": 0,       
+      }
+      if(this.user){
+        //整合用户名和供应id，创建一个报名信息
+        this.http.post(this.baoMingRequestUrl,this.baoMingRequestBody).subscribe((res)=> {
+          if(res['success']){
+            alert("你已经报名！");
+          }
+        })
+      }else{
+        this.isActive =  this.isActive == true ? false: true;
+      }
+   
   }
 
 }

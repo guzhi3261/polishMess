@@ -10,20 +10,22 @@
         <td height="176" valign="top" bgcolor="#FFFFFF">
             <table id="cjgglist" width="100%" border="0" cellspacing="0" cellpadding="0" class="jygg1">
                 <tr>
-                    <th class="TheId" >项目编号</th>
                     <th>项目名称</th>
+                    <th class="TheId" >成交价格</th>
                     <th width="185">交易地点</th>
+                    <th width="185">交易面积</th>
                     <th width="90">交易日期</th>
                 </tr>
 
                 <tr *ngFor="let item of cjxx; let i = index">
-                    <td height="28" class="num" >{{item.chengJiaoXinXi.id}}</td>
                     <td align="center" class="tit TheId" >
                         <a [routerLink] = "['/cjggdetail',item.chengJiaoXinXi.id]"  >
                             <div class="textCss div1" >&nbsp;{{item.chengJiaoXinXi.xiangMuMingCheng}}</div>
                         </a>
                     </td>
+                    <td height="28" class="num" align="center" >{{item.chengJiaoXinXi.chengJiaoJiaGe}} {{item.chengJiaoXinXi.chengJiaoJiaGeDanWei}} </td>
                     <td align="center"><span class="tit">{{item.chengJiaoXinXi.biaoDiQuYu}}</span></td>
+                    <td align="center"><span class="tit">{{item.chengJiaoXinXi.zhuanChuShuLiang}}</span></td>
                     <td align="center" class="num">{{item.chengJiaoXinXi.chengJiaoShiJian | date:'yyyy-MM-dd'}}</td>
                 </tr>
 

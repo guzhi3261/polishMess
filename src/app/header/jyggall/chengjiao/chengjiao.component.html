@@ -21,13 +21,14 @@
         </ng-template>
         <ng-template pTemplate="body" let-rowData>
             <tr>
-                <td height="28" class="num" style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" >{{rowData.chengJiaoXinXi.id}}</td>
 				<td align="center" class="tit TheId">
 					<a [routerLink] = "['/cjggdetail',rowData.chengJiaoXinXi.id]"  >
 						<div class="textCss div1" >&nbsp;{{rowData.chengJiaoXinXi.xiangMuMingCheng}}</div>
 					</a>
 				</td>
 				<td align="center"><span class="tit">{{rowData.chengJiaoXinXi.chengJiaoJiaGe}} {{rowData.chengJiaoXinXi.chengJiaoJiaGeDanWei | jgdwType}}</span></td>
+                <td height="28" class="num" style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" >{{rowData.chengJiaoXinXi.biaoDiQuYu}}</td>
+                <td height="28" class="num" style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" >{{rowData.chengJiaoXinXi.zhuanChuShuLiang}} 亩</td>
 				<td class="num" align="center">{{rowData.chengJiaoXinXi.chengJiaoShiJian | date:'yyyy-MM-dd'}}</td>
             </tr>
         </ng-template>

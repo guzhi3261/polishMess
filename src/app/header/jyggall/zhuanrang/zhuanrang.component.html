@@ -22,16 +22,21 @@
         </ng-template>
         <ng-template pTemplate="body" let-rowData>
             <tr>
-                <td height="28" class="num" style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
-                    {{rowData.gongYingXinXi.id}}</td>
                 <td align="center" class="tit">
                     <a [routerLink]="['/zrxxdetail', rowData.gongYingXinXi.id]">
                         <div class="textDiv overText">&nbsp;{{rowData.gongYingXinXi.xiangMuMingCheng}}</div>
                     </a>
                 </td>
-                <td align="center"><span
+                    <td align="center"><span
                         class="tit">{{rowData.gongYingXinXi.guaPaiJiaGe}}&nbsp;{{rowData.gongYingXinXi.guaPaiJiaGeDanWei
                         | jgdwType}}</span></td>
+                <td align="center" class="tit">                    
+                    <div class="textDiv overText">&nbsp;{{rowData.gongYingXinXi.faBuQuYu}}</div>                    
+                </td>
+                <td align="center" class="tit">                    
+                    <div class="textDiv overText">&nbsp;{{rowData.gongYingXinXi.status | status}}</div>                    
+                </td>               
+                
                 <td align="center" class="num">{{rowData.gongYingXinXi.chuangJianRiQi|date:'yyyy-MM-dd'}}</td>
             </tr>
         </ng-template>

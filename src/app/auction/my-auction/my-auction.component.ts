@@ -16,7 +16,7 @@ export class MyAuctionComponent implements OnInit {
   public userid: number;
   public myProject;
   public myProjectList = [];    //用户联系人
-  public url = 'http://218.29.137.134:22742/api/services/app/BaoMingXinXies/GetAll?UserIDFilter=';
+  public url = 'http://218.29.137.134:22742/api/services/app/BaoMingXinXies/GetAll?Filter=&ProjectTypeFilter=2&JiaoYiFangShiFilter=-1&JingJiaFangShiFilter=-1&StatusFilter=-1&ShiFouZhongBiaoFilter=-1';
 
   ngOnInit(): void {
     //通过服务获取用户id

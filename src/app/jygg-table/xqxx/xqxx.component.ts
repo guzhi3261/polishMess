@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class XqxxComponent implements OnInit {
 
-  public baseUrl = "http://218.29.137.134:22742/api/services/app/XuQiuXinXies/GetAll?xuqiufangFilter=-1&MaxResultCount=5";
+  public baseUrl = "http://218.29.137.134:22742/api/services/app/XuQiuXinXies/GetAll?Filter=&xuqiufangFilter=-1&DiLeiTypeFilter=-1&MaxResultCount=5";
   
   public xqxxList: any = [];
   public id: any ;
@@ -18,7 +18,7 @@ export class XqxxComponent implements OnInit {
   constructor(private http: HttpClient) { }
   ngOnInit(): void {
     this.http.get(this.baseUrl).subscribe((res: Response) => {
-      this.xqxxList = res['result']['items'].reverse();
+      this.xqxxList = res['result']['items'];
     })
   }
   

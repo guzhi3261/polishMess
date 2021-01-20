@@ -79,12 +79,21 @@ export class ZrxxDetailComponent implements OnInit {
 
   public baoMingRequestUrl = 'http://218.29.137.134:22742/api/services/app/BaoMingXinXies/CreateOrEdit';
   public time = new Date()
+  
   public baoMingRequestBody = {
-    'createTime': this.time.toISOString(),
     'projectID': '',
     'userId': 0,
     'projectName': '',
-    'userName': ''
+    'createTime': this.time.toISOString(),
+    'userName': '',
+    "projectType": 0,
+    "status": 0,
+    "jingJiaKaiShiShiJian": this.time.toISOString(),
+    "jiaoYiFangShi": 0,
+    "jingJiaFangShi": 0,
+    "shiFouZhongBiao": true,
+    "jiaGe": 0,
+    
   };
 
   swiperList: any[] = [
@@ -182,11 +191,18 @@ export class ZrxxDetailComponent implements OnInit {
     //登录成功拿到用户名
     this.GetUsernameService.username.subscribe(user => this.user = user);
       this.baoMingRequestBody = {
-        'createTime': this.time.toISOString(),
         'projectID': this.id,
         'userId': this.userId,
         'projectName': this.xiangMuMingCheng,
-        'userName': this.user
+        'createTime': this.time.toISOString(),
+        'userName': this.user,
+        "projectType": 1,
+        "status": 0,
+        "jingJiaKaiShiShiJian": this.time.toISOString(),
+        "jiaoYiFangShi": this.jiaoYiFangShi,
+        "jingJiaFangShi": 0,
+        "shiFouZhongBiao": false,
+        "jiaGe": this.guaPaiJiaGe,       
       }
       if(this.user){
         //整合用户名和供应id，创建一个报名信息

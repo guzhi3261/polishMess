@@ -10,20 +10,20 @@
         <td height="176"    valign="top" bgcolor="#FFFFFF">
             <table id="tzgglist" width="100%" border="0" cellspacing="0" cellpadding="0" class="jygg1">
                 <tr>
-                    <th width="15%" height="30">标段编号</th>
                     <th width="20%">项目名称</th>
+                    <th width="15%" height="30">项目编号</th>
                     <th width="10%">竞价方式</th>
                     <th width='15%'>报名截止时间</th>
                     <th width="15%" >竞价开始时间</th>
                 </tr>
 
                 <tr *ngFor="let item of jjxxList ;">
-                    <td height="28" class="num xmmcrow" align="center" >&nbsp;{{item.jingJiaModel.bdxX_BiaoDuanBianHao}}</td>
                     <td align="center" class="tit" > 
                         <a [routerLink]="['/jjjydetail', item.jingJiaModel.id]">
                             <div class="xmmcrow" >&nbsp;{{item.jingJiaModel.bdxX_BiaoDuanMiaoShu}}</div>
                         </a>
                     </td>
+                    <td height="28" class="num xmmcrow" align="center" >&nbsp;{{item.jingJiaModel.bdxX_BiaoDuanBianHao}}</td>
                     <td align="center" >{{item.jingJiaModel.bdxX_JiaoYiFangShi | jjfsType}}</td>
                     <td align="center"  class="num">{{item.jingJiaModel.bmxX_BaoMingShiJian|date:'yyyy-MM-dd'}}</td>
                     <td align="center" >{{item.jingJiaModel.bdxX_JingPaiShiJian|date:'yyyy-MM-dd'}}</td>

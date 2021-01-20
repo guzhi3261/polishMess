@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./jingjiaxinxi.component.css']
 })
 export class JingjiaxinxiComponent implements OnInit {
-  public url = 'http://10.10.10.225:22742/api/services/app/JingJiaModels/GetAll?BDXX_JiaoYiFangShiFilter=-1&CQXX_ShiFouXuZuFilter=-1&StatusFilter=3';
+  public url = 'http://218.29.137.134:22742/api/services/app/JingJiaModels/GetAll?Filter=&BDXX_JiaoYiFangShiFilter=-1&CQXX_ShiFouXuZuFilter=-1&StatusFilter=3&SkipCount=0';
   public jingjiaList ; 
   cols: { field: string; header: string; }[];
   totalRecords: any;

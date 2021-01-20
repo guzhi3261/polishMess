@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Router } from '@angular/router';
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-regist',
@@ -52,18 +54,20 @@ export class RegistComponent implements OnInit {
     };
    if(this.psw==this.pswAgain){
     this.verific = false;
-     this.http.post(this.baseUrl, this.requestBody, this.httpOptions).subscribe((res) => {
+     this.http.post(this.baseUrl, this.requestBody, this.httpOptions)
+     .pipe(
+       catchError(err => of(alert(err.error.error.message)))
+     )
+     .subscribe((res) => {
        if (res[ 'success']) {
          alert("注册成功，请登录");
          this.router.navigate(['/login']);
-       } else {
-         alert("出现未知错误，请重试");
-       }
-       
+       }            
      })        
    } else {
      this.verific = true;
      alert("密码输入不一致，请重新输入")
    }
   }
+  
 }

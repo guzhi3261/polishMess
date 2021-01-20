@@ -40,7 +40,7 @@ import { JygzDetailComponent } from './jygz/jygz-detail/jygz-detail.component';
 import { AskServiceComponent } from './hdjl/ask-service/ask-service.component';
 import { CommonAskComponent } from './hdjl/common-ask/common-ask.component';
 import { LiteLoginComponent } from '../common/lite-login/lite-login.component';
-import { xqTypePipe,jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeDanWeiPipe, zhiFuFangShiPipe, qiManChuLiPipe, jiaoNaXingShiPipe, tuDiXingZhiPipe, zhuanRangFangTypePipe, xuQiuFangTypePipe, } from '../model/dataPipe.model';
+import { xqTypePipe,jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeDanWeiPipe, zhiFuFangShiPipe, qiManChuLiPipe, jiaoNaXingShiPipe, tuDiXingZhiPipe, zhuanRangFangTypePipe, xuQiuFangTypePipe, statusPipe, jingJiaFangXiangPipe } from '../model/dataPipe.model';
 
 
 @NgModule({
@@ -57,7 +57,8 @@ import { xqTypePipe,jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeDa
     LxwmComponent,
     JyggAllComponent, ZhuanrangComponent, XuqiuComponent, ChengjiaoComponent,JingjiaxinxiComponent,
     PropertyManageMethodComponent,ContactVisioComponent,FileDownloadComponent, JygzDetailComponent, AskServiceComponent, CommonAskComponent, 
-    xqTypePipe, jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeDanWeiPipe, zhiFuFangShiPipe, qiManChuLiPipe, jiaoNaXingShiPipe, tuDiXingZhiPipe, zhuanRangFangTypePipe, xuQiuFangTypePipe
+    xqTypePipe, jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeDanWeiPipe, zhiFuFangShiPipe, qiManChuLiPipe, jiaoNaXingShiPipe, 
+    tuDiXingZhiPipe, zhuanRangFangTypePipe, xuQiuFangTypePipe, statusPipe, jingJiaFangXiangPipe
 
     ],
   imports: [
@@ -79,7 +80,8 @@ import { xqTypePipe,jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeDa
     TimeHeaderComponent,
     HeaderComponent,
     LiteLoginComponent,
-    xqTypePipe, jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeDanWeiPipe, zhiFuFangShiPipe, qiManChuLiPipe, jiaoNaXingShiPipe, tuDiXingZhiPipe, zhuanRangFangTypePipe, xuQiuFangTypePipe
+    xqTypePipe, jingJiaFangShiPipe, booleanPipe,zhuanChuFangShiPipe, jiaGeDanWeiPipe, zhiFuFangShiPipe, 
+    qiManChuLiPipe, jiaoNaXingShiPipe, tuDiXingZhiPipe, zhuanRangFangTypePipe, xuQiuFangTypePipe, statusPipe, jingJiaFangXiangPipe
 
 
   ]

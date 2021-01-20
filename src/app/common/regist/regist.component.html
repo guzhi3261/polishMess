@@ -11,13 +11,13 @@
     <div class="content usercenter">
         <p-tabView styleClass = "pTabPanel">
             <p-tabPanel header="个人用户">
-                <form (ngSubmit)="register()">
+                <form>
                     <div class="p-grid p-fluid">
                         <div class="p-col-12 p-md-6">
                             <div class="p-inputgroup">
                                 <label ><span style="color: red;">* </span>用户名:</label>
                                 <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-                                <input type="text" pInputText placeholder="用户名" [(ngModel)]="userName" name="userName">   
+                                <input type="text" pInputText placeholder="用户名只能包含数字和字母" [(ngModel)]="userName" name="userName">   
                             </div>
                         </div>
                         <br>
@@ -33,7 +33,7 @@
                             <div class="p-inputgroup">
                                 <label ><span style="color: red;">* </span>确认密码:</label>
                                 <span class="p-inputgroup-addon"><i class="pi pi-eye-slash"></i></span>
-                                <input type="text" pInputText placeholder="请重新输入密码" [(ngModel)]="pswAgain"name="pswAgain">      
+                                <input type="password" pInputText placeholder="请重新输入密码" [(ngModel)]="pswAgain"name="pswAgain">      
                             </div>
                         </div>
                         <div style="border-bottom:1px solid #ccc; height:18px; width:90%; margin:0 auto"></div>
@@ -86,20 +86,20 @@
                         </div>
                     </div>
                     <br>
-                    <button type="submit" class="lbt">注册</button>
+                    <button (click)="register()" class="lbt">注册</button>
                 </form>
                 
                 
             </p-tabPanel>
 
             <p-tabPanel header="单位用户">
-                <form (ngSubmit)="register()">
+                <form>
                     <div class="p-grid p-fluid">
                         <div class="p-col-12 p-md-6">
                             <div class="p-inputgroup">
                                 <label ><span style="color: red;">* </span>用户名:</label>
                                 <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-                                <input type="text" pInputText placeholder="用户名" [(ngModel)]="userName" name="userName">   
+                                <input type="text" pInputText placeholder="用户名只能包含数字和字母" [(ngModel)]="userName" name="userName">   
                             </div>
                         </div>
                         <br>
@@ -168,7 +168,7 @@
                         </div>
                     </div>
                     <br>
-                    <button type="submit" class="lbt">注册</button>
+                    <button (click)="register()" class="lbt">注册</button>
                 </form>
                 
                 

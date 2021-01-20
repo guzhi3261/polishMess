@@ -10,20 +10,20 @@
         <td height="176"    valign="top" bgcolor="#FFFFFF">
             <table width="100%" border="0" cellspacing="0" cellpadding="0" class="jygg1 xqxx">
                 <tr>
-                    <th width="15%" height="30">项目编号</th>
                     <th width="20%">项目名称</th>
+                    <th width="15%" height="30">项目编号</th>
                     <th width="10%">需求年限</th>
                     <th width="15%" >用途</th>
                     <th width='15%'>发布时间</th>
                 </tr>
 
                 <tr *ngFor="let item of xqxxList">
-                    <td height="28" class="num xmmcrow" align="center">&nbsp;{{item.xuQiuXinXi.id}}</td>
                     <td align="center" class="tit">
                         <a [routerLink]="['/xqxxdetail', item.xuQiuXinXi.id]" align="center">
                             <div class="xmmcrow" >&nbsp;{{item.xuQiuXinXi.xiuqiumingcheng}}</div>
                         </a>
                     </td>
+                    <td height="28" class="num xmmcrow" align="center">&nbsp;{{item.xuQiuXinXi.id}}</td>
                     <td align="center">{{item.xuQiuXinXi.xuqiunianxian}}</td>
                     <td align="center" class="num">{{item.xuQiuXinXi.zhuanruyongtu | xqType}}</td>
                     <td align="center">{{item.xuQiuXinXi.creationTime|date:'yyyy-MM-dd'}}</td>

@@ -27,15 +27,29 @@ export class xqTypePipe implements PipeTransform{
 export class jingJiaFangShiPipe implements PipeTransform{
     transform(value): string{
         if(value == 0){            
-            return "自由竞价";
+            return "公开竞价";
         }else if(value ==1){
-            return "阶梯竞价"
+            return "黑盒竞价"
         }else if(value == 2){
             return "拍卖"
         }else if(value == 3){
             return "招投标"
         }else{
-            return "其他"
+            
+            return "协商"
+        }
+        
+    }
+}
+// 竞价方式
+@Pipe({ name: 'jjfxType' })
+
+export class jingJiaFangXiangPipe implements PipeTransform{
+    transform(value): string{
+        if(value == 0){            
+            return "正向竞价";
+        }else {
+            return "反向竞价"
         }
         
     }
@@ -174,6 +188,34 @@ export class xuQiuFangTypePipe implements PipeTransform{
             return "个人"
         }else{
             return "企业"
+        }        
+    }
+}
+// 状态
+@Pipe({ name: 'status' })
+
+export class statusPipe implements PipeTransform{
+    transform(value): string{
+        if(value == 0){            
+            return "已录入";
+        }else if(value ==1){
+            return "申请审核"
+        }else if(value ==2){
+            return "申请发布"
+        }else if(value ==3){
+            return "已发布"
+        }else if(value ==4){
+            return "已驳回"
+        }else if(value ==5){
+            return "已摘牌"
+        }else if(value ==6){
+            return "竞价"
+        }else if(value ==7){
+            return "竞价结束"
+        }else if(value ==8){
+            return "终止转让"
+        }else{
+            return "成交"
         }        
     }
 }

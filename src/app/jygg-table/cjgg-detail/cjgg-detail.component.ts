@@ -21,7 +21,16 @@ export class CjggDetailComponent implements OnInit {
       public chengJiaoJiaGe: string;
       public shouRangFang: string;
       public zhuanChuFang: string;
+      public liuZhuanFangShi: string;
+      public jiaoYiFangShi: string;
       public chengJiaoJiaGeDanWei: string;
+      public beiZhu: string;
+      public zhuanChuQiXianQi: number;
+      public zhuanChuQiXianZhi: number;
+      public chengJiaoShiJian: Date;
+      public status: number;
+      public years: number;
+      public zhuanChuShuLiang: number;
     swiperList: any [] = [];
 
 
@@ -47,7 +56,16 @@ export class CjggDetailComponent implements OnInit {
         this.chengJiaoJiaGe = this.cjxx.chengJiaoJiaGe;
         this.shouRangFang = this.cjxx.shouRangFang;
         this.zhuanChuFang = this.cjxx.zhuanChuFang;
+        this.liuZhuanFangShi = this.cjxx.liuZhuanFangShi;
+        this.jiaoYiFangShi = this.cjxx.jiaoYiFangShi;
         this.chengJiaoJiaGeDanWei = this.cjxx.chengJiaoJiaGeDanWei;
+        this.chengJiaoShiJian = this.cjxx.chengJiaoShiJian;
+        this.beiZhu = this.cjxx.beiZhu;
+        this.status = this.cjxx.status;
+        this.status = this.cjxx.zhuanChuShuLiang;
+        this.zhuanChuQiXianQi = new Date(this.cjxx.zhuanChuQiXianQi).getFullYear();
+        this.zhuanChuQiXianZhi = new Date(this.cjxx.zhuanChuQiXianZhi).getFullYear();
+        this.years = this.zhuanChuQiXianZhi - this.zhuanChuQiXianQi;
         console.log(this.cjxx);
     });
   }

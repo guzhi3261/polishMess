@@ -58,7 +58,7 @@
                             </tr>
                             <tr>
                                 <td width="100" align="left" height="30">转出方式：</td>
-                                <td height="30" align="left" colspan="3">涉农资金项目</td>
+                                <td height="30" align="left" colspan="3">{{liuZhuanFangShi | zcfsType}} </td>
                             </tr>
                             <tr>
                             </tr>
@@ -68,25 +68,25 @@
                                     交易方式：
                                 </td>
                                 <td height="30" align="left" colspan="3">
-
+                                    {{jiaoYiFangShi | jjfsType}}
                                 </td>
                             </tr>
                             <tr>
                                 <td width="100" align="left" height="30">乡镇（街道）:</td>
                                 <td height="30" align="left" colspan="3">{{biaoDiQuYu}}</td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td width="100" align="left" height="30">村（社区）:</td>
                                 <td height="30" align="left" colspan="3">仁寿社区</td>
-                            </tr>
-                            <tr>
+                            </tr> -->
+                            <!-- <tr>
                                 <td width="100" align="left" height="30">组别：</td>
                                 <td height="30" align="left" colspan="3"></td>
-                            </tr>
-                            <tr>
+                            </tr> -->
+                            <!-- <tr>
                                 <td width="100" align="left" height="30">公示日期：</td>
                                 <td height="30" align="left" colspan="3">2020-09-01</td>
-                            </tr>
+                            </tr> -->
 
 
                         </tbody>
@@ -105,7 +105,7 @@
                             <tbody>
                                 <tr>
                                     <td height="20" align="left"
-                                        style="font-size:17px; font-weight:bold; color:#222; padding-top:5px">产权信息</td>
+                                        style="font-size:17px; font-weight:bold; color:#222; padding-top:5px">成交信息</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -115,31 +115,29 @@
                             style="table-layout:fixed;word-wrap:break-word;word-break:break-all;background:#ffffff">
                             <tbody>
                                 <tr>
-                                    <td align="left" colspan="3"><span>成交时间：</span>2020-09-01</td>
+                                    <td align="left" colspan="3"><span>成交时间：</span> {{chengJiaoShiJian | date:'yyyy-MM-dd'}} </td>
                                 </tr>
-                                <tr>
+                                <tr hidden>
                                     <td align="left" colspan="3"><span>项目底价：</span>
                                         {{chengJiaoJiaGe}} &nbsp;{{chengJiaoJiaGeDanWei}}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="left"><span>建设单位（受让方）：</span> {{zhuanChuFang }}</td>
+                                    <td align="left"><span>建设单位（受让方）：</span> {{shouRangFang }}</td>
                                     <td align="left" colspan="2"><span>预算总额：</span>{{chengJiaoJiaGe}}&nbsp;{{chengJiaoJiaGeDanWei}}</td>
                                 </tr>
                                 <tr>
-                                    <td align="left" colspan="3"><span>标的区域：</span>
-
-                                        其他&nbsp;
+                                    <td align="left" colspan="3"><span>标的区域：</span>{{biaoDiQuYu}}
                                     </td>
                                 </tr>
 
-                                <tr>
+                                <!-- <tr>
                                     <td align="left" colspan="3"><span>项目周期：</span> 自合同签订后5个工作日内。
                                     </td>
-                                </tr>
+                                </tr> -->
 
                                 <tr style="display:none;">
-                                    <td align="left" style="padding-bottom:10px;" colspan="3"><span>补充说明：</span></td>
+                                    <td align="left" style="padding-bottom:10px;" colspan="3"><span>补充说明：</span> </td>
 
                                 </tr>
                                 <tr>
@@ -190,48 +188,41 @@
                             <tbody>
 
                                 <tr>
-                                    <td align="left" width="50%"><span>标段编号：</span>1</td>
+                                    <td align="left" width="50%"><span>项目编号：</span>{{id}} </td>
                                     <td align="left" width="50%"></td>
                                 </tr>
                                 <tr>
-                                    <td align="left" colspan="2"><span>标段描述：</span>工程概况：
-                                        具体要求如下：
-                                        屋顶要求全部用黑大瓦重新盖顶，约30个平方；内里用三角板封面,要求刷白；配套水电。
-                                        工程造价：5070元（含税价）。</td>
+                                    <td align="left" colspan="2"><span>标段描述：</span> {{beiZhu}} </td>
                                 </tr>
 
                                 <tr>
-                                    <td align="left" colspan="2"><span>转出方</span>¥&nbsp;0</td>
+                                    <td align="left" colspan="2"><span>转出方</span>{{zhuanChuFang}}</td>
                                 </tr>
                                 <tr>
                                     <td align="left" colspan="2"><span>保证金：</span>¥&nbsp;0</td>
                                 </tr>
 
-                                <tr>
+                                <tr hidden>
                                     <td align="left" colspan="2"><span>最高限价：</span>小写&nbsp;
-                                       {{ chengJiaoJiaGe}}&nbsp;
-                                       {{chengJiaoJiaGeDanWei}}&nbsp;</td>
+                                       {{ chengJiaoJiaGe}} {{chengJiaoJiaGeDanWei}}&nbsp;</td>
                                 </tr>
 
 
                                 <tr>
-                                    <td align="left"><span>转出期限：</span> 协商
-
+                                    <td align="left"><span>转出期限：</span> {{years}}年
 
                                     </td>
 
-                                    <td align="left"><span>转出面积/数量：</span>
-                                        转账汇款&nbsp;
-                                    </td>
+                                    <td align="left"><span>转出面积/数量：</span> {{zhuanChuShuLiang}}亩</td>
                                 </tr>
 
                                 <!-- 成交 -->
                                 <tr>
-                                    <td align="left"><span>成交情况：</span>
+                                    <td align="left" colspan="2"><span>项目状态：</span>
+                                        {{status | status}}
+                                    </td>
 
-                                        成功</td>
-
-                                    <td align="left"><span>成交日期：</span>2020-09-01</td>
+                                    <!-- <td align="left"><span>成交日期：</span>{{chengJiaoShiJian}}</td> -->
 
                                 </tr>
 

@@ -34,24 +34,7 @@
         <!--这一行要实现图片轮换出现 -->
         <tr>
             <td width="362" height="278" valign="top" style="padding-top:7px;">
-                <div class="swiper-container" >
-                    <div class="swiper-wrapper">
-                        <ng-container *ngFor="let item of swiperList">
-                            <div class="swiper-slide" >
-                                <img [src]="item.imgUrl" width="362px" height="278" alt=""> 
-                            </div>                            
-                        </ng-container>
-                    </div>                    
-                    <!-- 如果需要分页器-->
-                    <!-- <div class="swiper-pagination"></div> -->
-                    
-                    <!-- 如果需要导航按钮 -->
-                    <!-- <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div> -->
-                    
-                    <!-- 如果需要滚动条 -->
-                    <div class="swiper-scrollbar"></div>
-                </div>
+                <app-swipper-pic></app-swipper-pic>
             </td>
             <!-- JavaScript的showDiv方法未实现-->
             <td width="386" align="center" valign="top" style="padding-top:7px;" >
