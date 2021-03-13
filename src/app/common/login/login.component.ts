@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
       //通过getUser服务将用户名和用户id保存，用于获取用户报名信息
       this.getUser.getUser(this.userName,this.userId);
       //进入竞价路由
-      this.router.navigate(['/auction'])   
+      this.router.navigate(['/auction/myAuction'])   
       console.log(res)
     },
     error=>{

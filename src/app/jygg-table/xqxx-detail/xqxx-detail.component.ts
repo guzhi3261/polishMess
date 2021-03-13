@@ -11,6 +11,7 @@ import { GetUsernameService } from 'src/app/model/get-username.service';
 export class XqxxDetailComponent implements OnInit {
 
   id;
+  xiangMuBianHao;
   userId: number;
   user:string;
   isActive: boolean = false;
@@ -64,7 +65,8 @@ export class XqxxDetailComponent implements OnInit {
   ngOnInit(): void {
     this.http.get(this.contentUrl + this.id).subscribe((res) => {
       this.xqxxList = res['result']['xuQiuXinXi'];
-      this.xuqiufang = this.xqxxList.xuqiufang
+      this.xuqiufang = this.xqxxList.xuqiufang;
+      this.xiangMuBianHao = this.xqxxList.xiangMuBianHao;
       this.xiuqiumingcheng = this.xqxxList.xiuqiumingcheng
       this.xiangmumingcheng = this.xqxxList.xiangmumingcheng
       this.phone = this.xqxxList.phone;
@@ -91,7 +93,7 @@ export class XqxxDetailComponent implements OnInit {
 
         'projectID': this.id,
         'userId': this.userId,
-        'projectName': this.xiuqiumingcheng,
+        'projectName': this.xiangmumingcheng,
         'createTime': this.time.toISOString(),
         'userName': this.user,
         "projectType": 0,

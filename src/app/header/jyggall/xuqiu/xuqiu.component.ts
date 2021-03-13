@@ -19,10 +19,11 @@ export class XuqiuComponent implements OnInit {
 
   //   })
   // }
-  public baseUrl = "http://218.29.137.134:22742/api/services/app/XuQiuXinXies/GetAll?xuqiufangFilter=-1&MaxResultCount=500";
+  public baseUrl = "http://218.29.137.134:22742/api/services/app/XuQiuXinXies/GetAll?xuqiufangFilter=-1&DiLeiTypeFilter=-1&StatusFilter=3";
   
   public xqxxList: any = [];
   public id: any ;
+  public xiangMuBianHao: any ;
   public xuqiufang: any ;
   public type: any ;
   public chuangJianRiQi: any ;

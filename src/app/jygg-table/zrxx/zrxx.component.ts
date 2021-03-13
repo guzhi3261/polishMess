@@ -24,7 +24,7 @@ export class ZrxxComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get(this.baseUrl).subscribe((res: Response) => {
-      this.zrxx = res['result']['items'].reverse();  
+      this.zrxx = res['result']['items'];  
     })
   }
   

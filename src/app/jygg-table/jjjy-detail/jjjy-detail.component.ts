@@ -12,6 +12,8 @@ import { GetUsernameService } from 'src/app/model/get-username.service';
 export class JjjyDetailComponent implements OnInit {
   id;
   jjxx;
+  //本地缓存
+  public storage ;
   public bianHao: string;
   public GongShiRiQi: string;
   public JingPaiShiJian: any;
@@ -61,6 +63,7 @@ export class JjjyDetailComponent implements OnInit {
   public XingMing: string;
   public bwtr_LianXiDianHua: string;
   public GongZuoDanWei: string;
+  public jjBianHao: string;
 
 //附件下载
   public cqxX_XiangMuShenPiXinXi: string;
@@ -73,11 +76,14 @@ export class JjjyDetailComponent implements OnInit {
   
   jingjiaUrl = 'http://218.29.137.134:22742/api/services/app/JingJiaModels/GetJingJiaModelForEdit?Id=';
   gongyingUrl = 'http://218.29.137.134:22742/api/services/app/GongYingXinXies/GetGongYingXinXiForEdit?Id=';
+  baoMingGetAllUrlA = 'http://218.29.137.134:22742/api/services/app/BaoMingXinXies/GetAll?UserIDFilter='
+  baoMingGetAllUrlB = '&ProjectTypeFilter=2&JiaoYiFangShiFilter=-1&JingJiaFangShiFilter=-1&StatusFilter=-1&ShiFouZhongBiaoFilter=-1&ProjectIDFilter='
   gyxx;
   public jiaoNaXingShi: number;
   public zhuanChuBegin: number;
   public zhuanChuEnd: number;
   public years: number;
+
 
   userId: number;
   user: string ;
@@ -89,6 +95,7 @@ export class JjjyDetailComponent implements OnInit {
     'projectID': '',
     'userId': 0,
     'projectName': '',
+    'xiangMuBianHao':'',
     'createTime': this.time.toISOString(),
     'userName': '',
     "projectType": 0,
@@ -98,6 +105,7 @@ export class JjjyDetailComponent implements OnInit {
     "jingJiaFangShi": 0,
     "shiFouZhongBiao": true,
     "jiaGe": 0,
+    "id":null
     
   };
   
@@ -110,9 +118,11 @@ export class JjjyDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
     this.http.get(this.jingjiaUrl+this.id).subscribe(res => {
       this.jjxx = res['result']['jingJiaModel'];
-      this.bianHao = this.jjxx.bdxX_BiaoDuanBianHao;
+      this.bianHao = this.jjxx.xiangMuBianHao;
+      this.jjBianHao = this.jjxx.bdxx_bdxX_BiaoDuanBianHao
       this.GongShiRiQi = this.jjxx.bdxX_GongShiRiQi;
       this.JingPaiShiJian = new Date(this.jjxx.bdxX_JingPaiShiJian);
       this.BiaoDuanMiaoShu = this.jjxx.bdxX_BiaoDuanMiaoShu;
@@ -164,7 +174,7 @@ export class JjjyDetailComponent implements OnInit {
       this.bwtr_LianXiDianHua = this.jjxx.bwtR_LianXiDianHua;
       this.GongZuoDanWei = this.jjxx.bwtR_GongZuoDanWei;
       this.JingPaiShiJianEnd = this.JingPaiShiJian.getTime() + 1000*60*30
-      this.http.get(this.gongyingUrl + this.bianHao).subscribe(res => {
+      this.http.get(this.gongyingUrl + this.jjBianHao).subscribe(res => {
         this.gyxx = res['result'].gongYingXinXi;
         this.jiaoNaXingShi = this.gyxx.jiaoNaXingShi;
         this.zhuanChuBegin = new Date(this.gyxx.zhuanChuBegin).getFullYear();
@@ -177,13 +187,20 @@ export class JjjyDetailComponent implements OnInit {
   }
   signUp() {
     //登录成功拿到用户id
-    this.GetUsernameService.userId.subscribe(id => this.userId = id) 
+    this.GetUsernameService.userId.subscribe(id => {
+      // this.storage.userId = id
+      this.userId = id
+    })   
+
     //登录成功拿到用户名
-    this.GetUsernameService.username.subscribe(user => this.user = user);
+    this.GetUsernameService.username.subscribe(user => {
+      // this.storage.user = user;
+      this.user = user});
       this.baoMingRequestBody = {
         'projectID': this.id,
         'userId': this.userId,
         'projectName': this.BiaoDuanMiaoShu,
+        'xiangMuBianHao':this.bianHao,
         'createTime': this.time.toISOString(),
         'userName': this.user,
         "projectType": 2,
@@ -192,13 +209,23 @@ export class JjjyDetailComponent implements OnInit {
         "jiaoYiFangShi": this.JiaoYiFangShi,
         "jingJiaFangShi": this.jingJiaFangShi,
         "shiFouZhongBiao": false,
-        "jiaGe": 0,       
+        "jiaGe": 0,   
+        "id":null    
       }
       if(this.user){
         //整合用户名和供应id，创建一个报名信息
-        this.http.post(this.baoMingRequestUrl,this.baoMingRequestBody).subscribe((res)=> {
-          if(res['success']){
-            alert("你已经报名！");
+        //判断是否已经报名
+        this.http.get(this.baoMingGetAllUrlA + this.userId + this.baoMingGetAllUrlB +this.id).subscribe(res => {
+          if(res['result'].totalCount == 0){
+
+            this.http.post(this.baoMingRequestUrl,this.baoMingRequestBody).subscribe((res)=> {
+              if(res['success']){
+                alert("你已经报名！");
+              }
+    
+            })
+          }else {
+            alert("不可以重复报名")
           }
         })
       }else{

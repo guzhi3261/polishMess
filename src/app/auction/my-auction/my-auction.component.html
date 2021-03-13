@@ -7,11 +7,12 @@
         
     </tr>
     <tr *ngFor="let item of myProjectList">
-        <td>{{item.baoMingXinXi.projectID}}</td>
+        <td>{{item.baoMingXinXi.xiangMuBianHao}}</td>
         <td>{{item.baoMingXinXi.projectName}}</td>
         <td>
             <button pButton class="p-button-warning" label="缴纳保证金"></button>
-            <button pButton class="p-button-success" routerLink="/auction/auctioning" label="进入竞拍"></button>
+            <button pButton class="p-button-success" [routerLink]="['/auction/auctioning', item.baoMingXinXi.projectID]"  label="进入竞拍"></button>
+            <button pButton class="p-button-danger"  label="取消报名" (click) = "cancelSign(item.baoMingXinXi.id,myProjectList)"></button>
         </td>
 
     </tr>

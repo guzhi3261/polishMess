@@ -83,7 +83,7 @@ const routes: Routes = [
   {path: 'auction', component: AuctionComponent,children:[
     {path: 'myAuction', component: MyAuctionComponent},
     {path: 'auctionRule', component: AuctionRuleComponent},
-    {path: 'auctioning', component: AuctioningComponent}
+    {path: 'auctioning/:id', component: AuctioningComponent}
   ],canActivate:[LoginGuard]},
   // {path: 'myAuction', component: MyAuctionComponent},
   {path: '**', component: DashboradComponent },

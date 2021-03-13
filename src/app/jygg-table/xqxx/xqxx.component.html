@@ -20,10 +20,10 @@
                 <tr *ngFor="let item of xqxxList">
                     <td align="center" class="tit">
                         <a [routerLink]="['/xqxxdetail', item.xuQiuXinXi.id]" align="center">
-                            <div class="xmmcrow" >&nbsp;{{item.xuQiuXinXi.xiuqiumingcheng}}</div>
+                            <div class="xmmcrow" >&nbsp;{{item.xuQiuXinXi.xiangmumingcheng}}</div>
                         </a>
                     </td>
-                    <td height="28" class="num xmmcrow" align="center">&nbsp;{{item.xuQiuXinXi.id}}</td>
+                    <td height="28" class="num xmmcrow" align="center">&nbsp;{{item.xuQiuXinXi.xiangMuBianHao}}</td>
                     <td align="center">{{item.xuQiuXinXi.xuqiunianxian}}</td>
                     <td align="center" class="num">{{item.xuQiuXinXi.zhuanruyongtu | xqType}}</td>
                     <td align="center">{{item.xuQiuXinXi.creationTime|date:'yyyy-MM-dd'}}</td>

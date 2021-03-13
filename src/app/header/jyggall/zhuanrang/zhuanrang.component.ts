@@ -32,9 +32,9 @@ export class ZhuanrangComponent implements OnInit {
     })
     this.cols = [
       { field: 'name', header: '项目名称' },
+      { field: 'price', header: '项目编号' },      
       {field: 'author', header: '挂牌价格' },
       { field: 'price', header: '发布区域' },   
-      { field: 'price', header: '项目状态' },      
       { field: 'price', header: '登记日期' }      
   ];
   }

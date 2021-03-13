@@ -33,6 +33,7 @@ export class ZrxxDetailComponent implements OnInit {
   zrxx: any;
   user: string ;
   public xiangMuMingCheng;
+  public xiangMuBianHao;
   public jiaoYiFangShi;
   public faBuQuYu;
   public zhuanChuBegin;
@@ -115,6 +116,7 @@ export class ZrxxDetailComponent implements OnInit {
     this.http.get(this.contentUrl + this.id).subscribe((res) => {
       this.zrxx = res['result']['gongYingXinXi']
       this.xiangMuMingCheng = this.zrxx.xiangMuMingCheng;
+      this.xiangMuBianHao = this.zrxx.xiangMuBianHao;
       this.jiaoYiFangShi = this.zrxx.jiaoYiFangShi;
       this.faBuQuYu = this.zrxx.faBuQuYu;
       this.zhuanChuBegin = this.zrxx.zhuanChuBegin;

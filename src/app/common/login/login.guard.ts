@@ -21,7 +21,7 @@ export class LoginGuard implements CanActivate{
             return true;
         } else {
             if(!this.token){
-                this.router.navigate(['/auction'])
+                this.router.navigate(['/auction/myAuction'])
                 alert("登陆已过期")
             }
             return true;
