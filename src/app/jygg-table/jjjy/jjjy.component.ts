@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JjjyComponent implements OnInit {
 
-  public url = 'http://218.29.137.134:22742/api/services/app/JingJiaModels/GetAll?Filter=&BDXX_JiaoYiFangShiFilter=-1&CQXX_ShiFouXuZuFilter=-1&StatusFilter=3&SkipCount=0&MaxResultCount=5'
+  public url = 'http://218.29.137.134:22742/api/services/app/JingJiaModels/GetAll?Filter=&BDXX_JiaoYiFangShiFilter=-1&CQXX_ShiFouXuZuFilter=-1&StatusFilter=3&SkipCount=0&MaxResultCount=4'
   public jjxxList
   constructor(private http:HttpClient) { }
 

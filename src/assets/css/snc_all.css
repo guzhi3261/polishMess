@@ -1,5 +1,5 @@
 @charset "utf-8";
-body { margin:0px;padding:0px; background:#f1f1f1; font-size:12px; font-family:"宋体";color:#555}
+body { margin:0px;padding:0px; background:#f1f1f1; font-size:16px; font-family:"宋体";color:#555}
 
 a { text-decoration:none; color:#444}
 a:hover { color:#f56800}
@@ -34,7 +34,7 @@ img { border:0px}
 .nav_f a { text-decoration:none; color:#222; font-size:14px;font-family:"微软雅黑","黑体"; font-weight:bold}
 .nav_f a:hover { color:#ff8400}
 
-.news_sw { width:370px; margin:0 auto}
+.news_sw { width:100%; margin:0 auto}
 .news_sw ul { background:url(../img/newsw1.jpg);height:31px;}
 .news_sw li {font-size:12px;font-family:"宋体"; color:#333; line-height:31px; cursor:pointer; height:31px; width:75px; float:left; text-align:center}
 .news_sw .active { color:#000; font-weight:bold;font-family:"宋体"; background: url(../img/newsw.jpg);;line-height:31px; height:31px;}

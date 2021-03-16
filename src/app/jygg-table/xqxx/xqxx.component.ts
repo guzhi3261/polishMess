@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class XqxxComponent implements OnInit {
 
-  public baseUrl = "http://218.29.137.134:22742/api/services/app/XuQiuXinXies/GetAll?xuqiufangFilter=-1&DiLeiTypeFilter=-1&StatusFilter=3&MaxResultCount=5";
+  public baseUrl = "http://218.29.137.134:22742/api/services/app/XuQiuXinXies/GetAll?xuqiufangFilter=-1&DiLeiTypeFilter=-1&StatusFilter=3&MaxResultCount=4";
   
   public xqxxList: any = [];
   public id: any ;

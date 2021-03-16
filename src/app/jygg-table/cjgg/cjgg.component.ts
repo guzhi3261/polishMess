@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CjggComponent implements OnInit {
 
-  public baseUrl = "http://218.29.137.134:22742/api/services/app/ChengJiaoXinXies/GetAll?Filter=&XiangMuMingChengFilter=&LiuZhuanFangShiFilter=-1&JiaoYiFangShiFilter=-1&BiaoDiQuYuFilter=&ZhuanChuFangFilter=&ShouRangFangFilter=&StatusFilter=9&SkipCount=0&MaxResultCount=5";
+  public baseUrl = "http://218.29.137.134:22742/api/services/app/ChengJiaoXinXies/GetAll?Filter=&XiangMuMingChengFilter=&LiuZhuanFangShiFilter=-1&JiaoYiFangShiFilter=-1&BiaoDiQuYuFilter=&ZhuanChuFangFilter=&ShouRangFangFilter=&StatusFilter=9&SkipCount=0&MaxResultCount=4";
   public cjxx: any = [];
   public cjxxList: any = [];
   public id: any ;
