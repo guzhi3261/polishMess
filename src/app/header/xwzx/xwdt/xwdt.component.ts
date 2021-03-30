@@ -25,7 +25,7 @@ export class XwdtComponent implements OnInit {
     .then(res =>{
       this.newses = res["result"]["items"]; 
       this.totalRecords = res["result"].totalCount;
-      console.log(this.newses)})
+    })
 
 }
 }

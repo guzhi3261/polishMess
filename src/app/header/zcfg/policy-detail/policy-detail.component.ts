@@ -19,18 +19,15 @@ export class PolicyDetailComponent implements OnInit {
 
   constructor(private http: HttpClient, protected activatedroute: ActivatedRoute, private route: Router ) {
     this.id = this.activatedroute.snapshot.params['id'];
-    console.log(this.id);
   }
 
   ngOnInit(): void {
     this.http.get(this.contentUrl + this.id).subscribe((res) => {
-      console.log(this.contentUrl + this.id)
       this.policy = res['result']['zhengCeFaGui'];
       this.content = this.policy.content;
       this.author = this.policy.author;
       this.title = this.policy.title;
       this.creationTime = this.policy.creationTime;
-      console.log(res);
   });
 
 }

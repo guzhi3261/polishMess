@@ -155,7 +155,6 @@ export class ZrxxDetailComponent implements OnInit {
       // this.fuzhuowuList_shuLiang = this.zrxx.diKuaiList.fuzhuowuList.shuLiang;
       // this.fuzhuowuList_quanShu = this.zrxx.diKuaiList.fuzhuowuList.quanShu;
 
-      console.log(this.zrxx);
     });
     
   }

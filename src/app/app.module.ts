@@ -23,6 +23,7 @@ import { ButtonModule } from 'primeng/button';
 import {ProgressBarModule} from 'primeng/progressbar';
 import { CardModule } from 'primeng';
 import {DropdownModule} from 'primeng/dropdown';
+import {TableModule} from 'primeng/table';
 
 
 
@@ -71,6 +72,7 @@ import { ProtocolComponent } from './common/protocol/protocol.component';
     ProgressBarModule,
     FormsModule,
     CardModule,
+    TableModule,
     DropdownModule,
   ],
   

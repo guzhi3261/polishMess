@@ -20,12 +20,10 @@ export class TimeHeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.username)    
     this.timer = setInterval(() => { this.currentDate = new Date()},1000)
   }
   signIn(){
     this.isActive = true;
-    console.log("login")
 
   }
 

@@ -66,7 +66,6 @@ export class CjggDetailComponent implements OnInit {
         this.zhuanChuQiXianQi = new Date(this.cjxx.zhuanChuQiXianQi).getFullYear();
         this.zhuanChuQiXianZhi = new Date(this.cjxx.zhuanChuQiXianZhi).getFullYear();
         this.years = this.zhuanChuQiXianZhi - this.zhuanChuQiXianQi;
-        console.log(this.cjxx);
     });
   }
   // 轮播图初始化

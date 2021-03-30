@@ -3,18 +3,20 @@
     <tr>
         <th>项目编号</th>
         <th>项目名称</th>
-        <th>操作</th>
+        <th>竞价方式</th>
+        <th>是否中标</th>
+        <th align="center">操作</th>
         
     </tr>
     <tr *ngFor="let item of myProjectList">
         <td>{{item.baoMingXinXi.xiangMuBianHao}}</td>
         <td>{{item.baoMingXinXi.projectName}}</td>
+        <td>{{item.baoMingXinXi.jiaoYiFangShi | jjfsType}}-{{item.baoMingXinXi.jingJiaFangShi |jjfxType}} </td>
+        <td>{{item.baoMingXinXi.shiFouZhongBiao | boolean}} </td>
         <td>
-            <button pButton class="p-button-warning" label="缴纳保证金"></button>
-            <button pButton class="p-button-success" [routerLink]="['/auction/auctioning', item.baoMingXinXi.projectID]"  label="进入竞拍"></button>
-            <button pButton class="p-button-danger"  label="取消报名" (click) = "cancelSign(item.baoMingXinXi.id,myProjectList)"></button>
+            <!-- <button pButton class="p-button-warning" label="缴纳保证金"></button> -->
+            <button pButton class="p-button-success" [routerLink]="['/auction/auctioning', item.baoMingXinXi.projectID]" *ngIf="item.baoMingXinXi.status == 2" label="进入竞拍"></button>
+            <button pButton class="p-button-danger"  label="取消报名" [disabled]="item.baoMingXinXi.shiFouZhongBiao" (click) = "cancelSign(item.baoMingXinXi.id,myProjectList)"></button>
         </td>
-
-    </tr>
-    
+    </tr>    
 </table>

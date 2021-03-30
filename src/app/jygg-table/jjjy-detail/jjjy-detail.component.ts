@@ -42,6 +42,7 @@ export class JjjyDetailComponent implements OnInit {
 
   public DiZhi: string;
   public DengJiRiQi: string;
+  public baoMingJieZhiTime: string;
   public SuoYouQuanRen: string;
   public QuanZhengBianHao: string;
   public QuanZhengNianXian: string;
@@ -145,7 +146,9 @@ export class JjjyDetailComponent implements OnInit {
       this.PingGuZhi = this.jjxx.pgxX_PingGuZhi;
 
       this.DiZhi = this.jjxx.cqxX_DiZhi;
-      this.DengJiRiQi = this.jjxx.cqxX_DengJiRiQi;
+      // 产权登记日期改为报名截止日期。登记日期使用公示日期
+      this.baoMingJieZhiTime = this.jjxx.cqxX_DengJiRiQi;
+      this.DengJiRiQi = this.jjxx.bdxX_GongShiRiQi;
       this.SuoYouQuanRen = this.jjxx.cqxX_SuoYouQuanRen;
       this.QuanZhengBianHao = this.jjxx.cqxX_QuanZhengBianHao;
       this.QuanZhengNianXian = this.jjxx.cqxX_QuanZhengNianXian;
@@ -186,6 +189,14 @@ export class JjjyDetailComponent implements OnInit {
     })
   }
   signUp() {
+    let currentTime = new Date()
+    let endTime = new Date(this.baoMingJieZhiTime)
+
+    let leavelTime = endTime.getTime() - currentTime.getTime() + (24*60*60*1000);
+    if(leavelTime < 0){
+      alert ("已经超过报名截止日期")
+      return 
+    }
     //登录成功拿到用户id
     this.GetUsernameService.userId.subscribe(id => {
       // this.storage.userId = id
@@ -215,14 +226,14 @@ export class JjjyDetailComponent implements OnInit {
       if(this.user){
         //整合用户名和供应id，创建一个报名信息
         //判断是否已经报名
+       
         this.http.get(this.baoMingGetAllUrlA + this.userId + this.baoMingGetAllUrlB +this.id).subscribe(res => {
           if(res['result'].totalCount == 0){
 
             this.http.post(this.baoMingRequestUrl,this.baoMingRequestBody).subscribe((res)=> {
               if(res['success']){
                 alert("你已经报名！");
-              }
-    
+              }    
             })
           }else {
             alert("不可以重复报名")

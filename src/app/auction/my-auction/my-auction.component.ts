@@ -26,10 +26,8 @@ export class MyAuctionComponent implements OnInit {
   //     this.myProject = res['result']['gongYingXinXi'];
   //     this.myProjectList.push(this.myProject);
 
-  //     console.log(this.myProjectList)
   // })
   this.http.get(this.url + this.userid).subscribe(res => {
-    console.log(res)
     this.myProjectList = res['result'].items;
   })
 }

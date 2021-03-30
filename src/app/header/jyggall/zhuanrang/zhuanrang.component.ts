@@ -27,7 +27,6 @@ export class ZhuanrangComponent implements OnInit {
   ngOnInit(): void {
     this.http.get(this.baseUrl).subscribe((res: Response) => {
       this.zrxx = res['result']['items'];
-      console.log(this.zrxx);
       this.totalRecords = res["result"].totalCount;
     })
     this.cols = [

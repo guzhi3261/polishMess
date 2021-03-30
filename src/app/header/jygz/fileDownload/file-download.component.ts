@@ -27,9 +27,9 @@ export class FileDownloadComponent implements OnInit {
      this.heTongList = res['result']['items']
         .filter(hetong => hetong.ziLiaoXiaZaiTypeZiLiaoXiaZaiTypeTitle == "合同模板" );
      this.tuQuanList = res['result']['items']
-        .filter(tuquan => tuquan.ziLiaoXiaZaiTypeZiLiaoXiaZaiTypeTitle == "产权交易");
+        .filter(tuquan => tuquan.ziLiaoXiaZaiTypeZiLiaoXiaZaiTypeTitle == "土地流转相关");
      this.qiTaList = res['result']['items']
-        .filter(tuquan => tuquan.ziLiaoXiaZaiTypeZiLiaoXiaZaiTypeTitle == "其他资料");
+        .filter(tuquan => tuquan.ziLiaoXiaZaiTypeZiLiaoXiaZaiTypeTitle == "其他");
      this.totalRecords = res['result'].totalCount;
    })
  }

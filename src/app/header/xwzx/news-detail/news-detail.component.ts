@@ -20,7 +20,6 @@ export class NewsDetailComponent implements OnInit {
 
   constructor(private http: HttpClient, protected activatedroute: ActivatedRoute, private route: Router, private service: NewsService) {
     this.id = this.activatedroute.snapshot.params['id'];
-    console.log(this.id);
   }
 
   ngOnInit(): void {
@@ -30,9 +29,16 @@ export class NewsDetailComponent implements OnInit {
       this.author = this.news.author;
       this.title = this.news.title;
       this.creationTime = this.news.creationTime;
-      console.log(res);
   });
 }
-
+printCon(){
+  const printContent = document.getElementById("printCon");
+  const WindowPrt = window.open('', '', 'left=0,top=0,width=900,height=900,toolbar=0,scrollbars=0,status=0');
+  WindowPrt.document.write(printContent.innerHTML);
+  WindowPrt.document.close();
+  WindowPrt.focus();
+  WindowPrt.print();
+  WindowPrt.close();
+}
 
 }

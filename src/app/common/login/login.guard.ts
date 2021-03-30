@@ -16,7 +16,6 @@ export class LoginGuard implements CanActivate{
     canActivate(){
         this.token = this.cookies.get("accessToken") 
         this.currentUrl = this.router.url;
-        // console.log(this.currentUrl == '/login')
         if(this.currentUrl == '/login' || this.currentUrl == '/'){
             return true;
         } else {

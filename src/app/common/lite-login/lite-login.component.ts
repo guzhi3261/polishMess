@@ -46,10 +46,8 @@ export class LiteLoginComponent implements OnInit {
   }
 close(){
   this.isActive=true;
-  console.log("close");
 }
 submit(){
-  console.log(this.loginForm.value)
   if(this.accessToken){
     this.user = this.loginForm.value.userNameOrEmailAddress;    
     this.getUser.getUser(this.user,this.userid);
@@ -62,7 +60,6 @@ submit(){
         this.cookies.set("accessToken",this.accessToken,new Date(new Date().getTime() + this.time))  
         // this.router.navigate(['/auction'])  ;
         this.getUser.getUser(this.loginForm.value.userNameOrEmailAddress,this.userid) 
-        // console.log(this.user);
   
     },
     error =>{

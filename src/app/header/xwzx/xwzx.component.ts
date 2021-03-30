@@ -21,7 +21,6 @@ export class XwzxComponent implements OnInit {
     this.http.get(this.baseUrl).subscribe((res: Response) => {
       this.newses = res['result']['items'].reverse();
       this.newsTop = this.newses[0];
-      console.log(this.newses);
   });
   this.primengConfig.ripple = true;
 

@@ -1,12 +1,23 @@
 .bidHistory{
-float: right;
-right: 20px;
-background-color: aliceblue;
-width: 200px;
-height: 50px;
-scroll-behavior: smooth;
+    height: 50px;
+    scroll-behavior: smooth;
+    position: relative;
+    left: 600px;
+    
 }
 .countdown{
     color: red;
     float: right;
+}
+.serveTime {
+    position: relative;
+    margin: 0 auto;
+    width: 500px;
+    margin-top: 130px;
+    font-size: 18px;
+    font-weight: 800;
+}
+.timeNumber{
+    color: red;
+    font-size: 28px;
 }

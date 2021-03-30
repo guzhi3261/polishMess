@@ -19,10 +19,7 @@ export class NewsService implements OnInit {
         
         // this.http.get(this.baseUrl).subscribe((res: Response) => {
         // this.newses = res['result']['items'];
-        // console.log(this.newses);
-        // console.log(this.newses[0]['news']['title'])
         // });
-        // return of(this.newses);
     }
     getNews(id: number): Observable<News> {
         const url = `${this.contentUrl}/${id}`;

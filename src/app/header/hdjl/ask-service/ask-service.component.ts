@@ -37,7 +37,6 @@ export class AskServiceComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    // console.log(g.global.userName);
 
   }
   save(){
@@ -56,7 +55,6 @@ export class AskServiceComponent implements OnInit {
     // }else{
     //   this.isActive = this.isActive? false: true;
     // }
-    // console.log(this.hdjlForm.value)
     alert("您已经提交，请持续关注本页面等待管理员回复哟~")
     this.hdjlForm.reset();
   }

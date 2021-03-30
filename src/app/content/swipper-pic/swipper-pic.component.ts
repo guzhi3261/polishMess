@@ -22,10 +22,8 @@ export class SwipperPicComponent implements OnInit {
       this.news = this.news.filter(item => item['news']['image'] != null )
       for(let i=0; i<this.news.length;i++){
         this.swiperList.push({imgUrl :this.addImageIp(this.news[i]['news']['image']),id:this.news[i].news.id});
-        console.log(this.swiperList.length)
 
       }
-      console.log(this.news)
     })
     setTimeout(() => {
       this.swiperInit();

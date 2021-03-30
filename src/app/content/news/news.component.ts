@@ -30,8 +30,6 @@ ngOnInit(): void {
     this.news = this.newses[0].news;
     this.id = this.news.id
     
-    console.log(this.newsTop);
-    // console.log(res);
       });
      // 轮播图初始化
 //     setTimeout(() => {
@@ -53,14 +51,10 @@ ngOnInit(): void {
 //     this.newses = this.service.getNewses().subscribe(
 //         data => {
 //             this.newses = data;
-//             console.log(data);
-//             console.log(this.newses);
 //             // return this.newses;
 //         });
-    // console.log( this.newses );
     // return this.newses['result']['items'];
     // this.newsTop = this.newses[0]['news']['title'];
-    // console.log(this.newsTop);
 // }
 // 轮播图初始化
 // swiperInit() {

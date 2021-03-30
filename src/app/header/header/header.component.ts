@@ -13,7 +13,6 @@ export class HeaderComponent implements OnInit {
 
   constructor(private getUser: GetUsernameService) { 
     this.getUser.username.subscribe(user => this.user = user);
-    console.log(this.user)
     
   }
 

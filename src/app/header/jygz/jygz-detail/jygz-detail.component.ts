@@ -18,7 +18,6 @@ export class JygzDetailComponent implements OnInit {
 
   constructor(private http: HttpClient, protected activatedroute: ActivatedRoute) { 
     this.id = this.activatedroute.snapshot.params['id'];
-    console.log(this.id)
   }
 
   ngOnInit(): void {

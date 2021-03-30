@@ -1,51 +1,91 @@
-<br>
-<div>
-    <p>竞拍时间</p>
-</div>
-<div class = "countdown">
-   {{remainTime}}
-</div>
-
-<br>
-<p-progressBar [value]="value"></p-progressBar>
-<br>
-<div *ngIf="jiaoYiFangShi == 1">
-    <span>尊敬的{{username}} ，本次竞拍为一次性报价，您可以在规定时间内在下方填写您的报价，然后提交。注意：提交以后不可更改，请谨慎报价。</span>
-</div>
-<div *ngIf="jiaoYiFangShi == 0">
-    <span>尊敬的{{username}} ，本次竞拍为公开报价，您可以在规定时间内在下方填写您的报价，然后提交。注意：点击刷新按钮可得到当前最高报价，在竞价时间内您可以多次报价，请谨慎报价。</span>
-</div>
-<br>
-<br>
-<div *ngIf="jingJiaFangShi == 0">
-    <span> 您参与的竞价为正向报价，即价高者得，合理的增加报价更容易中标哦</span>
-</div>
-<div *ngIf="jingJiaFangShi == 1">
-    <span> 您参与的竞价为反向报价，即合理的降低报价更容易中标哦</span>
-</div>
-<br>
-<div>
-    <input type="number" pInputText [(ngModel)]="bidPrice">
-    <button pButton pRipple type="button" label="出价" *ngIf="jiaoYiFangShi == 0"  class="p-button-success" (click)="getPrice()" ></button>
-    <button #oneButton pButton pRipple type="button" label="出价"  class="p-button-success" *ngIf="jiaoYiFangShi == 1 " (click)="getOnePrice()" ></button>
-</div>
-<div class="bidHistory" *ngIf="jiaoYiFangShi == 0">
-    <table>
-        <!-- <tr>
-            <th>时间</th>
-            <td></td>
-            <th>出价</th>
-        </tr> -->
+<div *ngIf="serveTime >= 0 && serveTime <= 1800">
+    <br>
+    <div>
+        <p>竞拍时间</p>
+    </div>
+    <div class = "countdown">
+    {{remainTime}}
+    </div>
+    <br>
+    <p-progressBar [value]="value"></p-progressBar>
+    <br>
+    <table style="border: none;font-size: 16px;">    
         <tr>
-            <td><button pButton class="p-button-success" label = "刷新" (click)="getMaxPrice()"></button></td>
-            <td>&nbsp;&nbsp;</td>
-            <td>&nbsp;&nbsp;</td>
-            <td>{{now}}</td>
-
-            <td>&nbsp;&nbsp;</td>
-            <td>&nbsp;&nbsp;</td>
-            <td>{{maxPrice}}</td>
-
+            <th align="right">项目名称：</th>
+            <th align="left">
+                {{projectName}}
+            </th>  
+        <td width='100'></td> 
+            <th  align="right">竞价方式：</th>
+            <th align="left">
+                <span *ngIf="jiaoYiFangShi == 1">黑盒报价</span>
+                <span *ngIf="jiaoYiFangShi == 0">公开报价</span>
+            <span>--</span>
+                <span *ngIf="jingJiaFangShi == 0">正向</span>
+                <span *ngIf="jingJiaFangShi == 1">反向</span>
+            </th>                     
+        </tr>
+        <tr height='20px'></tr>
+        <tr  align="right">
+            <th>项目底价：</th>
+            <th align="left">
+                {{DiJia}}
+            </th> 
+            <th width="150px">当前有效报价：</th>
+            <th align="left">
+                {{price}}
+            </th> 
+            <th>当前最高报价：</th>
+            <th align="left">
+                {{endPrice}}
+            </th> 
+                        
         </tr>
     </table>
+    <br>
+    <div>
+        <span>请输入价格（精确到整数）：</span>
+        <input type="number" pInputText [(ngModel)]="bidPrice">&nbsp;&nbsp;
+        <button pButton pRipple type="button" label="出价" *ngIf="jiaoYiFangShi == 0"  class="p-button-success" (click)="getPrice()" ></button>
+        <button #oneButton pButton pRipple type="button" label="出价"  class="p-button-success" *ngIf="jiaoYiFangShi == 1 " (click)="getOnePrice()" ></button>
+    </div>
+    <div class="bidHistory" *ngIf="jiaoYiFangShi == 0">
+        <div><span style="font-size: 14px; color: #13b695;font-family: simsun;">报价记录</span></div>
+        <table style="width: 300px; font-size: 14px;">
+            <tr>
+                <th width="70">序号</th>
+                <th width="70">报价人</th>
+                <th width="70">出价</th>
+                <th width="180">出价时间</th>
+            </tr>
+            <!-- <tr>
+                <td>当前最高价</td>
+                <td>{{endUser}} </td>
+                <td>{{endPrice}} </td>
+                <td></td>
+            </tr> -->
+            <tr *ngFor="let item of tongjiList ; ">
+
+                <td>{{item.count}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.lasttime}}</td>           
+                
+            </tr>
+        
+        </table>
+    </div>
+</div>
+<div  class="serveTime" *ngIf="serveTime > 1800">
+    <span>竞价已经结束</span>
+
+</div>
+<div class="serveTime" *ngIf="serveTime < 0 ">
+    <span>距离竞价开始时间还有
+        <span class="timeNumber" >{{days}}</span> 天
+        <span class="timeNumber" >{{hours}}</span>小时
+        <span class="timeNumber" >{{minutes}}</span>分钟
+        <span class="timeNumber" >{{seconds}}</span>秒
+    </span>
+
 </div>

@@ -80,7 +80,6 @@ export class XqxxDetailComponent implements OnInit {
       this.zhuanruyongtu = this.xqxxList.zhuanruyongtu
       this.dikuaimianji = this.xqxxList.dikuaimianji
       this.qita = this.xqxxList.qita;
-      console.log(this.photo)
     })
   }
 
@@ -120,10 +119,8 @@ export class XqxxDetailComponent implements OnInit {
     if (images0) {
         let re = /@/gi;
         images0 = images0.replace(re, 'http://218.29.137.134:22742/'); //this.news.image.split(';');
-         console.log('123' + images0);
          return images0;
     } else {
-        console.log(123);
         return null;
     }
 }

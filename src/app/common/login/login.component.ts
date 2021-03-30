@@ -53,7 +53,6 @@ export class LoginComponent implements OnInit {
       this.getUser.getUser(this.userName,this.userId);
       //进入竞价路由
       this.router.navigate(['/auction/myAuction'])   
-      console.log(res)
     },
     error=>{
       alert('用户名或密码不正确');
