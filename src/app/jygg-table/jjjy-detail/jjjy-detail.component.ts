@@ -25,7 +25,7 @@ export class JjjyDetailComponent implements OnInit {
   public BaoLiuJia: string;
   public DiJia: string;
   public JiaJiaFuDu: string;
-  public JiaoYiFangShi: 0;
+  public JiaoYiFangShi;
 
   public BaoMingShiJian: string;
   public ChengJiaoJiaoKuanJieZhiShiJian: string;
@@ -38,7 +38,7 @@ export class JjjyDetailComponent implements OnInit {
   public PingGuJiZhunRi: string;
   public PingGuZhi: string;
 
-  public jingJiaFangShi: 0;
+  public jingJiaFangShi;
 
   public DiZhi: string;
   public DengJiRiQi: string;
@@ -123,7 +123,7 @@ export class JjjyDetailComponent implements OnInit {
     this.http.get(this.jingjiaUrl+this.id).subscribe(res => {
       this.jjxx = res['result']['jingJiaModel'];
       this.bianHao = this.jjxx.xiangMuBianHao;
-      this.jjBianHao = this.jjxx.bdxx_bdxX_BiaoDuanBianHao
+      this.jjBianHao = this.jjxx.bdxX_BiaoDuanBianHao
       this.GongShiRiQi = this.jjxx.bdxX_GongShiRiQi;
       this.JingPaiShiJian = new Date(this.jjxx.bdxX_JingPaiShiJian);
       this.BiaoDuanMiaoShu = this.jjxx.bdxX_BiaoDuanMiaoShu;

@@ -11,13 +11,8 @@
 </table>
 <div>
     <form id="teseForm" action="/nccqjy/jswebportal.do?method=zixuntousuSave" method="post" enctype="multipart/form-data">
-        <input id="status" name="status" type="hidden" value="">
-        <input id="zxtsId" name="id" type="hidden" value="">
-        <input id="unitId" name="unitId.unitId" type="hidden" value="1">
-        <input id="type" name="type" type="hidden" value="4">
-        <input type="hidden" id="page" name="page" value="1">
-
-        <table width="725" border="0" cellspacing="0" cellpadding="0" style="border:1px solid #eaeaea;">
+      
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:1px solid #eaeaea;">
             <tbody>
                 <tr>
                     <td id="title" height="58" align="center" bgcolor="#f5f5f5" style="font-size:19px; color:#333; font-weight:bold; font-family:'微软雅黑';">常见问题</td>
@@ -31,16 +26,69 @@
                 </tr>
             </tbody>
         </table>
-        <table width="725" height="500" border="0" cellspacing="0" cellpadding="0" style="border:1px solid #eaeaea;margin-top:7px;">
+        <table width="100%" height="500" border="0" cellspacing="0" cellpadding="0" style="border:1px solid #eaeaea;margin-top:7px;">
             <tbody>
                 <tr>
                     <td align="center" bgcolor="#f5f5f5" style="padding:10px 0">
                         <form >
                             <table width="96%" border="0" cellpadding="0" cellspacing="0" class="hd_sqb">
                                 <tbody>
+                                    <tr *ngFor="let item of replayList">
+                                        <div class="qa-item-c">
+                                            <div class="qa-tite-c">
+                                                <div class="qa-title">{{item.answer.title}}</div>
+                                                <div class="qa-time">{{item.answer.createTime | date:'yyyy-MM-dd'}}</div>
+                                                <div class="qa-asker">{{item.answer.userName}}</div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="qs-content-c">
+                                                <div class="question">{{item.answer.title}}</div>
+                                                <img src="assets/img/ask-line.jpg" class="split-img">
+                                                <div class="answer-c">［回复］{{item.answer.content}}</div>
+                                                <!-- <div class="ask-footer">
+                                                    <div class="answer-date">2021-03-30 20:03:44</div>
+                                                    <div class="clear"></div>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                    </tr>
                                     <tr>
-                                        <!-- <td style="width: 80%;">title</td>
-                                        <td style="width: 20%;">time</td> -->
+                                        <div class="qa-item-c">
+                                            <div class="qa-tite-c">
+                                                <div class="qa-title">test问题</div>
+                                                <div class="qa-time">2021-03-30</div>
+                                                <div class="qa-asker">刘</div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="qs-content-c">
+                                                <div class="question">这是一个test问题</div>
+                                                <img src="assets/img/ask-line.jpg" class="split-img">
+                                                <div class="answer-c">［回复］这是test回复</div>
+                                                <!-- <div class="ask-footer">
+                                                    <div class="answer-date">2021-03-30 20:03:44</div>
+                                                    <div class="clear"></div>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                    </tr>
+                                    <tr>
+                                        <div class="qa-item-c">
+                                            <div class="qa-tite-c">
+                                                <div class="qa-title">test问题</div>
+                                                <div class="qa-time">2021-03-30</div>
+                                                <div class="qa-asker">刘</div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="qs-content-c">
+                                                <div class="question">这是一个test问题</div>
+                                                <img src="assets/img/ask-line.jpg" class="split-img">
+                                                <div class="answer-c">［回复］这是test回复</div>
+                                                <!-- <div class="ask-footer">
+                                                    <div class="answer-date">2021-03-30 20:03:44</div>
+                                                    <div class="clear"></div>
+                                                </div> -->
+                                            </div>
+                                        </div>
                                     </tr>
                                 </tbody>
                             </table>

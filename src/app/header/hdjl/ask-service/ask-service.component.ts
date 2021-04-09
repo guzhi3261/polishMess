@@ -45,13 +45,13 @@ export class AskServiceComponent implements OnInit {
     // this.getUser.username.subscribe(user => this.user = user);
     // if(this.user){
     //   this.hdjlForm.value.userName = this.user;
-    //   this.http.post(this.baseUrl,this.hdjlForm.value).subscribe(res => {
-    //     if(res['success']){
-    //       alert('您已经成功提交！')
-    //     }else{
-    //       alert('发生未知错误，请重试！')
-    //     }
-    //   })
+      this.http.post(this.baseUrl,this.hdjlForm.value).subscribe(res => {
+        if(res['success']){
+          alert('您已经成功提交！')
+        }else{
+          alert('发生未知错误，请重试！')
+        }
+      })
     // }else{
     //   this.isActive = this.isActive? false: true;
     // }

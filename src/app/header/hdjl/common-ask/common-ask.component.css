@@ -1,0 +1,52 @@
+.qa-item-c {
+    border: solid 1px #eeeeee;
+    margin-bottom: 30px;
+}
+.qa-tite-c {
+    height: 35px;
+    line-height: 35px;
+    background-color: #e8f2fd;
+}
+.qa-title {
+    float: left;
+    margin-left: 10px;
+    font-size: 16px;
+    color: #333333;
+}
+.qa-time {
+    float: right;
+    margin-right: 20px;
+    font-size: 12px;
+    color: #999999;
+}
+.qa-asker {
+    float: right;
+    color: #666666;
+    margin-right: 20px;
+}
+.clear {
+    visibility: hidden;
+    clear: both;
+    height: 0px;
+}
+.question {
+    padding: 15px 20px;
+    color: #666666;
+    font-size: 12px;
+    line-height: 24px;
+}
+.split-img {
+    display: block;
+    margin: auto;
+    margin-top: -6px;
+    width: 100%;
+}
+.answer-c {
+    padding: 15px 20px;
+    color: #ff9c00;
+    font-size: 12px;
+    line-height: 24px;
+}
+.qs-content-c{
+background-color: #fff;
+}

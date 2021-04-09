@@ -30,7 +30,6 @@ export class AuctioningComponent implements OnInit {
   // now = new Date()    
   bidPrice;
   // bidPrice;
-  price;
   maxPrice = 0;
   remainTime;
   serveTime;
@@ -203,24 +202,44 @@ export class AuctioningComponent implements OnInit {
   //倒计时结束
   }
   getPrice(){    
-    this.price  = this.bidPrice
-    // this.http.get(this.baoMingGetForEdit + this.baoMingXinXiId).subscribe(res=> {
-    //   //通过projectId筛选得到某条报名信息
-    //   this.baoMingXinXi = res['result'].items[0].baoMingXinXi;
-    //   this.baoMingXinXiId = this.baoMingXinXi.id;
-      this.baoMingXinXi.jiaGe = this.price;      
-      this.http.post(this.baojiaUrl,this.baoMingXinXi).subscribe(res =>{
-        // this.getMaxPrice()
-        this.setPrice()        
-        this.getServeMaxPrice()
-        alert("报价成功")        
-      })
+    
+    //1.判断是正向还是反向；2.判断报价是否低于（高于）项目底价；3.判断报价是否低于（高于）当前最高（低）价；4.报价
+    if(this.jingJiaFangShi == 0){ //正向报价
+      if(this.bidPrice < this.DiJia){
+        alert("您的报价不能低于本项目规定的底价，请重新报价")
+      }else{
+        this.getServeMaxPrice();
+        if(this.bidPrice < this.endPrice){
+          alert ("您的报价不能低于当前最高价，请重新报价")
+        }else{
+          this.baoMingXinXi.jiaGe = this.bidPrice; 
+          this.http.post(this.baojiaUrl,this.baoMingXinXi).subscribe(res =>{
+          this.setPrice();
+          this.getServeMaxPrice();
+          })
+        }
 
-        
-    // })  
-    // this.getMaxPrice()
+      }
+    }else{ //反向报价
+      if(this.bidPrice > this.DiJia){
+        alert("您的报价不能高于本项目给出的底价，请重新报价")
+      }else{
+        this.getServeMaxPrice();
+        if(this.bidPrice > this.endPrice){
+          alert ("您的报价不能高于当前最低价，请重新报价")
+        }else{
+          this.baoMingXinXi.jiaGe = this.bidPrice; 
+          this.http.post(this.baojiaUrl,this.baoMingXinXi).subscribe(res =>{
+          this.setPrice();
+          this.getServeMaxPrice();
+          })
+        }
+
+      }
+    }     
+    
   }  
-  // 新增报价
+  // 新增报价，为了记录报价信息
   setPrice(){    
     let  quoted = {
       "baoMingXinXieID": this.baoMingXinXiId,
@@ -237,6 +256,7 @@ export class AuctioningComponent implements OnInit {
       }
     })
   }
+//获取当前最优报价
   getServeMaxPrice(){
     let currentUrl='http://218.29.137.134:22742/api/services/app/BaoJias/getCurrentPrice?xiangmubianhao='+this.bianHao+'&userid='+this.userId+'&style='+this.jingJiaFangShi
     this.http.get(currentUrl).subscribe( res =>{
@@ -248,6 +268,8 @@ export class AuctioningComponent implements OnInit {
     })
     return this.endPrice,this.endUser
   }
+
+  //修改最优报价的中标状态
   defineBid(){
      //根据用户名和项目锁定要改是否中标的报名信息
     //  let defineBidUrl = 'http://218.29.137.134:22742/api/services/app/BaoMingXinXies/GetAll?UserIDFilter='+this.username+'&ProjectNameFilter='+this.projectName
@@ -256,12 +278,12 @@ export class AuctioningComponent implements OnInit {
     //   this.baoMingXinXi = res['result'].items[0].baoMingXinXi;
       //判断是否中标
       let currentUrl='http://218.29.137.134:22742/api/services/app/BaoJias/getCurrentPrice?xiangmubianhao='+this.bianHao+'&userid='+this.userId+'&style='+this.jingJiaFangShi
-    this.http.get(currentUrl).subscribe( res =>{
+      this.http.get(currentUrl).subscribe( res =>{
 
       this.endPrice = res['result'].price;       
       this.endUser = res['result'].username;     
       this.tongjiList = res['result'].tongji;
-      if(this.username==this.endUser){
+      if(this.username == this.endUser){
         this.baoMingXinXi.jiaGe = this.endPrice;
         this.baoMingXinXi.shiFouZhongBiao = true;           
         this.http.post(this.baojiaUrl,this.baoMingXinXi).subscribe(res =>{       
@@ -274,27 +296,24 @@ export class AuctioningComponent implements OnInit {
       if(this.username==this.endUser){
         this.baoMingXinXi.shiFouZhongBiao = true;           
         this.http.post(this.baojiaUrl,this.baoMingXinXi).subscribe(res =>{       
-                  
+                  console.log(res)
         })
       }
     // })
   }
-  getOnePrice(){
-    
-        
-    this.price  = this.bidPrice
+  getOnePrice(){           
     this.http.get(this.baoMingGetAllUrl + this.id).subscribe(res=> {
       //通过projectId筛选得到某条报名信息
       this.baoMingXinXi = res['result'].items[0].baoMingXinXi;
       this.baoMingXinXiId = this.baoMingXinXi.id;
       
-      this.baoMingXinXi.jiaGe = this.price;      
+      this.baoMingXinXi.jiaGe = this.bidPrice;      
       
       this.http.post(this.baojiaUrl,this.baoMingXinXi).subscribe(res =>{
         if(res['success']){
           this.defineBid()
-          alert("你已经报价，网页即将跳转")
           this.obtn.nativeElement.disabled = true;
+          alert("你已经报价，网页即将跳转")
           setTimeout(() => {            
             this.route.navigate(['/home'])
           }, 3000);

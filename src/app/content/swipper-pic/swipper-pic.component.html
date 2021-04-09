@@ -2,7 +2,7 @@
     <div class="swiper-wrapper">
         <ng-container *ngFor="let item of swiperList; let i = index">
             <div class="swiper-slide" *ngIf="i<5">
-                <a [routerLink]="['/newsdetail', item.id]" routerLinkActive="router-link-active" ><img [src]="item.imgUrl" width="362px" height="278" alt=""> </a>  
+                <a [routerLink]="['/newsdetail', item.id]" routerLinkActive="router-link-active" ><img [src]="item.imgUrl" width="450px" height="278" alt=""> </a>  
             </div>                            
         </ng-container>
     </div>                    
